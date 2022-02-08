@@ -1,0 +1,36 @@
+{
+  "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-teal.svg?style=for-the-badge&logo=appveyor)](#contributors)",
+  "contributors": [
+    {
+      "login": "tsukiseele",
+      "name": "Tsuki Seele",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28500231?v=4",
+      "profile": "http://tsukiseele.com",
+      "contributions": [
+        "design",
+        "code",        
+        "bug",
+        "doc"
+      ]
+    },
+    {
+      "login": "satoutoshio",
+      "name": "satoutoshio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88788387?v=4",
+      "profile": "https://github.com/satoutoshio",
+      "contributions": [
+        "code" 
+      ]
+    }
+  ],
+  "projectName": "Watora",
+  "projectOwner": "tsukiseele",
+  "imageSize": 100,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "files": [
+    "README.md"
+  ],
+  "contributorsPerLine": 7
+}

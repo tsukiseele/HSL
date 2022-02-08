@@ -1,0 +1,119 @@
+#container {
+}
+
+#main {
+  .friends {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    .friend {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 33%;
+      cursor: pointer;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.33);
+        background-image: var(--cover);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center right;
+        transform: translateY(-100%);
+        transition: 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          transform: translateY(0);
+        }
+      }
+      .friend-avatar {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+      }
+      .friend-name {
+        flex: 1;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  #main {
+    .friends {
+      padding: 1rem;
+      .friend {
+        width: 50%;
+        &::after {
+          background-position: center;
+        }
+      }
+    }
+  }
+}
+
+/*
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  margin: 0.5rem;
+  width: calc(100% / 3 - 1rem);
+  background: var(--color-card);
+  transition: all 0.3s;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  max-height: 200px;
+  overflow: hidden;
+  padding: 1rem;
+  cursor: pointer;
+  &:hover {
+    background: var(--color-card);
+  }
+  .link-icon {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+  &:hover .link-icon {
+    transform: rotate(360deg);
+  }
+  .link-wrap {
+    flex-grow: 1;
+    overflow: hidden;
+    text-align: center;
+    padding-left: 0.2rem;
+  }
+  .link-name {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--color-text-primary);
+  }
+  .link-info {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+}
+@media screen and (max-width: $mobile) {
+  .card {
+    // width: calc(100% / 2 - 1rem);
+    width: 100%;
+  }
+}*/

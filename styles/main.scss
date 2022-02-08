@@ -1,0 +1,227 @@
+@import './loading.scss';
+@import './transitions.scss';
+@import './theme/light.scss';
+@import './theme/dark.scss';
+@import './fonts.scss';
+
+/** 根样式 **/
+:root {
+  font-family: var(--sans-serif);
+  font-weight: 300;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  line-height: 1.8;
+  @media screen and (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
+/** 全局英文字体 **/
+@font-face {
+  font-family: 'InfoDisplay';
+  src: url('https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static/fonts/InfoDisplay.woff');
+}
+
+*::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 6px;
+}
+*::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  // background: #535353;
+  background-color: teal;
+}
+*::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #ededed;
+}
+
+/** 初始化样式 **/
+
+hr {
+  background: var(--color-border);
+  height: 1px;
+  width: 100%;
+  border: none;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+input {
+  &:hover {
+    border-bottom: 2px solid var(--color-secondary);
+  }
+
+  &:focus {
+    border-bottom: 2px solid var(--color-secondary);
+    box-shadow: 0 0 9px var(--color-secondary);
+  }
+
+  outline: none;
+  border-bottom: 2px solid var(--color-primary);
+  transition: 0.2s;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0;
+}
+
+input[type='button'],
+input[type='file'] {
+  &:hover {
+    border: 1px solid var(--color-secondary);
+  }
+
+  &:active {
+    border: 1px solid var(--color-secondary);
+  }
+
+  &:focus {
+    border: 1px solid var(--color-secondary);
+    box-shadow: 0 0 9px var(--color-secondary);
+  }
+
+  border: 1px solid var(--color-primary);
+  border-radius: 3px;
+  transition: 0.2s;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0;
+}
+
+a {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: var(--color-text);
+  }
+
+  &::before {
+    content: '\e226 ' attr(href);
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    bottom: 100%;
+    width: max-content;
+    font-family: InfoDisplay, "Material Icons";
+    line-height: 1.2rem;
+    padding: 0 0.25rem;
+    border-radius: 3px;
+    background: white;
+    box-shadow: var(--shadow);
+    transform: scale(0);
+    transform-origin: left bottom;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9;
+  }
+
+  &::after {
+    content: '';
+    background: currentColor;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+      transform-origin: left bottom;
+    }
+
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &.normal {
+    position: static;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+/** 特殊样式 **/
+#main {
+  // margin: 0 auto;
+  min-height: 100vh;
+  overflow: hidden;
+  // width: 100%;
+  padding: 0;
+  /*
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+  @media screen and (min-width: 1080px) {
+    width: 1080px;
+  }*/
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--redius);
+  transition: 0.3s ease;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: var(--shadow);
+  &hover:hover {
+    background: var(--color-card-active);
+  }
+}
+
+/** 工具类 **/
+.single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.underline {
+  position: relative;
+
+  &::after {
+    content: '';
+    background: currentColor;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+      transform-origin: left bottom;
+    }
+
+    &::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}

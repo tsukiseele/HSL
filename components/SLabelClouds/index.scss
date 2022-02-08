@@ -1,0 +1,12 @@
+.label-clouds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .label-item {
+    line-height: 1.5rem;
+    margin: .33rem 0!important;
+    // padding: 0!important;
+  }
+}

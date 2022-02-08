@@ -1,0 +1,20 @@
+#gallery {
+  .gallery-list {
+    margin: 1rem 0;
+  }
+}
+/*
+::v-deep {
+  a::before,
+  a::after {
+    display: none;
+  }
+  .vue-waterfall-easy-container {
+    .vue-waterfall-easy-scroll {
+      overflow: hidden;
+      .vue-waterfall-easy {
+      }
+    }
+  }
+}
+*/
