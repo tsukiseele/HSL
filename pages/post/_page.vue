@@ -1,14 +1,15 @@
 <template lang="pug">
 #container
-  TheBanner(
-    ref='banner',
-    :title='header.title',
-    :subtitle='header.subtitle',
-    :isFull='header.isFull',
-    :isHide='header.isHide',
-    :isHideSubtitle='header.isHideSubtitle',
-    :cover='$src.images.backgrounds[7]'
-  )
+  TheIndex
+  //- TheBanner(
+  //-   ref='banner',
+  //-   :title='header.title',
+  //-   :subtitle='header.subtitle',
+  //-   :isFull='header.isFull',
+  //-   :isHide='header.isHide',
+  //-   :isHideSubtitle='header.isHideSubtitle',
+  //-   :cover='$src.images.backgrounds[7]'
+  //- )
   main#main
     .aside-wrap
       TheInfoCard(:icon='res.icon')

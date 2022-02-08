@@ -2,7 +2,7 @@
   "name": "watora",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://tsukiseele.github.io/Watora",
+  "homepage": "https://tsukiseele.github.io/Haruka",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nuxt",
     "dev-spa": "cross-env NODE_ENV=dev MODE=SPA nuxt",

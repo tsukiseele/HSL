@@ -36,12 +36,17 @@ export default {
         type: 'text/css',
         href: '//cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css',
       },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
+      },
     ],
     script: [
       {
-        src: '//cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js'
-      }
-    ]
+        src: '//cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js',
+      },
+    ],
   },
   axios: {
     // baseURL: 'https://api.github.com/repos/chanshiyucx/blog',

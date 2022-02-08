@@ -128,7 +128,10 @@ export default {
     bottom: 0;
     right: 0;
     // background: url('/bg.webp');
-    background-color: rgba(192, 224, 224, 1);  
+    // background-color: rgba(192, 224, 224, 1);  
+    
+    // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg);
+    background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
     // background: url(https://api.paugram.com/wallpaper?source=gt);
     // background: repeating-linear-gradient(45deg, rgba(0, 128, 128, 1) 0 1rem, transparent 1rem 2rem, rgba(0, 128, 128, 1) 2rem 3rem);
     background-size: cover;
@@ -145,8 +148,9 @@ export default {
 #app {
   position: relative;
   // background: var(--color-background);
-  background-color: white;
-  width: 1080px;
+  // background-color: white;
+  // width: 1080px;
+  width: 100%;
   // width: $mobile;
   margin: 0 auto;
   box-shadow: var(--shadow);

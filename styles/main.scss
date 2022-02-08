@@ -180,14 +180,15 @@ a {
 }
 
 .card {
-  background: var(--color-card);
+  background-color: var(--color-card);
   border-radius: var(--redius);
   transition: 0.3s ease;
   margin: 0.5rem;
   padding: 0.5rem;
   box-shadow: var(--shadow);
-  &hover:hover {
-    background: var(--color-card-active);
+  backdrop-filter: saturate(200%) blur(16px);
+  &:hover {
+    background-color: var(--color-card-active);
   }
 }
 
