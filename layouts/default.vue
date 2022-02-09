@@ -104,9 +104,6 @@ export default {
     },
     windowWidth(newVal) {
       this.$store.commit('clientWidth', newVal)
-    },
-    isMobile(newVal) {
-      console.log(newVal);
     }
   },
   methods: {
