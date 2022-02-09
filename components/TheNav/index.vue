@@ -1,31 +1,27 @@
 <template lang="pug">
-.nav-wrap
-  TheBanner(v-if="isFull" :title="title" :subtitle="subtitle" :nav="nav" :links="links")
-  //- 仅滑到顶部时显示工具栏
-  //- :class="{ 'nav-hide': scroll.change > 100 }"
-  //- 'nav-hide': scroll.change > 0,
-  nav#nav(v-if="!hide && !isFull")
-    .nav-title(@click="$router.push('/')") {{ title }}
-    .nav-spacer
-    //- , :class="{ 'menu-dark': scroll.pos > 100 }"
-    ul.nav-menu(v-if="!isMobile")
-      li(v-for="(item, i) in nav", :key="i", @click="$router.push(item.to)")
-        s-icon(:name='item.icon')
-        .menu-title {{ item.name }}
-    .nav-spacer
-    .nav-bars(v-if="isMobile", @click="drawer = !drawer")
-      s-icon(name='menu')
-  .nav-drawer(v-if="isMobile", :class="{ open: drawer }")
-    .drawer-blank(@click="drawer = !drawer")
+#the-nav
+  //- Banner
+  TheBanner(v-if='isFull', :title='title', :subtitle='subtitle', :nav='nav', :links='links', @scrollDown='$emit("scrollDown")')
+  //- 导航栏
+  .nav-wrap
+    nav#nav(v-if='!hide')
+      .nav-title(@click='$router.push("/")') {{ title }}
+      .nav-spacer
+      ul.nav-menu(v-if='!isMobile')
+        li(v-for='(item, i) in nav', :key='i', @click='$router.push(item.to)')
+          s-icon(:name='item.icon')
+          .menu-title {{ item.name }}
+      .nav-spacer
+      .nav-bars(v-if='isMobile', @click='drawer = !drawer')
+        s-icon(name='mdi-menu')
+  //- 抽屉
+  .nav-drawer(v-if='isMobile', :class='{ open: drawer }')
+    .drawer-blank(@click='drawer = !drawer')
     .drawer-main
       .drawer-banner
-        img.drawer-banner-bg(:src="drawerBannerBackground")
-      ul.drawer-menu(@click="drawer = !drawer")
-        li(
-          v-for="(item, j) in nav",
-          :key="j",
-          @click="$router.push(item.to)"
-        )
+        img.drawer-banner-bg(:src='drawerBannerBackground')
+      ul.drawer-menu(@click='drawer = !drawer')
+        li(v-for='(item, j) in nav', :key='j', @click='$router.push(item.to)')
           s-icon(:name='item.icon')
           .menu-title {{ item.name }}
 </template>
@@ -35,42 +31,42 @@ export default {
   props: {
     hide: {
       type: Boolean,
-      default: false
+      default: false,
     },
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     subtitle: {
       type: String,
-      default: ''
+      default: '',
     },
     links: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     nav: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     isFull: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isMobile: {
       type: Boolean,
-      default: false
+      default: false,
     },
     drawerBannerBackground: {
       type: String,
-      default: null
+      default: null,
     },
   },
   data: () => ({
-    drawer: false
+    drawer: false,
   }),
-};
+}
 </script>
 <style lang="scss" scoped>
-@import "./index.scss";
+@import './index.scss';
 </style>

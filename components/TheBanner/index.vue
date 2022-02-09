@@ -1,5 +1,5 @@
 <template lang="pug">
-.index
+#banner
   .title {{ title }}
   .subtitle {{ subtitle }}
   nav.nav
@@ -12,6 +12,7 @@
         n-link.normal(:to='item.to')
           s-icon(:name='item.icon')
           | {{ item.name }}
+  s-icon.scroll-down(name='mdi-chevron-down', @click='$emit("scrollDown")')
 </template>
 
 <script>

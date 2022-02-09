@@ -1,4 +1,5 @@
-.index {
+#banner {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,4 +90,28 @@
       }
     }
   }
+  .scroll-down {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 3rem;
+    animation: scroll-down-effect 3s ease-in-out infinite;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+}
+50% {
+  transform: translateY(-1rem);
+    opacity: 0.384;
+}
+100% {
+  transform: translateY(0);
+    opacity: 1;
+}
 }

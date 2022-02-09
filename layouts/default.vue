@@ -3,13 +3,16 @@
   #background
   #app
     TheNav(
-      :title='nav.title', 
-      :subtitle='nav.subtitle', 
-      :nav='nav.nav', 
-      :links='nav.links'
-      :drawerBannerBackground='nav.drawerBannerBackground'
-      :isMobile='isMobile'
-      :isFull='$route.path == "/"')
+      :title='nav.title',
+      :subtitle='nav.subtitle',
+      :nav='nav.nav',
+      :links='nav.links',
+      :drawerBannerBackground='nav.drawerBannerBackground',
+      :isMobile='isMobile',
+      :isFull='isFull',
+      :hide='isHideNav',
+      @scrollDown='scrollToContent'
+    )
     main#main
       nuxt
     //- 页脚
@@ -81,12 +84,18 @@ export default {
   }),
   computed: {
     ...mapState(['header', 'live2dText']),
-    ...mapGetters(['isMobile']),
+    ...mapGetters(['isMobile', 'scroll']),
     background() {
       // 判断客户端，防止重复渲染；
       if (process.client) {
         return `url(${this.$static}/bg/${this.getRandomNumber(1, 20)}.webp)`
       }
+    },
+    isFull() {
+      return this.$route.path == '/'
+    },
+    isHideNav() {
+      return this.isFull && document && document.documentElement.clientHeight > this.scroll.pos
     },
   },
   watch: {
@@ -96,6 +105,9 @@ export default {
     windowWidth(newVal) {
       this.$store.commit('clientWidth', newVal)
     },
+    isMobile(newVal) {
+      console.log(newVal);
+    }
   },
   methods: {
     /**
@@ -136,7 +148,19 @@ export default {
     getRandomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min
     },
-    handleScroll() {
+    scrollToContent() {
+      this.$nextTick(() => {
+        const ele = document.getElementById('container')
+        if (ele) {
+          this.$store.commit('scroll', {
+            pos: ele.offsetTop,
+            change: ele.offsetTop,
+          })
+          ele.scrollIntoView({ behavior: 'smooth' })
+        }
+      })
+    },
+    onScroll() {
       const newPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       const scroll = this.$store.getters.scroll
       this.$store.commit('scroll', {
@@ -144,7 +168,7 @@ export default {
         change: scroll && scroll.pos ? newPos - scroll.pos : 0,
       })
     },
-    handleResize() {
+    onResize() {
       if (document) {
         this.windowWidth = document.documentElement.clientWidth
       }
@@ -160,15 +184,15 @@ export default {
     this.changeTheme()
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.onResize)
+    this.onResize()
 
     // this.initMusicList();
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll)
-    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('resize', this.onResize)
   },
 }
 </script>
