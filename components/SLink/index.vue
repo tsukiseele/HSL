@@ -1,5 +1,5 @@
 <template lang="pug">
-a.link(:href="to",target="_blank")
+span.link(@click='$router.push(to)')
   slot
 </template>
 
@@ -7,11 +7,11 @@ a.link(:href="to",target="_blank")
 export default {
   props: {
     to: {
-      type: [ String, Boolean ],
-      default: null
-    }
-  }
-};
+      type: String,
+      default: null,
+    },
+  },
+}
 </script>
 
 <style lang="less" scoped></style>

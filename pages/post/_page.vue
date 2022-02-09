@@ -1,6 +1,6 @@
 <template lang="pug">
 #container
-  TheIndex
+  //- TheIndex
   //- TheBanner(
   //-   ref='banner',
   //-   :title='header.title',

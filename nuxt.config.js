@@ -39,7 +39,8 @@ export default {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
+        href: '//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css'
+        // href: '//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',
       },
     ],
     script: [

@@ -1,128 +1,117 @@
 #banner {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 50vh;
-  width: 100%;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  background-position: center;
-  background-size: cover;
-  &::before {
-    content: '';
+  justify-content: center;
+  min-height: 100vh;
+  .title {
+    font-size: 3rem;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    line-height: 2.4rem;
+  }
+  .subtitle {
+    // font-family: 'Microsoft YaHei';
+    font-weight: lighter;
+  }
+  nav.nav {
+    margin-bottom: 10rem;
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      text-transform: uppercase;
+      i {
+        font-size: 1.5rem;
+      }
+      li {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: '';
+          right: 0.5rem;
+          bottom: 2px;
+          width: 0;
+          height: 2px;
+          background-color: rgba(0, 0, 0, 0.382);
+          transition: 0.25s ease-out;
+        }
+        &.active,
+        &:hover {
+          &::before,
+          &::after {
+            width: calc(100% - 1rem);
+            left: 0.5rem;
+          }
+        }
+        /*
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        right: .5rem;
+        width: 0;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.382);
+        transition: 0.25s ease-out;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      &:hover {
+        &::before,
+        &::after {
+          width: calc(100% - 1rem);
+          left: .5rem;
+        }
+      }*/
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 1rem 0;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.25s ease-out;
+      i {
+        padding-right: 0.5rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .scroll-down {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 1rem, rgba(255, 255, 255, 0.2) 1rem 2rem, rgba(255, 255, 255, 0.1) 2rem 3rem);
-    background-position: center;
-    background-size: cover;
-    z-index: 0;
-  }
-  &.full {
-    // height: 100vh;
-    // background-color: transparent;
-  }
-  &.hide {
-    height: 3rem;
-    background-image: none;
-    background-color: var(--color-card);
-  }
-  @media screen and(max-width: $mobile) {
-    height: 33vh;
-  }
-}
-
-.banner--card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
-  text-align: center;
-  color: var(--color-text);
-  font-family: InfoDisplay;
-  z-index: 1;
-  .banner--title {
-    font-size: 2.2rem;
-    font-weight: 500;
-    font-family: var(--font-sans-serif);
+    bottom: 1rem;
+    font-size: 3rem;
+    animation: scroll-down-effect 3s ease-in-out infinite;
     cursor: pointer;
-    // text-shadow: 2px 2px 0px white;
+    user-select: none;
     color: white;
-    text-shadow: 0px 1px 0px #c7c8ca, 0px 2px 0px #b1b3b6, 0px 3px 0px #9d9fa2, 0px 4px 0px #8a8c8e, 0px 5px 0px #77787b, 0px 6px 0px #636466, 0px 7px 0px #4d4d4f, 0px 8px 7px #001135;
-
-    span {
-      transition: color 0.3s ease;
-    }
-    :hover {
-      color: var(--color-text);
-    }
-  }
-  .banner--subtitle {
-    font-size: 1.4rem;
-    cursor: pointer;
-    width: 80vw;
-    margin-top: 1rem;
-    white-space: pre-wrap;
-    font-family: var(--font-serif);
-    font-weight: bold;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.67);
-    // text-shadow: 1px 1px 0 white;
-    .subtitle--cursor {
-      height: 100%;
-      border-left: white solid 1px;
-      margin-left: 0.2rem;
-    }
-    .subtitle--cursor-vague {
-      animation: cursor-vague 1s ease infinite;
-    }
-  }
-  @media screen and (max-width: $mobile) {
-    .banner--title {
-      font-size: 1.8rem;
-    }
-    .banner--subtitle {
-      font-size: 1.2rem;
-    }
+    
   }
 }
-
-.btn-scroll {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  // background-color: #fff;
-  height: 50px;
-  width: 50px;
-  color: white;
-  cursor: pointer;
-  animation: float 3s linear infinite;
-  z-index: 1;
-}
-
-@keyframes cursor-vague {
+@keyframes scroll-down-effect {
   0% {
+    transform: translateY(0);
     opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
-
-@keyframes float {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(-6px);
-    transform: translateY(-10px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
+50% {
+  transform: translateY(-1rem);
+    opacity: 0.384;
+}
+100% {
+  transform: translateY(0);
+    opacity: 1;
+}
 }

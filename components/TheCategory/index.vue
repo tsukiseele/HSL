@@ -1,7 +1,7 @@
 <template lang="pug">
 .category.card
   .category-title 归档
-  nuxt-link.category-item.normal(
+  n-link.category-item.normal(
     v-for="(category, i) in categorys",
     :key="i",
     :to="`/category/${category.id}`"
