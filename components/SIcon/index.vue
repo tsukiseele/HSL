@@ -1,5 +1,5 @@
 <template lang="pug">
-i(v-if="name" :class='`fa ${name}`', aria-hidden='true')
+i(v-if="name" :class='`mdi ${name}`', aria-hidden='true')
 </template>
 
 <script>

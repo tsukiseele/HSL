@@ -2,10 +2,16 @@
 #watora
   #background
   #app
-    //- #background(:style="{ 'background-image': background }")
-    TheNav
-    main
-      Nuxt
+    TheNav(
+      :title='nav.title', 
+      :subtitle='nav.subtitle', 
+      :nav='nav.nav', 
+      :links='nav.links'
+      :drawerBannerBackground='nav.drawerBannerBackground'
+      :isMobile='isMobile'
+      :isFull='$route.path == "/"')
+    main#main
+      nuxt
     //- 页脚
     TheFooter
     //- 播放器
@@ -23,6 +29,55 @@ export default {
     playlistId: 6760099512,
     musics: [],
     windowWidth: 0,
+    nav: {
+      title: 'HARUKA',
+      subtitle: "Let's search for tomorrow",
+      drawer: false,
+      drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
+      nav: [
+        {
+          name: 'Home',
+          icon: 'mdi-home',
+          to: '/',
+        },
+        {
+          name: 'Projects',
+          icon: 'mdi-developer-board',
+          to: '/projects',
+        },
+        {
+          name: 'Friends',
+          icon: 'mdi-link-variant',
+          to: '/friends',
+        },
+        {
+          name: 'Gallery',
+          icon: 'mdi-image-frame',
+          to: '/gallery',
+        },
+        {
+          name: 'About',
+          icon: 'mdi-information',
+          to: '/about',
+        },
+      ],
+      links: [
+        {
+          icon: 'mdi-github',
+          to: 'https://github.com/tsukiseele',
+        },
+
+        {
+          icon: 'mdi-twitter',
+          to: 'https://twitter.com/tsukiseele',
+        },
+
+        {
+          icon: 'mdi-gmail',
+          to: 'mailto:tsukiseele@gmail.com',
+        },
+      ],
+    },
   }),
   computed: {
     ...mapState(['header', 'live2dText']),
@@ -127,13 +182,8 @@ export default {
     left: 0;
     bottom: 0;
     right: 0;
-    // background: url('/bg.webp');
-    // background-color: rgba(192, 224, 224, 1);  
-    
-    // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg);
     background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
     // background: url(https://api.paugram.com/wallpaper?source=gt);
-    // background: repeating-linear-gradient(45deg, rgba(0, 128, 128, 1) 0 1rem, transparent 1rem 2rem, rgba(0, 128, 128, 1) 2rem 3rem);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -150,17 +200,20 @@ export default {
   // background: var(--color-background);
   // background-color: white;
   // width: 1080px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  min-height: 100vh;
   // width: $mobile;
   margin: 0 auto;
   box-shadow: var(--shadow);
-
+  /*
   @media screen and (max-width: 1080px) {
     width: $mobile;
   }
   @media screen and (max-width: $mobile) {
     width: 100%;
-  }
+  }*/
 }
 #background {
   position: fixed;
@@ -178,6 +231,7 @@ export default {
 }
 
 main {
+  flex: 1;
   // position: absolute;
   // background: #445;
 }

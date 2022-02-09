@@ -1,6 +1,6 @@
 <template lang="pug">
 #container
-  TheBanner(v-if='archive',  :disableTyping='true', :isHide='header.isHide')
+  //- TheBanner(v-if='archive',  :disableTyping='true', :isHide='header.isHide')
   //- :title='header.title', :cover='header.cover', :subtitle='header.subtitle',
   main#main
     .content

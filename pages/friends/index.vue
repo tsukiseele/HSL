@@ -1,12 +1,9 @@
 <template lang="pug">
 #container
-  TheBanner(
-    title="友链",
-    subtitle="",
-  )
+  //- TheBanner(title='友链', subtitle='')
   main#main
     ul.friends
-      li.friend(v-for='(friend, index) in friends' :key='index' @click="onLinkClick(friend)" :style="{ '--cover' : `url(${friend.cover})` }")
+      li.friend(v-for='(friend, index) in friends', :key='index', @click='onLinkClick(friend)', :style='{ "--cover": `url(${friend.cover})` }')
         img.friend-avatar(:src='friend.avatar')
         span.friend-name {{ friend.name }}
 </template>

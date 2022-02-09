@@ -1,6 +1,6 @@
 <template lang="pug">
 #main.card
-  TheBanner(:title='header.title', :subtitle='header.subtitle', :isFull='header.isFull', :isHide='header.isHide', :isHideSubtitle='header.isHideSubtitle')
+  //- TheBanner(:title='header.title', :subtitle='header.subtitle', :isFull='header.isFull', :isHide='header.isHide', :isHideSubtitle='header.isHideSubtitle')
   .about
     .blockquote
       i.quote-left.material-icons format_quote

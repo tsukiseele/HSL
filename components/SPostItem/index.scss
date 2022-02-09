@@ -111,12 +111,14 @@
       }
     }
   }
+  /*
   .item-category {
     $triangle: 0.8rem;
     $height: 2rem;
     position: absolute;
     text-align: center;
-    color: var(--color-primary);
+    // color: var(--color-primary);
+    color: rgba(255,255,255,.618);
     background: currentColor;
     width: 6.6rem;
     font-size: 0.8rem;
@@ -127,6 +129,7 @@
     left: -$triangle;
     box-shadow: var(--shadow);
     z-index: 2;
+    backdrop-filter: blur(16px);
     &::before {
       content: '';
       position: absolute;
@@ -153,7 +156,7 @@
       font-size: 0.8rem;
       vertical-align: middle;
     }
-  }
+  }*/
   /** Mobile兼容 */
   @media screen and (max-width: $mobile) {
     /* A方案-下方显示*/
