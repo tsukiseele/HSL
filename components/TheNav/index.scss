@@ -4,7 +4,6 @@
 .nav-wrap {
   position: relative;
   width: inherit;
-  height: 0;
 }
 
 #nav {
@@ -21,9 +20,15 @@
   background: var(--color-nav);
   backdrop-filter: blur(16px) saturate(2);
   z-index: 9;
+  transform: translateY(calc(-1 * var(--nav-height)));
 
+  text-transform: uppercase;
   i {
     font-size: 1.8rem;
+  }
+
+  &.show {
+    transform: translateY(0);
   }
 
   &:hover {
@@ -60,13 +65,14 @@
     transition: 0.3s ease;
   }
   &:hover {
-    filter: brightness(.8);
+    filter: brightness(0.8);
   }
 }
 
 .nav-drawer {
   .drawer-main {
     position: fixed;
+    top: 0;
     right: -61.8%;
     width: 61.8%;
     height: 100%;
@@ -94,11 +100,11 @@
       padding: 0.618rem;
       align-items: center;
       font-size: 1.2rem;
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
 
       &:hover {
         // background-color: var(--color-primary);
-        background-color: rgba(255,255,255,.618);
+        background-color: rgba(255, 255, 255, 0.618);
       }
 
       i {
@@ -109,11 +115,11 @@
   }
   .drawer-blank {
     position: fixed;
-    display: none;
-    height: 100%;
-    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
     z-index: 99;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
   }
 
   &.open {
@@ -122,8 +128,10 @@
       box-shadow: var(--shadow);
     }
     .drawer-blank {
-      display: block;
+      width: 100%;
+      height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
+      opacity: 1;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-#content.card
+#content
   .about
     .blockquote
       i.quote-left.material-icons format_quote

@@ -4,7 +4,7 @@
   TheBanner(v-if='isFull', :title='title', :subtitle='subtitle', :nav='nav', :links='links', @scrollDown='$emit("scrollDown")')
   //- 导航栏
   .nav-wrap
-    nav#nav(v-if='!hide')
+    nav#nav(:class='{ show: !hide }')
       .nav-title(@click='$router.push("/")') {{ title }}
       .nav-spacer
       ul.nav-menu(v-if='!isMobile')
