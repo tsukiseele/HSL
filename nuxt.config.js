@@ -7,7 +7,7 @@ export default {
   ssr: !(process.env.MODE && process.env.MODE.toLocaleLowerCase() == 'spa'),
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Watora - TsukiSeele个人博客',
+    title: 'Haruka - 遥远的理想乡',
     htmlAttrs: {
       lang: 'zh-CN',
     },
