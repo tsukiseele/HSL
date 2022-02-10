@@ -42,36 +42,36 @@ export default {
       this.titlesActiveIndex = index
     },
     onImageClick(e) {},
-    getColor(src) {
-      return new Promise((resolve, reject) => {
-        const colorThief = new ColorThief()
-        const img = new Image()
-        img.crossOrigin = 'Anonymous'
-        img.src = src
-        if (img.complete) {
-          resolve([colorThief.getColor(img), ...colorThief.getPalette(img)])
-        } else {
-          img.addEventListener('load', () => resolve([colorThief.getColor(img), ...colorThief.getPalette(img)]))
-          img.addEventListener('error', () => reject('Image failed to load'))
-        }
-      })
-    },
+    // getColor(src) {
+    //   return new Promise((resolve, reject) => {
+    //     const colorThief = new ColorThief()
+    //     const img = new Image()
+    //     img.crossOrigin = 'Anonymous'
+    //     img.src = src
+    //     if (img.complete) {
+    //       resolve([colorThief.getColor(img), ...colorThief.getPalette(img)])
+    //     } else {
+    //       img.addEventListener('load', () => resolve([colorThief.getColor(img), ...colorThief.getPalette(img)]))
+    //       img.addEventListener('error', () => reject('Image failed to load'))
+    //     }
+    //   })
+    // },
   },
-  async mounted() {
-    try {
-      const [dominant, palette1, palette2, palette3] = await this.getColor(this.archive.cover.url)
-      document.getElementById('background').style.background = `rgba(${dominant[0]}, ${dominant[1]}, ${dominant[2]}, 1)`
-    } catch (error) {
-      console.error(error)
-    }
-  },
+  // async mounted() {
+  //   try {
+  //     const [dominant, palette1, palette2, palette3] = await this.getColor(this.archive.cover.url)
+  //     document.getElementById('background').style.background = `rgba(${dominant[0]}, ${dominant[1]}, ${dominant[2]}, 1)`
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // },
   async fetch({ store, params }) {
     const id = parseInt(params.id)
     await store.dispatch('archive', { id })
   },
-  async beforeDestroy() {
-    document.getElementById('background').style.backgroundColor = `rgba(0, 0, 0, 0.12)`
-  },
+  // async beforeDestroy() {
+  //   document.getElementById('background').style.backgroundColor = `rgba(0, 0, 0, 0.12)`
+  // },
 }
 </script>
 
