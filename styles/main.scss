@@ -188,9 +188,10 @@ a {
   padding: 0.5rem;
   box-shadow: var(--shadow);
   backdrop-filter: saturate(200%) blur(16px);
+  /*
   &:hover {
     background-color: var(--color-card-active);
-  }
+  }*/
 }
 
 /** 工具类 **/

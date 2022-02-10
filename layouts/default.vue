@@ -95,7 +95,7 @@ export default {
       return this.$route.path == '/'
     },
     isHideNav() {
-      return this.isFull && document && document.documentElement.clientHeight > this.scroll.pos
+      return this.isFull && process.client && document.documentElement.clientHeight > this.scroll.pos
     },
   },
   watch: {
@@ -226,7 +226,6 @@ export default {
   width: 100%;
   min-height: 100vh;
   // width: $mobile;
-  margin: 0 auto;
   box-shadow: var(--shadow);
   /*
   @media screen and (max-width: 1080px) {
@@ -252,6 +251,9 @@ export default {
 }
 
 main {
+  // margin: 0 auto;
+  align-self: center;
+  width: 1080px;
   flex: 1;
   // position: absolute;
   // background: #445;

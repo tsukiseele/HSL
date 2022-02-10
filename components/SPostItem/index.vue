@@ -10,7 +10,7 @@
         SChip(:text="date | formatTimeAgo", icon="event_note")
       li.item-label(v-for="(label, i) in labels", :key="i")
         SChip(:text="label.name", icon="sell")
-  .item-category 
+  //- .item-category 
     i.category-icon.material-icons bookmark
     span.category-text {{ category ? category.title : '未分类' }}
 </template>
