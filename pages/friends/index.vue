@@ -1,11 +1,10 @@
 <template lang="pug">
-#container
+#content
   //- TheBanner(title='友链', subtitle='')
-  main#main
-    ul.friends
-      li.friend(v-for='(friend, index) in friends', :key='index', @click='onLinkClick(friend)', :style='{ "--cover": `url(${friend.cover})` }')
-        img.friend-avatar(:src='friend.avatar')
-        span.friend-name {{ friend.name }}
+  ul.friends
+    li.friend(v-for='(friend, index) in friends', :key='index', @click='onLinkClick(friend)', :style='{ "--cover": `url(${friend.cover})` }')
+      img.friend-avatar(:src='friend.avatar')
+      span.friend-name {{ friend.name }}
 </template>
 
 <script>

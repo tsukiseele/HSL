@@ -13,6 +13,8 @@
   --color-secondary: rgba(139, 207, 222, 1);
   // 头部背景
   --color-header: rgba(255, 255, 255, .3);
+  // 导航栏背景
+  --color-nav: rgba(255, 255, 255, .618);
   // 卡片背景
   --color-card: rgba(255, 255, 255, .618);
   // 卡片背景-活动
@@ -30,4 +32,6 @@
   // --shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);/*0 3px 8px 6px rgba(7,19,27,0.06)*/
   // 阴影-扩散
   --shadow-active: rgba(7, 19, 27, 0.15);
+
+  --blur: blur(16px) saturate(2);
 }

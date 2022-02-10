@@ -1,5 +1,5 @@
 <template lang="pug">
-.comment
+.comment.card
   Vssue(:title="title")
 </template>
 
@@ -15,6 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.comment {
+}
 ::v-deep .vssue {
   a {
     &::before,

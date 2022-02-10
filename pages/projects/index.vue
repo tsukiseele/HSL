@@ -1,9 +1,9 @@
 <template lang="pug">
-#container
+#content
 </template>
 
 <style lang="scss" scoped>
-#container {
+#content {
   // min-height: 100vh;
 }
 </style>

@@ -1,5 +1,5 @@
 <template lang="pug">
-#container
+#content
   main#main
     .aside-wrap
       TheInfoCard(:icon='res.icon')

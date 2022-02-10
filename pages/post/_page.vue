@@ -1,5 +1,5 @@
 <template lang="pug">
-#container
+#content
   //- TheIndex
   //- TheBanner(
   //-   ref='banner',

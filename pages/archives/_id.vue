@@ -1,5 +1,5 @@
 <template lang="pug">
-#container
+#content
   //- TheBanner(v-if='archive',  :disableTyping='true', :isHide='header.isHide')
   //- :title='header.title', :cover='header.cover', :subtitle='header.subtitle',
   main#main

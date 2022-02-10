@@ -9,7 +9,7 @@
   box-shadow: var(--shadow);
   cursor: pointer;
   border-radius: 5px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--blur);
 
   &:hover {
     // background: var(--color-card-active);

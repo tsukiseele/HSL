@@ -34,10 +34,10 @@
 }
 *::-webkit-scrollbar-thumb {
   // border-radius: 6px;
-  background: linear-gradient( #9198e5, #e66465);
+  background: linear-gradient(45deg, #9198e5, #e66465);
 }
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #333;
+  filter: brightness(1.2);
 }
 *::-webkit-scrollbar-track {
   background: transparent;
@@ -164,21 +164,6 @@ a {
 }
 
 /** 特殊样式 **/
-#main {
-  // margin: 0 auto;
-  min-height: 100vh;
-  overflow: hidden;
-  // width: 100%;
-  padding: 0;
-  /*
-  @media screen and (min-width: $mobile) {
-    width: $mobile;
-  }
-  @media screen and (min-width: 1080px) {
-    width: 1080px;
-  }*/
-}
-
 .card {
   background-color: var(--color-card);
   border-radius: var(--redius);
@@ -186,11 +171,18 @@ a {
   margin: 0.5rem;
   padding: 0.5rem;
   box-shadow: var(--shadow);
-  backdrop-filter: saturate(200%) blur(16px);
+  backdrop-filter: var(--blur);
   /*
   &:hover {
     background-color: var(--color-card-active);
   }*/
+}
+
+.blur {
+  background-color: var(--color-card);
+  transition: 0.3s ease;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px) saturate(200%);
 }
 
 /** 工具类 **/

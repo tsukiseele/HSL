@@ -104,7 +104,7 @@ export default {
     },
     windowWidth(newVal) {
       this.$store.commit('clientWidth', newVal)
-    }
+    },
   },
   methods: {
     /**
@@ -218,22 +218,11 @@ export default {
 
 #app {
   position: relative;
-  // background: var(--color-background);
-  // background-color: white;
-  // width: 1080px;
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  // width: $mobile;
   box-shadow: var(--shadow);
-  /*
-  @media screen and (max-width: 1080px) {
-    width: $mobile;
-  }
-  @media screen and (max-width: $mobile) {
-    width: 100%;
-  }*/
 }
 #background {
   position: fixed;
@@ -250,13 +239,19 @@ export default {
   overflow: hidden;
 }
 
-main {
-  // margin: 0 auto;
-  align-self: center;
-  width: 1080px;
+main#main {
   flex: 1;
-  // position: absolute;
-  // background: #445;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--nav-height);
+  width: 1080px;
+}
+
+@media screen and (max-width: 1080px) {
+  main#main {
+    width: 100%;
+  }
 }
 @keyframes identifier {
   100% {
