@@ -28,9 +28,9 @@ export default () => {
         ,fLL;::;;i:..............;:::,,....:fftGKKKEt::::ff;;
         .tiit:::::;itti;::,,,,,,,,,,,:;iiiiiff;;fLLj::::tLf::
 
-                         %cWatora %ccreated by %c@tsukiseele%c - 2021
+                         %HARUKA %ccreated by %c@tsukiseele%c - 2021
   
-                         https://github.com/tsukiseele/watora`;
+                         https://github.com/tsukiseele/Haruka`;
 
   console.log(
     ascii,

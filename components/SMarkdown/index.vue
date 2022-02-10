@@ -109,7 +109,7 @@ export default {
 
 @import './index.scss';
 
-@import './watora.scss';
+@import './haruka.scss';
 /*
 :root[theme="dark"] {
   @import "./theme/dark.scss";

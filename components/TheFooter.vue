@@ -12,7 +12,7 @@
         |.
         span.info--spacer |
         |Theme 
-        a.info--color-secondary(href="https://github.com/tsukiseele/Watora" target="_blank") Watora
+        a.info--color-secondary(href="https://github.com/tsukiseele/Haruka" target="_blank") Haruka
         |.
 </template>
 

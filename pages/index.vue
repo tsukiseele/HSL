@@ -30,7 +30,7 @@ export default {
   scrollToTop: true,
   data: () => ({
     header: {
-      title: 'WATORA',
+      title: 'HARUKA',
     },
     arch: null,
     error: null,
