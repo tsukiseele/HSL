@@ -14,14 +14,12 @@
   height: var(--nav-height);
   padding: 0 2rem;
   color: var(--color-text);
-  background: transparent;
   transition: all 0.3s ease-in-out;
   user-select: none;
   background: var(--color-nav);
   backdrop-filter: blur(16px) saturate(2);
   z-index: 9;
   transform: translateY(calc(-1 * var(--nav-height)));
-
   text-transform: uppercase;
   i {
     font-size: 1.8rem;
@@ -29,6 +27,9 @@
 
   &.show {
     transform: translateY(0);
+  }
+  &.transparent {
+    background: transparent;
   }
 
   &:hover {

@@ -1,4 +1,9 @@
-export default {
+import { defineNuxtConfig } from '@nuxt/bridge'
+
+export default defineNuxtConfig({
+  bridge: {
+    nitro: true,
+  },
   // https://github.com/tsukiseele/blog.git
   server: {
     host: process.env.BASE_HOST || 'localhost',
@@ -101,4 +106,4 @@ export default {
      */
     extend(config, ctx) {},
   },
-}
+})
