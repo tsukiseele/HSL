@@ -32,7 +32,6 @@ export default {
     await store.dispatch('images')
   },
   mounted() {
-    console.log(this.imae)
   },
 }
 </script>
