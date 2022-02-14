@@ -70,12 +70,10 @@ export default {
           icon: 'mdi-github',
           to: 'https://github.com/tsukiseele',
         },
-
         {
           icon: 'mdi-twitter',
           to: 'https://twitter.com/tsukiseele',
         },
-
         {
           icon: 'mdi-gmail',
           to: 'mailto:tsukiseele@gmail.com',
@@ -87,17 +85,16 @@ export default {
     ...mapState(['header', 'live2dText']),
     ...mapGetters(['isMobile', 'scroll']),
     background() {
-      // 判断客户端，防止重复渲染；
       return process.client ? `url(${this.$static}/bg/${this.getRandomNumber(1, 20)}.webp)` : ''
     },
     isFull() {
       return this.$route.path == '/'
     },
     isHideNav() {
-      return process.server || (this.isFull && this.scroll.pos <= document.documentElement.clientHeight)
+      return this.isFull && (process.server || this.scroll.pos <= document.documentElement.clientHeight)
     },
     isTransparentNav() {
-      return process.client && this.scroll.pos < 100
+      return this.scroll.pos < 64
     },
   },
   watch: {
@@ -178,6 +175,12 @@ export default {
         // document.getElementsByTagName("html")[0].setAttribute("theme", "dark");
       }
     },
+    init() {
+      this.$nextTick(() => {
+        this.onScroll()
+        this.onResize()
+      })
+    },
   },
   beforeMount() {
     this.changeTheme()
@@ -185,11 +188,12 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
-    this.$nextTick(() => this.onScroll() || this.onResize())
 
+    window.addEventListener('load', this.init)
     // this.initMusicList();
   },
   destroyed() {
+    window.removeEventListener('load', this.init)
     window.removeEventListener('scroll', this.onScroll)
     window.removeEventListener('resize', this.onResize)
   },
