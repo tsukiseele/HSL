@@ -2,6 +2,7 @@ import { defineNuxtConfig } from '@nuxt/bridge'
 
 export default defineNuxtConfig({
   bridge: {
+    meta: true,
     nitro: true,
   },
   // https://github.com/tsukiseele/blog.git
@@ -44,7 +45,7 @@ export default defineNuxtConfig({
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css'
+        href: '//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css',
       },
     ],
     script: [
@@ -59,11 +60,11 @@ export default defineNuxtConfig({
     },
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['ress', '~/styles/main.scss'],
+  css: ['ress', '~/assets/styles/main.scss'],
 
   // Global variables, mixins and function
   styleResources: {
-    scss: ['~/styles/app/app.variables.scss', '~/styles/app/app.mixins.scss'],
+    scss: ['~/assets/styles/variables.scss', '~/assets/styles/mixins.scss'],
   },
 
   // Plugins to run before rendering pasge: https://go.nuxtjs.dev/config-plugins
@@ -90,7 +91,7 @@ export default defineNuxtConfig({
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/axios' , '@nuxtjs/style-resources'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

@@ -24,6 +24,7 @@
     "live2d-vue": "~0.2.5",
     "marked": "~3.0.2",
     "nuxt-edge": "latest",
+    "postcss-preset-env": "~7.3.3",
     "ress": "~4.0.0",
     "timeago.js": "~4.0.2",
     "vssue": "~1.4.8",

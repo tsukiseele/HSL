@@ -8,11 +8,21 @@
     .description(v-for='(part, i) in about', :key='i')
       hr
       .subtitle {{ part.title }}
-      SMarkdown(:content="part.content")
+      SMarkdown(:content='part.content')
 </template>
 <script>
 import { mapState } from 'vuex'
+// import { useMeta } from 'nuxt-edge'
+
 export default {
+  setup() {
+    useMeta({
+      meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }],
+      bodyAttrs: {
+        class: 'test',
+      },
+    })
+  },
   data: () => ({
     header: {
       title: '关于',

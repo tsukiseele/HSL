@@ -2,9 +2,8 @@
 .markdown-preview
   .markdown-content(v-html='markdown')
   transition(name='zoom')
-    .markdown-image-preview-modal(v-if='previewEl' @click='cancelPreview')
-  img.markdown-image-preview(v-if='preview' :src='preview' ref='preview')
-
+    .markdown-image-preview-modal(v-if='previewEl', @click='cancelPreview')
+  img.markdown-image-preview(v-if='preview', :src='preview', ref='preview')
 </template>
 
 <script>
@@ -24,8 +23,9 @@ export default {
   computed: {
     markdown() {
       try {
+        if (!this.$markdown) return null
         const result = this.$markdown(this.content)
-        this.$emit("loaded", result)
+        this.$emit('loaded', result)
         this.titles = result.titles
         return result.html
       } catch (error) {
@@ -78,12 +78,14 @@ export default {
       this.initPreview()
     },
     initCopy() {
-      document.querySelectorAll('.markdown-content .md-code-copy').forEach(el => (el.onclick = e => navigator.clipboard.writeText(document.getElementById(el.getAttribute('data-copy')).textContent)))
+      document
+        .querySelectorAll('.markdown-content .md-code-copy')
+        .forEach((el) => (el.onclick = (e) => navigator.clipboard.writeText(document.getElementById(el.getAttribute('data-copy')).textContent)))
     },
     initPreview() {
       document
         .querySelectorAll('.markdown-content img')
-        .forEach(imgEl => imgEl.addEventListener('click', e => this.$nextTick(() => (this.previewEl ? this.cancelPreview() : this.openPreview(e.target)))))
+        .forEach((imgEl) => imgEl.addEventListener('click', (e) => this.$nextTick(() => (this.previewEl ? this.cancelPreview() : this.openPreview(e.target)))))
     },
   },
   created() {},

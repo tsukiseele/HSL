@@ -1,5 +1,5 @@
 <template lang="pug">
-img#back-top(v-if='!isMobile', ref='back', :src='img', :class='{ hide: scroll.pos < 500 }', @click='handleBackTop()', draggable='false', oncontextmenu='return false')
+img#back-top(v-if='!isMobile', ref='back', :src='img', :class='{ hide: scroll && scroll.pos < 500 }', @click='handleBackTop()', draggable='false', oncontextmenu='return false')
 </template>
 
 <script>
@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
 #back-top {
   position: fixed;
   right: 2rem;

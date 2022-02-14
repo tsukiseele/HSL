@@ -8338,7 +8338,7 @@ postcss-preset-env@^6.7.0:
     postcss-selector-matches "^4.0.0"
     postcss-selector-not "^4.0.0"
 
-postcss-preset-env@^7.3.1:
+postcss-preset-env@^7.3.1, postcss-preset-env@~7.3.3:
   version "7.3.3"
   resolved "https://registry.npmmirror.com/postcss-preset-env/-/postcss-preset-env-7.3.3.tgz#2c08a717549b282c89be7c90827147814d41809b"
   integrity sha512-/4EIceyxf6LKihp88YnQ0uExt//EHozxOspsCQbLq9/RB4W0zutdk52XJZzDYtCkvergw0NTTQvB7TpdxBRbvQ==
