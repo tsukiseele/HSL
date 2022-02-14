@@ -4,7 +4,7 @@
   TheBanner(v-if='isFull', :title='title', :subtitle='subtitle', :nav='nav', :links='links', @scrollDown='$emit("scrollDown")')
   //- 导航栏
   .nav-wrap
-    nav#nav(:class='{ show: !hide }')
+    nav#nav(:class='{ hide: isHide, transparent: isTransparent }')
       .nav-title(@click='$router.push("/")') {{ title }}
       .nav-spacer
       ul.nav-menu(v-if='!isMobile')
@@ -29,10 +29,6 @@
 <script>
 export default {
   props: {
-    hide: {
-      type: Boolean,
-      default: false,
-    },
     title: {
       type: String,
       default: '',
@@ -49,11 +45,19 @@ export default {
       type: Array,
       default: () => [],
     },
+    isHide: {
+      type: Boolean,
+      default: false,
+    },
     isFull: {
       type: Boolean,
       default: false,
     },
     isMobile: {
+      type: Boolean,
+      default: false,
+    },
+    isTransparent: {
       type: Boolean,
       default: false,
     },

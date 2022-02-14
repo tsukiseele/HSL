@@ -5,6 +5,15 @@ export default defineNuxtConfig({
     meta: true,
     nitro: true,
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `$mobile: 768px;`
+        }
+      }
+    }
+  },
   // https://github.com/tsukiseele/blog.git
   server: {
     host: process.env.BASE_HOST || 'localhost',

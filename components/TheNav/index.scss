@@ -19,26 +19,20 @@
   background: var(--color-nav);
   backdrop-filter: blur(16px) saturate(2);
   z-index: 9;
-  transform: translateY(calc(-1 * var(--nav-height)));
+  transform: translateY(0);
   text-transform: uppercase;
   i {
     font-size: 1.8rem;
   }
 
-  &.show {
-    transform: translateY(0);
+  &.hide {
+    transform: translateY(calc(-1 * var(--nav-height)));
   }
   &.transparent {
-    background: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: none;
+    color: white;
   }
-
-  &:hover {
-  }
-  /*
-  &.nav-hide {
-    transform: translateY(-100%);
-    opacity: 0;
-  }*/
 
   &.nav-bg {
     color: var(--color-text);
@@ -59,9 +53,10 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  transition: background 0.3s ease;
+  transition: 0.25s ease-out;
   cursor: pointer;
   user-select: none;
+
   svg {
     transition: 0.3s ease;
   }

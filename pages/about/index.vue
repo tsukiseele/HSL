@@ -2,9 +2,9 @@
 #content
   .about
     .blockquote
-      i.quote-left.material-icons format_quote
+      s-icon(name='mdi-format-quote-open').quote-left
       .quote-content TECH OTAKUS SAVE THE WORLD
-      i.quote-right.material-icons format_quote
+      s-icon(name='mdi-format-quote-close').quote-right
     .description(v-for='(part, i) in about', :key='i')
       hr
       .subtitle {{ part.title }}

@@ -10,7 +10,8 @@
       :drawerBannerBackground='nav.drawerBannerBackground',
       :isMobile='isMobile',
       :isFull='isFull',
-      :hide='isHideNav',
+      :isTransparent='isTransparentNav',
+      :isHide='isHideNav',
       @scrollDown='scrollToContent'
     )
     main#main
@@ -87,15 +88,16 @@ export default {
     ...mapGetters(['isMobile', 'scroll']),
     background() {
       // 判断客户端，防止重复渲染；
-      if (process.client) {
-        return `url(${this.$static}/bg/${this.getRandomNumber(1, 20)}.webp)`
-      }
+      return process.client ? `url(${this.$static}/bg/${this.getRandomNumber(1, 20)}.webp)` : ''
     },
     isFull() {
       return this.$route.path == '/'
     },
     isHideNav() {
-      return this.isFull && process.client && document.documentElement.clientHeight > this.scroll.pos
+      return process.server || (this.isFull && this.scroll.pos <= document.documentElement.clientHeight)
+    },
+    isTransparentNav() {
+      return process.client && this.scroll.pos < 100
     },
   },
   watch: {
@@ -183,7 +185,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
-    this.onResize()
+    this.$nextTick(() => this.onScroll() || this.onResize())
 
     // this.initMusicList();
   },
@@ -195,8 +197,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
 #haruka {
   position: relative;
   #background {
