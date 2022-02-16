@@ -250,7 +250,7 @@ main#main {
   align-self: center;
   display: flex;
   flex-direction: column;
-  padding-top: var(--nav-height);
+  margin-top: var(--nav-height);
   width: 1080px;
 }
 
