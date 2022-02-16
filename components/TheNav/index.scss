@@ -14,7 +14,7 @@
   height: var(--nav-height);
   padding: 0 2rem;
   color: var(--color-text);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.25s ease-out, background .25s ease-out, color .25s ease-out;
   user-select: none;
   background: var(--color-nav);
   backdrop-filter: blur(16px) saturate(2);
@@ -22,9 +22,8 @@
   transform: translateY(0);
   text-transform: uppercase;
   i {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
-
   &.hide {
     transform: translateY(calc(-1 * var(--nav-height)));
   }
@@ -33,7 +32,6 @@
     backdrop-filter: none;
     color: white;
   }
-
   &.nav-bg {
     color: var(--color-text);
     background-color: var(--color-light);

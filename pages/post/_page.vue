@@ -27,7 +27,7 @@
           :description='item.description',
           :category='item.category'
           :to='`/archives/${item.id || ""}`',
-          :data-aos='index % 2 == 0 ? "fade-left" : "fade-right"',
+          :data-aos='index % 2 ? "fade-left" : "fade-right"',
           :data-aos-once='isAosOnce'
         )
 
