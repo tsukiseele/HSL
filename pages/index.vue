@@ -17,9 +17,11 @@
           :description='item.description',
           :category='item.category'
           :to='`/archives/${item.id || ""}`',
-          :data-aos='index % 2 == 0 ? "fade-left" : "fade-right"',
           :data-aos-once='isAosOnce'
+          data-aos='fade-up'
         )
+          //- :data-aos='index % 2 == 0 ? "fade-left" : "fade-right"',
+          //- :data-aos-once='isAosOnce'
       SPagination(:current='page', @change='onChange', :size='10', :loading='isLoading')
 </template>
 
@@ -36,7 +38,7 @@ export default {
     error: null,
     isLoading: false,
     itemActive: null,
-    isAosOnce: true,
+    isAosOnce: false,
     _timer: null,
   }),
   mounted() {

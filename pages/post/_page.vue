@@ -25,11 +25,12 @@
           :date='item.createAt',
           :labels='item.labels',
           :description='item.description',
-          :category='item.category'
+          :category='item.category',
           :to='`/archives/${item.id || ""}`',
-          :data-aos='index % 2 ? "fade-left" : "fade-right"',
-          :data-aos-once='isAosOnce'
+          data-aos='fade-up' 
         )
+        //- :data-aos='index % 2 ? "fade-left" : "fade-right"',
+        //- :data-aos-once='isAosOnce'
 
       SPagination(:current='page', @change='onChange', :size='10', :loading='isLoading')
 </template>
@@ -47,7 +48,7 @@ export default {
     error: null,
     isLoading: false,
     itemActive: null,
-    isAosOnce: true,
+    isAosOnce: false,
     _timer: null,
   }),
   mounted() {
@@ -62,7 +63,7 @@ export default {
       if (newVal) {
         this.$store.commit('live2dText', `要阅读『${newVal} 』吗?`)
       }
-    }
+    },
     /*
     $route: {
       handler(to, from) {
@@ -78,7 +79,7 @@ export default {
       },
       deep: true,
       immediate: true,
-    },*/,
+    },*/
   },
   computed: {
     ...mapState(['page', 'scroll', 'archives', 'labels', 'categorys']),
@@ -97,7 +98,7 @@ export default {
   methods: {
     async onChange(page) {
       this.$router.push({ params: { page } })
-    }
+    },
   },
   async fetch({ store, params }) {
     await Promise.all([
