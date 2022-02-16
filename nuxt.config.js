@@ -3,7 +3,7 @@ import { defineNuxtConfig } from '@nuxt/bridge'
 export default defineNuxtConfig({
   bridge: {
     meta: true,
-    nitro: false,
+    nitro: true,
     vite: false
   },
   vite: {
