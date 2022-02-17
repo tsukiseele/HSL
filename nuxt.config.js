@@ -1,9 +1,11 @@
 import { defineNuxtConfig } from '@nuxt/bridge'
 
 export default defineNuxtConfig({
+  bridge: false,
+  /*
   bridge: {
     meta: true,
-    nitro: false,
+    nitro: true,
     vite: false
   },
   vite: {
@@ -14,13 +16,13 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
+  },*/
   // https://github.com/tsukiseele/blog.git
   server: {
     host: process.env.BASE_HOST || 'localhost',
     port: process.env.BASE_PORT || 3000,
   },
-  ssr: !(process.env.MODE && process.env.MODE.toLocaleLowerCase() == 'spa'),
+  ssr: !(process.env.MODE && process.env.MODE.toLocaleUpperCase() == 'SPA'),
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Haruka - 遥远的理想乡',

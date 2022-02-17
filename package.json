@@ -7,7 +7,8 @@
     "dev": "cross-env NODE_ENV=dev nuxi dev",
     "dev-spa": "cross-env NODE_ENV=dev MODE=SPA nuxi dev",
     "build": "cross-env NODE_ENV=prod nuxi build",
-    "start": "cross-env NODE_ENV=prod nuxi preview",
+    "start": "cross-env NODE_ENV=prod nuxt start",
+    "preview": "cross-env NODE_ENV=prod nuxi preview",
     "analyze": "nuxi build --analyze",
     "generate": "nuxi generate"
   },
