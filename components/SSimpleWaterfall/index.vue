@@ -1,11 +1,11 @@
 <template lang="pug">
-  .simple-waterfall
-    slot(name="header")
-    .list
-      .list-item(v-for="(item, index) in items" :key="index" @click="$emit('click', item)")
-        img.list-item--image(:src="imageKey ? item[imageKey] : item.src")
-        slot(:index='index', :item='item')
-    slot(name="footer")
+.simple-waterfall
+  slot(name="header")
+  .list
+    .list-item(v-for="(item, index) in items" :key="index" @click="$emit('click', item)")
+      img.list-item--image(:src="imageKey ? item[imageKey] : item.src")
+      slot(:index='index', :item='item')
+  slot(name="footer")
 </template>
 
 <script>
@@ -148,7 +148,7 @@ export default {
   position: relative;
   .list-item {
     position: absolute;
-    transition: 0.3s ease;
+    transition: 0.25s ease;
     img {
       width: 100%;
       height: 100%;

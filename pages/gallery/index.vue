@@ -1,5 +1,5 @@
 <template lang="pug">
-#gallery
+#gallery.card
   //- TheBanner(:title='banner.title', :cover='banner.cover')
   .gallery-list
     client-only
