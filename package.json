@@ -4,13 +4,13 @@
   "private": true,
   "homepage": "https://tsukiseele.github.io/Haruka",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev nuxi dev",
-    "dev-spa": "cross-env NODE_ENV=dev MODE=SPA nuxi dev",
-    "build": "cross-env NODE_ENV=prod nuxi build",
+    "dev": "cross-env NODE_ENV=dev nuxt dev",
+    "dev-spa": "cross-env NODE_ENV=dev MODE=SPA nuxt dev",
+    "build": "cross-env NODE_ENV=prod nuxt build",
     "start": "cross-env NODE_ENV=prod nuxt start",
-    "preview": "cross-env NODE_ENV=prod nuxi preview",
-    "analyze": "nuxi build --analyze",
-    "generate": "nuxi generate"
+    "preview": "cross-env NODE_ENV=prod nuxt preview",
+    "analyze": "nuxt build --analyze",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@mdi/font": "^6.5.95",
@@ -24,7 +24,7 @@
     "katex": "~0.15.1",
     "live2d-vue": "~0.2.5",
     "marked": "~3.0.2",
-    "nuxt-edge": "latest",
+    "nuxt": "~2.15.8",
     "postcss-preset-env": "~7.3.3",
     "ress": "~4.0.0",
     "timeago.js": "~4.0.2",
@@ -33,7 +33,6 @@
     "vuex-persistedstate": "~4.0.0-beta.3"
   },
   "devDependencies": {
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
     "@nuxtjs/style-resources": "~1.2.1",
     "all-contributors-cli": "~6.20.0",
     "cross-env": "~7.0.3",

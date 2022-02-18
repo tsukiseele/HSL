@@ -1,22 +1,4 @@
-import { defineNuxtConfig } from '@nuxt/bridge'
-
-export default defineNuxtConfig({
-  bridge: false,
-  /*
-  bridge: {
-    meta: true,
-    nitro: true,
-    vite: false
-  },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `$mobile: 768px;`
-        }
-      }
-    }
-  },*/
+export default {
   // https://github.com/tsukiseele/blog.git
   server: {
     host: process.env.BASE_HOST || 'localhost',
@@ -119,4 +101,4 @@ export default defineNuxtConfig({
      */
     extend(config, ctx) {},
   },
-})
+}
