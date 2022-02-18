@@ -1,7 +1,7 @@
 <template lang="pug">
 #content
   .projects 
-    .project-item.blur(v-for="project in projects" :key="project.name" data-aos="fade-up") 
+    .project-item.card(v-for="project in projects" :key="project.name" data-aos="fade-up") 
       .project-name {{ project.name }}
       .project-desc {{ project.desc }}
       img.project-cover(:src="project.preview" :alt="project.name")
@@ -36,6 +36,7 @@ export default {
   
   .projects {
     .project-item {
+      margin: 0;
       height: 100vh;
     }
   }

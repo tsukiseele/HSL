@@ -4,10 +4,10 @@
   //- :title='header.title', :cover='header.cover', :subtitle='header.subtitle',
   main#main
     .content
-      .markdown
+      .markdown.card
         client-only
           SMarkdown(:content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
-      .aside(v-if='!isMobile && titles && titles.length')
+      .aside.card(v-if='!isMobile && titles && titles.length')
         STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
     client-only
       SComment(:title='this.$route.path')

@@ -1,6 +1,6 @@
 <template lang="pug">
 span.chip
-  i.chip-icon.material-icons(v-if="icon") {{ icon }}
+  s-icon.chip-icon(v-if="icon" name="mdi-tag-outline") {{ icon }}
   span.chip-text {{ text }}
 </template>
 

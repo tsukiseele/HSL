@@ -1,6 +1,6 @@
 <template lang="pug">
 #content
-  .about
+  .about.card
     .blockquote
       s-icon(name='mdi-format-quote-open').quote-left
       .quote-content TECH OTAKUS SAVE THE WORLD

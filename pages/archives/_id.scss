@@ -6,24 +6,23 @@
 .content {
   overflow: visible;
 }
-#main {
-  margin-top: 0rem;
-}
 .content {
   display: flex;
 }
 .markdown {
   flex: 1;
   width: 0;
-  margin: 0;
 }
 .aside {
   position: sticky;
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + .5rem);
   flex: 0 0 200px;
+  width: 0;
   align-self: flex-start;
-  margin: 0 .5rem;
+  padding: .5rem;
+  margin-left: .5rem;
 }
+/*
 .markdown,
 .comments,
 .banner {
@@ -31,7 +30,7 @@
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-}
+}*/
 
 .comments {
   overflow: hidden;

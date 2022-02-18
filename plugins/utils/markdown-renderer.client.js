@@ -38,8 +38,8 @@ renderer.code = function(code, lang, isEscaped) {
   const langClass = this.options.langPrefix + lang
   if (this.options.highlight) code = this.options.highlight(code, lang) || code
   return `
-    <pre class="hljs${langClass}">
-      <div class="code-options"><i data-copy="${id}" class="material-icons md-code-copy">content_paste</i></div>
+    <pre class="hljs ${langClass}">
+      <div class="code-options"><i data-copy="${id}" class="mdi mdi-content-copy" aria-hidden="true"></i></div>
       <div class="code-wrap"><code class="${langClass}" id="${id}">${code}</code></div>
     </pre>\n`
 }

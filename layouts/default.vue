@@ -228,7 +228,6 @@ export default {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-  // box-shadow: var(--shadow);
 }
 #background {
   position: fixed;
