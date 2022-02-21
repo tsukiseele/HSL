@@ -65,9 +65,9 @@ export default {
       // 若传入列数，则使用，否则自动计算：实际列数 = 页面宽度 / (图片宽度 + 间距)
       this.column = Math.floor((containerWidth - this.gap) / (this.itemWidth + this.gap))
       this.column = this.maxColumn && this.column > this.maxColumn ? this.maxColumn : this.column || 1
-      // 若传入平均间距，则自动计算，否则为传入的间距
-      const realGap = this.evenly ? (containerWidth - this.itemWidth * this.column) / (this.column - 1) : this.gap
-      // 若传入平均间距，则为传入的间距，否则自动计算
+      // 真实间隔：若传入平均间距，则自动计算，否则为传入的间距
+      const realGap = this.evenly ? (containerWidth - this.itemWidth * this.column) / (this.column + 1) : this.gap
+      // 边距：若传入平均间距，则为传入的间距，否则自动计算
       const margin = this.evenly ? realGap : (containerWidth - (this.itemWidth + realGap) * this.column + realGap) / 2
       // 获取所有需要布局的项
       const itemEls = this.$el.querySelectorAll('.list-item')

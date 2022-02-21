@@ -3,7 +3,7 @@
   //- TheBanner(:title='banner.title', :cover='banner.cover')
   .gallery-list
     client-only
-      SSimpleWaterfall(:items="images" imageKey="url" :itemWidth="isMobile ? 170 : 240" :gap='isMobile ? 10 : 20')
+      SSimpleWaterfall(:items="images" imageKey="url" :itemWidth="isMobile ? 170 : 240" :gap='isMobile ? 10 : 20' evenly)
         template(v-slot="{ index, item }")
           span {{ item.title }}
 </template>
