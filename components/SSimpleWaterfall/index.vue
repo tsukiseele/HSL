@@ -1,11 +1,11 @@
 <template lang="pug">
 .simple-waterfall
-  slot(name="header")
+  slot(name='header')
   .list
-    .list-item(v-for="(item, index) in items" :key="index" @click="$emit('click', item)")
-      img.list-item--image(:src="imageKey ? item[imageKey] : item.src")
+    .list-item(v-for='(item, index) in items', :key='index', @click='$emit("click", item)')
+      img.list-item--image(:src='imageKey ? item[imageKey] : item.src')
       slot(:index='index', :item='item')
-  slot(name="footer")
+  slot(name='footer')
 </template>
 
 <script>
@@ -55,19 +55,17 @@ export default {
   },
   methods: {
     responsive() {
-      if (this.$el) {
-        this.fall()
-      }
+      this.$el && this.fall()
     },
     fall() {
       // 获取当前组件的宽度
       const containerWidth = this.$el.offsetWidth
-      // 若传入列数，则使用，否则自动计算：实际列数 = 页面宽度 / (图片宽度 + 间距)
+      // 列数：若传入列数，则使用，否则自动计算：实际列数 = 页面宽度 / (图片宽度 + 间距)
       this.column = Math.floor((containerWidth - this.gap) / (this.itemWidth + this.gap))
       this.column = this.maxColumn && this.column > this.maxColumn ? this.maxColumn : this.column || 1
-      // 真实间隔：若传入平均间距，则自动计算，否则为传入的间距
+      // 每项间隔：若设置平分间距，则自动计算，否则为传入的间距
       const realGap = this.evenly ? (containerWidth - this.itemWidth * this.column) / (this.column + 1) : this.gap
-      // 边距：若传入平均间距，则为传入的间距，否则自动计算
+      // 边距：若设置平分间距，则为传入的间距，否则自动计算
       const margin = this.evenly ? realGap : (containerWidth - (this.itemWidth + realGap) * this.column + realGap) / 2
       // 获取所有需要布局的项
       const itemEls = this.$el.querySelectorAll('.list-item')
@@ -101,11 +99,11 @@ export default {
     async getImageSize() {
       await Promise.allSettled(
         this.items.map(
-          item =>
-            new Promise(resolve => {
+          (item) =>
+            new Promise((resolve) => {
               const img = new Image()
               img.src = this.imageKey ? item[this.imageKey] : item.src
-              img.onload = img.onerror = e => {
+              img.onload = img.onerror = (e) => {
                 if (img.width > 0 && img.height > 0) {
                   item._height = img.height
                 }
@@ -117,14 +115,14 @@ export default {
     },
     // 监听组件变化
     listenLayoutChanged() {
-      this.resizeObserver = new ResizeObserver(entries => {
+      this.resizeObserver = new ResizeObserver((entries) => {
         if (entries && entries.length) {
-          if (this.resizeTimer) return
+          this.resizeTimer && clearTimeout(this.resizeTimer)
           this.resizeTimer = setTimeout(() => {
             this.responsive()
             clearTimeout(this.resizeTimer)
             this.resizeTimer = null
-          }, 300)
+          }, 500)
         }
       })
       this.resizeObserver.observe(this.$el)
