@@ -50,7 +50,7 @@ export default {
       background-color: rgba($color: white, $alpha: 0.33);
       backdrop-filter: blur(16px);
       overflow: hidden;
-
+      
       .project-cover-wrapper {
         width: 280px;
         height: 280px;
@@ -59,7 +59,6 @@ export default {
         img {
           width: 100%;
           height: 100%;
-
           object-fit: cover;
         }
       }
