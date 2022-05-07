@@ -1,32 +1,11 @@
 <template lang="pug">
 #content
-  main#main
-    .aside-wrap
-      TheInfoCard(:icon='res.icon')
-      .sticky
-        SLabelClouds.card(:labels='labels')
-        TheCategory(:categorys='categorys')
-    .post
-      .error(v-if='error') {{ error }}
-      .post-item-wrap(v-for='(item, index) in archives', :key='index')
-        SPostItem(
-          :title='item.title',
-          :cover='item.cover.url',
-          :date='item.createAt',
-          :labels='item.labels',
-          :description='item.description',
-          :category='item.category'
-          :to='`/archives/${item.id || ""}`',
-          :data-aos-once='isAosOnce'
-          data-aos='fade-up'
-        )
-          //- :data-aos='index % 2 == 0 ? "fade-left" : "fade-right"',
-          //- :data-aos-once='isAosOnce'
-      SPagination(:current='page', @change='onChange', :size='10', :loading='isLoading')
+  TheAPlayer
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import TheAPlayer from '@/components/TheAPlayer.vue'
 
 export default {
   scrollToTop: true,
@@ -107,5 +86,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'post/_page.scss';
+
 </style>

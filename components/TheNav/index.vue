@@ -1,7 +1,5 @@
 <template lang="pug">
 #the-nav
-  //- Banner
-  TheBanner(v-if='isFull', :title='title', :subtitle='subtitle', :nav='nav', :links='links', @scrollDown='$emit("scrollDown")')
   //- 导航栏
   .nav-wrap
     nav#nav(:class='{ hide: isHide, transparent: isTransparent }')

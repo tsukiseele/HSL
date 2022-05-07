@@ -28,7 +28,7 @@ export default () => {
         ,fLL;::;;i:..............;:::,,....:fftGKKKEt::::ff;;
         .tiit:::::;itti;::,,,,,,,,,,,:;iiiiiff;;fLLj::::tLf::
 
-                         %cHARUKA %ccreated by %c@tsukiseele%c - 2021
+                         %cHARUKA %ccreated by %c@tsukiseele%c - ${new Date().getFullYear()}
   
                          https://github.com/tsukiseele/Haruka`;
 

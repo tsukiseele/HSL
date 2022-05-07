@@ -14,6 +14,8 @@
       :isHide='isHideNav',
       @scrollDown='scrollToContent'
     )
+    //- Banner
+    TheBanner(v-if='isFull', :title='nav.title', :subtitle='nav.subtitle', :nav='nav.nav', :links='nav.links', @scrollDown='$emit("scrollDown")', hideArrow)
     main#main
       nuxt
     //- 页脚
@@ -50,15 +52,21 @@ export default {
           to: '/projects',
         },
         {
-          name: 'Friends',
-          icon: 'mdi-link-variant',
-          to: '/friends',
+
+          name: 'Blog',
+          icon: 'mdi-developer-board',
+          to: '/post',
         },
-        {
-          name: 'Gallery',
-          icon: 'mdi-image-frame',
-          to: '/gallery',
-        },
+        // {
+        //   name: 'Friends',
+        //   icon: 'mdi-link-variant',
+        //   to: '/friends',
+        // },
+        // {
+        //   name: 'Gallery',
+        //   icon: 'mdi-image-frame',
+        //   to: '/gallery',
+        // },
         {
           name: 'About',
           icon: 'mdi-information',
