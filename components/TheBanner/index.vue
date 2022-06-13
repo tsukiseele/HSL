@@ -13,7 +13,7 @@
           s-icon(:name='item.icon')
           | {{ item.name }}
     div.introduction
-      span Hi, 
+      //- span Hi, 
   s-icon.scroll-down(v-if="!hideArrow" name='mdi-chevron-down', @click='$emit("scrollDown")')
 </template>
 

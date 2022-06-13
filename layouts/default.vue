@@ -1,7 +1,7 @@
 <template lang="pug">
 #haruka
   #background
-  #app
+  #app(:class="{ full: isFull }")
     TheNav(
       :title='nav.title',
       :subtitle='nav.subtitle',
@@ -19,7 +19,7 @@
     main#main
       nuxt
     //- 页脚
-    TheFooter
+    TheFooter#footer
     //- 播放器
     //- TheAPlayer(:musics="musics")
     //- Live2d，仅PC端
@@ -252,13 +252,22 @@ export default {
   overflow: hidden;
 }
 
-main#main {
+#main {
   flex: 1;
   align-self: center;
   display: flex;
   flex-direction: column;
   margin-top: var(--nav-height);
   width: 1080px;
+}
+
+.full {
+  #footer {
+    display: none;
+  }
+  #main {
+    margin-top: 0;
+  }
 }
 
 @media screen and (max-width: 1080px) {
