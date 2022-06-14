@@ -9,16 +9,11 @@
           s-icon(:name='item.icon')
     ul.nav-menu(data-aos="fade-right"  data-aos-delay="600")
       li(v-for='item in nav', :key='item.name', :class='{ active: item.to == $route.path }')
-        n-link.normal(:to='item.to')
-          s-icon(:name='item.icon')
+        SLink.normal(:to='item.to')
+          SIcon(:name='item.icon')
           | {{ item.name }}
-<<<<<<< Updated upstream
-    div.introduction
-      //- span Hi, 
-=======
     div.introduction(data-aos="fade-up"  data-aos-delay="900")
       span {{ introduction }} 
->>>>>>> Stashed changes
   s-icon.scroll-down(v-if="!hideArrow" name='mdi-chevron-down', @click='$emit("scrollDown")')
 </template>
 
