@@ -15,7 +15,7 @@
       @scrollDown='scrollToContent'
     )
     //- Banner
-    TheBanner(v-if='isFull', :title='nav.title', :subtitle='nav.subtitle', :nav='nav.nav', :links='nav.links', @scrollDown='$emit("scrollDown")', hideArrow)
+    TheBanner(v-if='isFull', :title='nav.title', :subtitle='nav.subtitle', :nav='nav.nav', :links='nav.links', @scrollDown='$emit("scrollDown")', hideArrow, :introduction="nav.introduction")
     main#main
       nuxt
     //- 页脚
@@ -38,6 +38,7 @@ export default {
     nav: {
       title: 'HARUKA',
       subtitle: "Let's search for tomorrow",
+      introduction: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non inventore odio. Soluta, repellat quo velit eius officia distinctio earum esse iusto et, adipisci repudiandae dolor quaerat nobis mollitia obcaecati.',
       drawer: false,
       drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
       nav: [
@@ -102,7 +103,7 @@ export default {
       return this.isFull && (process.server || this.scroll.pos <= document.documentElement.clientHeight)
     },
     isTransparentNav() {
-      return this.scroll.pos < 64
+      return false// this.scroll.pos < 64
     },
   },
   watch: {
@@ -110,6 +111,7 @@ export default {
       if (this.$refs.live2d) this.$refs.live2d.showMessage(newVal)
     },
     windowWidth(newVal) {
+      console.log(newVal);
       this.$store.commit('clientWidth', newVal)
     },
   },
@@ -173,6 +175,7 @@ export default {
       })
     },
     onResize() {
+      console.log(this.windowWidth);
       if (document) {
         this.windowWidth = document.documentElement.clientWidth
       }
@@ -194,10 +197,11 @@ export default {
     this.changeTheme()
   },
   mounted() {
+    // window.addEventListener('load', this.init)
+    this.init()
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
 
-    window.addEventListener('load', this.init)
     // this.initMusicList();
   },
   destroyed() {
