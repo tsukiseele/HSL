@@ -194,8 +194,8 @@ export default {
     left: 0;
     bottom: 0;
     right: 0;
-    background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
-    // background-color: #F4D8E4;
+    // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
+    background-color: #F4D8E4;
     // background-color: #F4D8E4;
     // background-image: url(https://api.paugram.com/wallpaper?source=gt);
 

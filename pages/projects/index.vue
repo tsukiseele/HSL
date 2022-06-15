@@ -7,10 +7,11 @@
       .project-description
         .project-name {{ project.name }}
         .project-desc {{ project.desc }}
+        .project-detail
+          span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, ipsum voluptatibus. Nihil excepturi placeat sed esse quisquam minus deleniti facere aspernatur minima corrupti, magni libero, laboriosam, fugit laudantium doloremque amet.
+
       .project-type
         SIcon(name="mdi-github")
-      .project-detail
-        span Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, ipsum voluptatibus. Nihil excepturi placeat sed esse quisquam minus deleniti facere aspernatur minima corrupti, magni libero, laboriosam, fugit laudantium doloremque amet.
 </template>
 
 <script>
@@ -20,11 +21,13 @@ export default {
       {
         name: 'MoeViewerR',
         desc: 'lorem',
+        detail: '',
         preview: 'http://placekitten.com/300/300',
       },
       {
-        name: 'MoeViewerR',
+        name: 'MoeViewerN',
         desc: 'lorem',
+        detail: '',
         preview: 'http://placekitten.com/300/300',
       },
     ],
@@ -110,10 +113,15 @@ export default {
       }
       .project-description {
         padding: 0.5rem;
+
+        &:hover .project-detail {
+          transform: translateY(0);
+        }
       }
       .project-detail{
         position: absolute;
         top: 0;
+        left: 0;
         transform: translateY(100%);
         width: 100%;
         height: 100%;
@@ -124,9 +132,9 @@ export default {
       }
       &:hover {
         // transform: translateY(-.5rem);
-        .project-detail {
-          transform: translateY(0);
-        }
+        // .project-detail {
+        //   transform: translateY(0);
+        // }
       }
     }
   }

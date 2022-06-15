@@ -29,8 +29,8 @@
     &::before {
       content: '';
       position: absolute;
-      width: 1px;
-      height: 1px;
+      width: 4px;
+      height: 4px;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -40,23 +40,31 @@
     }
     @keyframes anim {
       0% {
-        box-shadow: -24px 0 0 12px #77428d, 0 0 0 0px #f596aa, 24px 0 0 12px #69b0ac;
+        background-color: #f596aa;
+        box-shadow: -24px 0 0 8px #77428d, 0 0 0 6px #f596aa, 24px 0 0 8px #69b0ac;
       }
 
       25% {
-        box-shadow: 24px 0 0 8px #f596aa, 0 0 0 8px #69b0ac, -24px 0 0 8px #77428d;
+        background-color: #69b0ac;
+        box-shadow: -24px 0 0 8px #f596aa, 0 0 0 8px #69b0ac, 24px 0 0 8px #77428d;
+        transform: rotate(0deg);
       }
 
       50% {
-        box-shadow: -24px 0 0 6px #77428d, 0 0 0 12px #f596aa, 24px 0 0 6px #69b0ac;
+        background-color: #f596aa;
+        box-shadow: -24px 0 0 6px #77428d, 0 0 0 8px #f596aa, 24px 0 0 6px #69b0ac;
+        transform: rotate(180deg);
       }
 
       75% {
-        box-shadow: 24px 0 0 8px #69b0ac, 0 0 0 8px #77428d, -24px 0 0 8px #f596aa;
+        background-color: #77428d;
+        transform: rotate(360deg);
+        box-shadow: -24px 0 0 8px #69b0ac, 0 0 0 8px #77428d, 24px 0 0 8px #f596aa;
       }
 
       100% {
-        box-shadow: -24px 0 0 12px #77428d, 0 0 0 0px #f596aa, 24px 0 0 12px #69b0ac;
+        background-color: #f596aa;
+        box-shadow: -24px 0 0 8px #77428d, 0 0 0 6px #f596aa, 24px 0 0 8px #69b0ac;
       }
     }
   }
