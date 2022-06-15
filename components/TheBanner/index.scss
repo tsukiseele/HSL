@@ -34,28 +34,45 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.12);
+      border-radius: 0.25rem;
       li {
         position: relative;
         display: inline-block;
         align-self: flex-start;
         text-transform: uppercase;
         margin: 0 0.5rem;
+        padding: 0 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        transition: 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
         i {
           padding-right: 0.5rem;
-          font-size: 1.5rem;
+          font-size: 1.35rem;
         }
-        &::after {
-          position: absolute;
-          content: '';
-          right: 0;
-          bottom: 2px;
-          width: 0;
-          height: 2px;
-          background-color: rgba(0, 0, 0, 0.382);
-          transition: 0.25s ease-out;
+        // &::after {
+        //   content: '';
+        //   position: absolute;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-size: 200% auto;
+        //   background-image: linear-gradient(90deg, #98d6d4, #cd5da0);
+        //   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        //   mask-composite: xor;
+        //   // border-radius: 0.5rem;
+        //   opacity: 0.5;
+        //   padding: 2px;
+        // }
+        &:hover::after {
+          opacity: 1;
         }
         &.active,
         &:hover {
+          color: #cd5da0;
           &::before,
           &::after {
             width: 100%;
@@ -68,12 +85,20 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      margin: .5rem 0;
+      margin: 0.5rem 0 3rem 0;
       li {
         margin: 0 0.8rem;
-
+        transition: 0.5s cubic-bezier(0, 1, 0.5, 1);
         i {
           font-size: 2rem;
+          transition: 0.25s cubic-bezier(0, 1, 0.5, 1);
+        }
+        &:hover {
+          transform: translateY(-0.25rem) scale(1.2);
+          i {
+            color: #cd5da0;
+            text-shadow: 0 0 0.5rem rgba($color: #cd5da0, $alpha: 0.5);
+          }
         }
       }
     }

@@ -3,7 +3,7 @@
   .footer-wrap
     .footer-info
       div
-        img(src="https://count.getloli.com/get/@nlo.li?theme=rule34" alt="counter")
+        img.assess-count(src="https://count.getloli.com/get/@nlo.li?theme=rule34" alt="counter")
       p © {{ new Date().getFullYear() }} by 
         a.info--developer(href="https://github.com/tsukiseele" target="_blank") TsukiSeele 
         | All Rights Reserved.
@@ -23,6 +23,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.assess-count {
+  height: 5rem;
+}
 #footer {
   display: flex;
   justify-content: center;

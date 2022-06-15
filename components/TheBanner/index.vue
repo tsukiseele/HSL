@@ -8,10 +8,9 @@
         a.normal(:href='item.to', target='_blank')
           s-icon(:name='item.icon')
     ul.nav-menu(data-aos="fade-right"  data-aos-delay="600")
-      li(v-for='item in nav', :key='item.name', :class='{ active: item.to == $route.path }')
-        SLink.normal(:to='item.to')
-          SIcon(:name='item.icon')
-          | {{ item.name }}
+      li(v-for='item in nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
+        SIcon(:name='item.icon')
+        .nav-name {{ item.name }}
     div.introduction(data-aos="fade-up"  data-aos-delay="900")
       span {{ introduction }} 
   s-icon.scroll-down(v-if="!hideArrow" name='mdi-chevron-down', @click='$emit("scrollDown")')

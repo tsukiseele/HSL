@@ -73,7 +73,6 @@ export default {
     '~/plugins/libs/lib-vue-lazyload.client.js',
     '~/plugins/libs/lib-vuex-persistedstate.client.js',
     '~/plugins/libs/lib-aos.client.js',
-    '~/plugins/libs/lib-live2d.client.js',
     '~/plugins/libs/lib-aplayer.client.js',
     '~/plugins/libs/lib-vssue.client.js',
   ],

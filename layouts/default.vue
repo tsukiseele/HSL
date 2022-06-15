@@ -21,9 +21,7 @@
     //- 页脚
     TheFooter#footer
     //- 播放器
-    //- TheAPlayer(:musics="musics")
-    //- Live2d，仅PC端
-    //- TheLive2d(v-if="!isMobile", ref="live2d")
+    TheAPlayer(:musics="musics")
     //- 返回顶部
     TheBackTop
 </template>
@@ -32,13 +30,14 @@
 import { mapState, mapGetters } from 'vuex'
 export default {
   data: () => ({
-    playlistId: 6760099512,
+    playlistId: 7373962292, //6760099512,
     musics: [],
     windowWidth: 0,
     nav: {
       title: 'HARUKA',
       subtitle: "Let's search for tomorrow",
-      introduction: '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non inventore odio. Soluta, repellat quo velit eius officia distinctio earum esse iusto et, adipisci repudiandae dolor quaerat nobis mollitia obcaecati.',
+      introduction:
+        '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non inventore odio. Soluta, repellat quo velit eius officia distinctio earum esse iusto et, adipisci repudiandae dolor quaerat nobis mollitia obcaecati.',
       drawer: false,
       drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
       nav: [
@@ -53,21 +52,10 @@ export default {
           to: '/projects',
         },
         {
-
           name: 'Blog',
           icon: 'mdi-developer-board',
           to: '/post',
         },
-        // {
-        //   name: 'Friends',
-        //   icon: 'mdi-link-variant',
-        //   to: '/friends',
-        // },
-        // {
-        //   name: 'Gallery',
-        //   icon: 'mdi-image-frame',
-        //   to: '/gallery',
-        // },
         {
           name: 'About',
           icon: 'mdi-information',
@@ -103,7 +91,7 @@ export default {
       return this.isFull && (process.server || this.scroll.pos <= document.documentElement.clientHeight)
     },
     isTransparentNav() {
-      return false// this.scroll.pos < 64
+      return false // this.scroll.pos < 64
     },
   },
   watch: {
@@ -111,7 +99,7 @@ export default {
       if (this.$refs.live2d) this.$refs.live2d.showMessage(newVal)
     },
     windowWidth(newVal) {
-      console.log(newVal);
+      console.log(newVal)
       this.$store.commit('clientWidth', newVal)
     },
   },
@@ -119,36 +107,21 @@ export default {
     /**
      * 获取播放列表
      */
-    async getMusicList(url) {
+    async getMusicList() {
       try {
-        const result = await this.$axios.$get(url)
+        const api = `https://api.hlo.li/music/playlist/detail?id=${this.playlistId}`
+        const result = await (await fetch(api, { method: 'GET', mode: 'cors' })).json()
         if (result.code == 200) {
-          const musics = []
-          for (const music of result.playlist.tracks) {
-            musics.push({
-              name: music.name,
-              artist: music.ar[0].name,
-              cover: music.al.picUrl,
-              url: `https://music.163.com/song/media/outer/url?id=${music.id}.mp3`,
-            })
-          }
-          return musics
+          this.musics = result.playlist.tracks.map((item) => ({
+            id: item.id,
+            name: item.name,
+            artist: item.ar.map((item) => item.name).toString(),
+            cover: item.al.picUrl,
+            url: `https://music.163.com/song/media/outer/url?id=${item.id}.mp3`,
+          }))
         }
-      } catch (e) {}
-      return undefined
-    },
-    async initMusicList() {
-      /** 歌曲API列表 */
-      // 文档参见：https://api.imjad.cn/cloudmusic.md
-      const apis = [
-        // `http://www.hjmin.com/playlist/detail?id=${this.playlistId}`,
-        `https://api.imjad.cn/cloudmusic/?type=playlist&id=${this.playlistId}`,
-      ]
-      for (const api of apis) {
-        const result = await this.getMusicList(api)
-        if (result) {
-          return (this.musics = result)
-        }
+      } catch (e) {
+        console.log(e)
       }
     },
     getRandomNumber(min, max) {
@@ -175,7 +148,7 @@ export default {
       })
     },
     onResize() {
-      console.log(this.windowWidth);
+      console.log(this.windowWidth)
       if (document) {
         this.windowWidth = document.documentElement.clientWidth
       }
@@ -202,7 +175,7 @@ export default {
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
 
-    // this.initMusicList();
+    this.getMusicList()
   },
   destroyed() {
     window.removeEventListener('load', this.init)
@@ -222,7 +195,10 @@ export default {
     bottom: 0;
     right: 0;
     background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
-    // background: url(https://api.paugram.com/wallpaper?source=gt);
+    // background-color: #F4D8E4;
+    // background-color: #F4D8E4;
+    // background-image: url(https://api.paugram.com/wallpaper?source=gt);
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

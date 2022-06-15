@@ -1,11 +1,9 @@
 <template lang="pug">
 #content
-  TheAPlayer
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import TheAPlayer from '@/components/TheAPlayer.vue'
 
 export default {
   scrollToTop: true,
