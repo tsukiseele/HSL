@@ -3,7 +3,7 @@
   .about.card
     .blockquote
       s-icon(name='mdi-format-quote-open').quote-left
-      .quote-content TECH OTAKUS SAVE THE WORLD
+      .quote-content 砂糖少女は愛を食む
       s-icon(name='mdi-format-quote-close').quote-right
     .description(v-for='(part, i) in about', :key='i')
       hr

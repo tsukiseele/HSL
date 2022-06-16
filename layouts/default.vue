@@ -34,7 +34,7 @@ export default {
     musics: [],
     windowWidth: 0,
     nav: {
-      title: 'HARUKA',
+      title: '砂糖と塩',
       subtitle: "Let's search for tomorrow",
       introduction:
         '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non inventore odio. Soluta, repellat quo velit eius officia distinctio earum esse iusto et, adipisci repudiandae dolor quaerat nobis mollitia obcaecati.',

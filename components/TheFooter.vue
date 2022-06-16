@@ -12,7 +12,7 @@
         |.
         span.info--spacer |
         |Theme 
-        a.info--color-secondary(href="https://github.com/tsukiseele/Haruka" target="_blank") Haruka
+        a.info--color-secondary(href="https://github.com/tsukiseele/Haruka" target="_blank") HSL
         |.
 </template>
 
@@ -27,14 +27,27 @@ export default {
   height: 5rem;
 }
 #footer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   // height: 100px;
   padding: 0.5rem 0;
   font-family: InfoDisplay;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #2a2b3d;
   color: white;
+  &::before {
+    
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      height: 2rem;
+      background: radial-gradient(circle, pink, pink 2rem, transparent 6px);
+      background-size: 10px 10px;
+  }
 }
 
 .footer-info {
@@ -45,7 +58,7 @@ export default {
 }
 
 .info--developer {
-  color: #b854d4;
+  color: rgba(139, 207, 222, 1);
 }
 
 .info--nuxtjs {
@@ -53,7 +66,7 @@ export default {
 }
 
 .info--color-secondary {
-  color: rgba(139, 207, 222, 1);
+  color: #f0a2d2;
 }
 
 .info--spacer {

@@ -5,7 +5,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
     .project-classify {
       display: flex;
       flex-direction: column;
@@ -25,10 +25,11 @@
         color: white;
         border: 2px solid transparent ;
         transition: .25s cubic-bezier(0.075, 0.82, 0.165, 1);
-        &:hover {
-          transform: skew(-16deg) scale(.9);
-          border: 2px solid #C7B3D6 ;
-        }
+        user-select: none;
+        // &:hover {
+        //   transform: skew(-16deg) scale(.9);
+        //   border: 2px solid #C7B3D6 ;
+        // }
       }
     }
     

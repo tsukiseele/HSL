@@ -6,7 +6,7 @@
       .nav-title(@click='$router.push("/")') {{ title }}
       .nav-spacer
       ul.nav-menu(v-if='!isMobile')
-        li(v-for='(item, i) in nav', :key='i', @click='$router.push(item.to)')
+        li.nav-menu__item(v-for='(item, i) in nav', :key='i', :class="{ active: $route.path == item.to }" @click='$router.push(item.to)')
           s-icon(:name='item.icon')
           .menu-title {{ item.name }}
       .nav-spacer

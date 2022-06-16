@@ -12,7 +12,8 @@
   //- )
   main#main
     .aside-wrap
-      TheInfoCard(:icon='res.icon')
+      //- TheInfoCard(:icon='res.icon')
+      .hitokito 
       .sticky
         SLabelClouds.card(:labels='labels')
         TheCategory(:categorys='categorys')

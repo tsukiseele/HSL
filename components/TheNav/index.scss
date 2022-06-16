@@ -14,7 +14,7 @@
   height: var(--nav-height);
   padding: 0 2rem;
   color: var(--color-text);
-  transition: transform 0.25s ease-out, background .25s ease-out, color .25s ease-out;
+  transition: transform 0.25s ease-out, background 0.25s ease-out, color 0.25s ease-out;
   user-select: none;
   background: var(--color-nav);
   backdrop-filter: blur(16px) saturate(2);
@@ -145,7 +145,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  li {
+  .nav-menu__item {
     // line-height: 3rem;
     position: relative;
     display: inline-flex;
@@ -157,12 +157,14 @@
     cursor: pointer;
     transition: all 0.2s ease;
 
-    &:hover {
-      color: var(--color-secondary);
+    &.active {
       &::after {
         width: 100%;
         left: 0;
       }
+    }
+    &:hover {
+      color: var(--color-secondary);
     }
     &::after {
       content: '';
