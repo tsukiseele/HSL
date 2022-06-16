@@ -28,8 +28,13 @@ export const state = () => ({
 })
 
 export const getters = {
-  live2dText(state) {
-    return state.live2dText
+  breakpoints(state, size) {
+    const breakpoints = {
+      'tablet': 760,
+      'mobile': 480
+    }
+    return breakpoints[size] && breakpoints[size] < state.clientWidth
+    // Object.entries(breakpoints).forEach(([k, v]) => k == size && v < state.clientWidth)
   },
   scroll(state) {
     return state.scroll

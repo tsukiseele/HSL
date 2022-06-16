@@ -1,0 +1,163 @@
+#content {
+  // margin-top: calc(-1 * var(--nav-height));
+  .projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    .project-classify {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      .project-classify-name {
+        text-align: center;
+        font-family: var(--font-serif);
+        font-size: 1.4rem;
+        background-color: #b980ae;
+        padding: 0.5rem 2rem;
+        display: inline-block;
+        width: auto;
+        transform: skew(-16deg);
+        align-self: center;
+        border-radius: .5rem 0 .5rem 0;
+        color: white;
+        border: 2px solid transparent ;
+        transition: .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover {
+          transform: skew(-16deg) scale(.9);
+          border: 2px solid #C7B3D6 ;
+        }
+      }
+    }
+    
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+    .project-item {
+      position: relative;
+      width: 20rem;
+      margin: 1rem;
+      background-color: white;
+      overflow: hidden;
+      box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.12);
+      cursor: pointer;
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   right: 0;
+      //   bottom: 0;
+      //   width: 2rem;
+      //   height: 2rem;
+
+      // }
+      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      .project-type {
+        $size: 3;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: $size + rem;
+        height: $size + rem;
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 #{$size + rem} #{$size + rem};
+          border-color: transparent transparent #b980ae transparent;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          $wh: math.sqrt($size * $size * 2);
+          right: math.div($wh, -2) + rem;
+          bottom: math.div($wh, -2) + rem;
+          width: $wh + rem;
+          height: $wh + rem;
+          transform: rotate(45deg);
+          // border-color: transparent transparent #B980AE transparent;
+          box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.2);
+        }
+        i {
+          color: white;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 1.6rem;
+          height: 1.6rem;
+          line-height: 1.6rem;
+          font-size: 1.6rem;
+          vertical-align: top;
+          display: flex;
+          align-items: flex-start;
+        }
+      }
+      .project-cover-wrapper {
+        display: flex;
+        height: 12rem;
+        padding: 0.5rem;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .project-description {
+        padding: 0.5rem;
+
+        &:hover .project-detail {
+          transform: translateY(0);
+        }
+      }
+      .project-detail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(100%);
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.8);
+        color: white;
+        padding: 1rem;
+        transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      &:hover {
+        // transform: translateY(-.5rem);
+        // .project-detail {
+        //   transform: translateY(0);
+        // }
+      }
+    }
+  }
+}
+
+// @media screen and(max-width: 580px) {
+@include screen-mobile {
+  #content {
+    .projects {
+      flex-direction: column;
+      margin: 1rem;
+      .project-list {
+        flex-direction: column;
+      }
+      .project-item {
+        flex: 1;
+        width: 100%;
+        margin: 1rem 0;
+        .project-cover-wrapper {
+          height: 16rem;
+        }
+      }
+    }
+  }
+}

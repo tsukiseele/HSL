@@ -30,7 +30,7 @@
 import { mapState, mapGetters } from 'vuex'
 export default {
   data: () => ({
-    playlistId: 7373962292, //6760099512,
+    playlistId: 7490559834, //6760099512,
     musics: [],
     windowWidth: 0,
     nav: {
@@ -187,21 +187,46 @@ export default {
 
 <style lang="scss" scoped>
 #haruka {
-  position: relative;
   #background {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
     // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
-    background-color: #F4D8E4;
     // background-color: #F4D8E4;
     // background-image: url(https://api.paugram.com/wallpaper?source=gt);
-
-    background-size: cover;
-    background-position: center;
+    background-color: #f4d8e4;
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: background 1s;
+    overflow: hidden;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      z-index: -2;
+    }
+    &::before {
+      border-left: 2px dotted #c16798;
+      left: 5rem;
+    }
+    &::after {
+      border-right: 2px dotted #c16798;
+      right: 5rem;
+    }
+    @include screen-mobile {
+      &::before,
+      &::after {
+        border: none;
+      }
+    }
   }
 }
 @media screen and (max-width: $mobile) {
@@ -216,20 +241,7 @@ export default {
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
-}
-#background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  object-fit: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  transition: background 1s;
-  overflow: hidden;
+  z-index: 1;
 }
 
 #main {
