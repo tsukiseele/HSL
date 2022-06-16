@@ -32,10 +32,25 @@ export default {
   justify-content: center;
   align-items: center;
   // height: 100px;
-  padding: 0.5rem 0;
+  padding: 4rem 0 2rem 0;
   font-family: InfoDisplay;
   background-color: #2a2b3d;
   color: white;
+  
+  &::after {
+    
+      content: '';
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      width: 100%;
+      height: 1.8rem;
+      background-image: radial-gradient(circle, #2a2b3d, #2a2b3d calc(2rem - 1px), transparent 2rem);
+      background-size: calc(4rem) calc(4rem);
+      background-position: top center;
+      background-repeat: repeat-x;
+  }
   &::before {
     
       content: '';
@@ -44,9 +59,11 @@ export default {
       right: 0px;
       left: 0px;
       width: 100%;
-      height: 2rem;
-      background: radial-gradient(circle, pink, pink 2rem, transparent 6px);
-      background-size: 10px 10px;
+      height: 1.8rem;
+      background-image: radial-gradient(circle, #f4d8e4, #f4d8e4 calc(2rem - 1px), transparent 2rem);
+      background-size: calc(4rem) calc(4rem);
+      background-position: bottom center;
+      background-repeat: repeat-x;
   }
 }
 

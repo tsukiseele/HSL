@@ -37,7 +37,7 @@ export default {
       title: '砂糖と塩',
       subtitle: "Let's search for tomorrow",
       introduction:
-        '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor non inventore odio. Soluta, repellat quo velit eius officia distinctio earum esse iusto et, adipisci repudiandae dolor quaerat nobis mollitia obcaecati.',
+        '久しぶり！这里是以松阪砂糖和神户盐作为配色的个人网站主题HSL，目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！（PS: 发电中）',
       drawer: false,
       drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
       nav: [

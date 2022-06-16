@@ -7,7 +7,7 @@ export default {
   ssr: !(process.env.MODE && process.env.MODE.toLocaleUpperCase() == 'SPA'),
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Haruka - 遥远的理想乡',
+    title: '砂糖と塩 - 罐中少女的爱',
     htmlAttrs: {
       lang: 'zh-CN',
     },
