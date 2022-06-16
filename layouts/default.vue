@@ -48,12 +48,12 @@ export default {
         },
         {
           name: 'Projects',
-          icon: 'mdi-developer-board',
+          icon: 'mdi-lightbulb-on-outline',
           to: '/projects',
         },
         {
           name: 'Blog',
-          icon: 'mdi-developer-board',
+          icon: 'mdi-clipboard-text-outline',
           to: '/post',
         },
         {
@@ -222,7 +222,7 @@ export default {
       right: 5rem;
     }
     @include screen-mobile {
-      &::before,
+      &::before, 
       &::after {
         border: none;
       }

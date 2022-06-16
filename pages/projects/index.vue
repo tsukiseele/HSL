@@ -35,11 +35,6 @@ export default {
             detail: '',
             preview: 'http://placekitten.com/300/300',
           },
-        ],
-      },
-      {
-        name: 'Web Sites',
-        items: [
           {
             name: 'MoeViewerR',
             desc: 'lorem',
@@ -52,6 +47,23 @@ export default {
             detail: '',
             preview: 'http://placekitten.com/300/300',
           },
+          {
+            name: 'MoeViewerR',
+            desc: 'lorem',
+            detail: '',
+            preview: 'http://placekitten.com/300/300',
+          },
+          {
+            name: 'MoeViewerN',
+            desc: 'lorem',
+            detail: '',
+            preview: 'http://placekitten.com/300/300',
+          },
+        ],
+      },
+      {
+        name: 'Web Sites',
+        items: [
           {
             name: 'MoeViewerR',
             desc: 'lorem',

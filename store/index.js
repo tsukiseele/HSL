@@ -25,6 +25,28 @@ export const state = () => ({
     isFull: false,
     isHide: false,
   },
+  navigation: [
+    {
+      name: 'Home',
+      icon: 'mdi-home',
+      to: '/',
+    },
+    {
+      name: 'Projects',
+      icon: 'mdi-developer-board',
+      to: '/projects',
+    },
+    {
+      name: 'Blog',
+      icon: 'mdi-developer-board',
+      to: '/post',
+    },
+    {
+      name: 'About',
+      icon: 'mdi-information',
+      to: '/about',
+    },
+  ],
 })
 
 export const getters = {
