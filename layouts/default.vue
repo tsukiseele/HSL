@@ -84,7 +84,6 @@ export default {
       })
     },
     onResize() {
-      console.log(this.windowWidth)
       if (document) {
         this.windowWidth = document.documentElement.clientWidth
       }

@@ -13,7 +13,8 @@
             .project-detail
               span {{ project.desc }}
           .project-type
-            SIcon(name="mdi-github")
+            SIcon(v-if="project.type == 'github'" name="mdi-github")
+            SIcon(v-else-if="project.type == 'website'" name="mdi-web")
 </template>
 
 <script>

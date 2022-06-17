@@ -9,10 +9,9 @@
         a.normal(:href='item.to', target='_blank')
           s-icon(:name='item.icon')
     ul.nav-menu(data-aos="fade-right"  data-aos-delay="600")
-      li(v-for='item in navigation.nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
-        //- SIcon(:name='item.icon')
-        //- .nav-name {{ item.name }}
-        SBook(:icon="item.icon" :name="item.name")
+      li.nav-item(v-for='item in navigation.nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
+        SIcon(:name='item.icon')
+        .nav-name {{ item.name }}
   .decorate
     .decorate-item(data-content="S") S
     .decorate-item(data-content="W") W
@@ -21,25 +20,26 @@
     .decorate-item(data-content="T") T
   
   div.introduction(data-aos="fade-up"  data-aos-delay="900")
-    span {{ navigation.introduction }} 
+    .blockquote
+      s-icon(name='mdi-format-quote-open').quote-left
+      .quote-content(v-html="navigation.introduction")
+      s-icon(name='mdi-format-quote-close').quote-right
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import SBook from '../components/SBook/index.vue'
 
 export default {
-    scrollToTop: true,
-    data: () => ({}),
-    mounted() { },
-    computed: {
-        ...mapState(["page", "scroll", "archives", "labels", "categorys", "navigation"]),
-        isMobile() {
-            return this.$store.getters.isMobile;
-        },
+  scrollToTop: true,
+  data: () => ({}),
+  mounted() {},
+  computed: {
+    ...mapState(['page', 'scroll', 'archives', 'labels', 'categorys', 'navigation']),
+    isMobile() {
+      return this.$store.getters.isMobile
     },
-    methods: {},
-    components: { SBook }
+  },
+  methods: {},
 }
 </script>
 
@@ -110,7 +110,6 @@ export default {
       animation: identifier 3s 1s ease-in-out infinite;
       height: 30%;
       &::after {
-        // color: rgb(250, 227, 217);
         color: #b7d7b6;
         transform: rotate(0);
       }
@@ -118,7 +117,8 @@ export default {
     }
     &:nth-of-type(3) {
       animation: identifier 4s -0.5s ease-in-out infinite;
-      height: 26%;
+      height: 20%;
+      // height: 26%;
       &::after {
         color: #c7b3d6;
         transform: rotate(15deg);
@@ -127,7 +127,8 @@ export default {
     }
     &:nth-of-type(4) {
       animation: identifier 3s 0.5s ease-in-out infinite;
-      height: 20%;
+      height: 26%;
+      // height: 20%;
       &::after {
         color: rgb(187, 222, 214);
         transform: rotate(-15deg);
@@ -185,8 +186,30 @@ export default {
     font-weight: lighter;
   }
   .introduction {
-    margin-top: 2rem;
+    margin-top: 1rem;
     max-width: 50vw;
+    
+  // margin: 0 2rem;
+  .blockquote {
+    display: flex;
+    padding: 1rem;
+    color: var(--color-text);
+    i {
+      font-size: 1.5rem;
+    }
+    .quote-left {
+      align-self: flex-start;
+    }
+    .quote-right {
+      align-self: flex-end;
+    }
+    .quote-content {
+      flex: 1;
+      padding: 1rem;
+      align-self: center;
+      font-size: 1rem;
+    }
+  }
   }
   .nav {
     display: flex;
@@ -201,21 +224,25 @@ export default {
     }
     .nav-menu {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       backdrop-filter: blur(20px);
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.12);
-      border-radius: 0.25rem;
+      box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.12);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &:hover {
+
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+ 
+      }
       .nav-item {
         position: relative;
-        display: inline-block;
-        align-self: flex-start;
-        text-transform: uppercase;
-        margin: 0 0.5rem;
-        padding: 0 0.5rem;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: stretch;
+        padding: 0 1.5rem;
         cursor: pointer;
         user-select: none;
         transition: 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -223,13 +250,44 @@ export default {
           padding-right: 0.5rem;
           font-size: 1.35rem;
         }
+        .nav-name {
+          text-transform: uppercase;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transform: scale(0);
+          opacity: 0;
+          background-color: #cd5da0;
+          transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+          z-index: -1;
+        }
+        &:hover,
+        &.active {
+          color: white;
+          &::before {
+            border-radius: 0;
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        &:hover::before {
+          background-color: #c7b3d6;
+        }
+        &.active::before {
+          background-color: #cd5da0;
+        }
       }
     }
     .nav-links {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      margin: 0.5rem 0 3rem 0;
+      margin: 0.5rem 0 1rem 0;
       li {
         margin: 0 0.8rem;
         transition: 0.5s cubic-bezier(0, 1, 0.5, 1);
@@ -253,9 +311,13 @@ export default {
   #content {
     .nav {
       .nav-menu {
-        display: flex;
+        flex-direction: row;
         align-items: stretch;
         box-shadow: none;
+        border-radius: 0;
+        &:hover {
+          box-shadow: none;
+        }
         .nav-item {
           position: relative;
           display: flex;
@@ -263,15 +325,24 @@ export default {
           align-items: center;
           justify-content: flex-start;
           height: 12rem;
-          padding-top: 2rem;
-          border: 1px dashed #cd5da0;
+          padding: 1.5rem .5rem 0 .5rem;
+          margin: 0 .5rem;
+          border-top: 1px dashed #cd5da0;
+          border-bottom: 1px dashed #cd5da0;
+          border-left: 1px solid #cd5da0;
+          border-right: 1px solid #cd5da0;
           transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
           transform-style: preserve-3d;
           perspective: 1000px;
+          &::before {
+            display: none;
+          }
           i {
+            font-size: 1.5rem;
             padding: 0;
           }
           .nav-name {
+            font-size: 1.2rem;
             writing-mode: vertical-lr;
           }
           &.active {
@@ -280,25 +351,15 @@ export default {
           }
           &:hover {
             color: #cd5da0;
-            border: 1px solid #cd5da0;
-
-            // transform: rotateY(45deg);
+            border-color: #cd5da0;
           }
-          // &::before {
-          //   content: '';
-          //   position: absolute;
-          //   height: 100%;
-          //   width: 100%;
-          //   background-color: #cd5da0;
-          //   transform: rotateY(90deg) translate(-5%， -5%);
-          // }
         }
       }
-      .introduction {
-        font-size: 1.25rem;
-        border: 1px dashed #cd5da0;
-        padding: 0.5rem;
-      }
+    }
+    .introduction {
+      max-width: 75%;
+      font-size: 1.2rem;
+      padding: 0.5rem;
     }
   }
 }

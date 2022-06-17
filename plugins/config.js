@@ -14,11 +14,14 @@ export default {
   commentRepository: 'comment',
   // 音乐接口
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
+  // 一言接口（可选，填写后会显示在subtitle)
+  hitokitoAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
+
   // 导航
   nav: {
     title: 'さとうしお',
     subtitle: "Let's search for tomorrow",
-    introduction: '久しぶり！这里是以松阪砂糖和神户盐作为配色的个人网站主题HSL，目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！（PS: 发电中）',
+    introduction: '很高兴见到你！这里是Happy Suger Life（ハッピーシュガーライフ）的个人网站主题。<br/>目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！',
     drawer: false,
     drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
     nav: [

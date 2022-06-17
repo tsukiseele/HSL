@@ -1,6 +1,6 @@
 <template lang="pug">
 .post-item(@click="$router.push(to)" :style="backgroundColor")
-  .item-cover-box
+  .item-cover-box(v-if="cover")
     img.item-cover(v-lazy="cover")
   .item-info 
     .item-title {{ title }}

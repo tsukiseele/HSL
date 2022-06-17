@@ -57,6 +57,11 @@
 
       // }
       transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      .project-name {
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: #b980ae;
+      }
       .project-type {
         $size: 3;
         position: absolute;

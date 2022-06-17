@@ -36,36 +36,7 @@
       transform: translate(-50%, -50%);
       border-radius: 50%;
       z-index: -1;
-      animation: anim 3s ease-in-out infinite;
-    }
-    @keyframes anim {
-      0% {
-        background-color: #f596aa;
-        box-shadow: -24px 0 0 8px #77428d, 0 0 0 6px #f596aa, 24px 0 0 8px #69b0ac;
-      }
-
-      25% {
-        background-color: #69b0ac;
-        box-shadow: -24px 0 0 8px #f596aa, 0 0 0 8px #69b0ac, 24px 0 0 8px #77428d;
-        transform: rotate(0deg);
-      }
-
-      50% {
-        background-color: #f596aa;
-        box-shadow: -24px 0 0 6px #77428d, 0 0 0 8px #f596aa, 24px 0 0 6px #69b0ac;
-        transform: rotate(180deg);
-      }
-
-      75% {
-        background-color: #77428d;
-        transform: rotate(360deg);
-        box-shadow: -24px 0 0 8px #69b0ac, 0 0 0 8px #77428d, 24px 0 0 8px #f596aa;
-      }
-
-      100% {
-        background-color: #f596aa;
-        box-shadow: -24px 0 0 8px #77428d, 0 0 0 6px #f596aa, 24px 0 0 8px #69b0ac;
-      }
+      // animation: anim 3s ease-in-out infinite;
     }
   }
   /*
