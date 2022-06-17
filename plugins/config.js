@@ -16,7 +16,7 @@ export default {
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 导航
   nav: {
-    title: 'Sweet Hurt',
+    title: 'さとうしお',
     subtitle: "Let's search for tomorrow",
     introduction: '久しぶり！这里是以松阪砂糖和神户盐作为配色的个人网站主题HSL，目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！（PS: 发电中）',
     drawer: false,
