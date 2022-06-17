@@ -10,8 +10,9 @@
           s-icon(:name='item.icon')
     ul.nav-menu(data-aos="fade-right"  data-aos-delay="600")
       li(v-for='item in navigation.nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
-        SIcon(:name='item.icon')
-        .nav-name {{ item.name }}
+        //- SIcon(:name='item.icon')
+        //- .nav-name {{ item.name }}
+        SBook(:icon="item.icon" :name="item.name")
   .decorate
     .decorate-item(data-content="S") S
     .decorate-item(data-content="W") W
@@ -25,28 +26,20 @@
 
 <script>
 import { mapState } from 'vuex'
+import SBook from '../components/SBook/index.vue'
 
 export default {
-  scrollToTop: true,
-  data: () => ({}),
-  mounted() {},
-  computed: {
-    ...mapState(['page', 'scroll', 'archives', 'labels', 'categorys', 'navigation']),
-    isMobile() {
-      return this.$store.getters.isMobile
+    scrollToTop: true,
+    data: () => ({}),
+    mounted() { },
+    computed: {
+        ...mapState(["page", "scroll", "archives", "labels", "categorys", "navigation"]),
+        isMobile() {
+            return this.$store.getters.isMobile;
+        },
     },
-  },
-  methods: {},
-  // async fetch({ store, params }) {
-  //   await Promise.all([
-  //     store.dispatch('archives', {
-  //       page: Number(params.page || 1),
-  //       count: 10,
-  //     }),
-  //     store.dispatch('labels'),
-  //     store.dispatch('categorys'),
-  //   ])
-  // },
+    methods: {},
+    components: { SBook }
 }
 </script>
 
@@ -213,7 +206,7 @@ export default {
       backdrop-filter: blur(20px);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.12);
       border-radius: 0.25rem;
-      li {
+      .nav-item {
         position: relative;
         display: inline-block;
         align-self: flex-start;
@@ -263,7 +256,7 @@ export default {
         display: flex;
         align-items: stretch;
         box-shadow: none;
-        li {
+        .nav-item {
           position: relative;
           display: flex;
           flex-direction: column;
