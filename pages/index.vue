@@ -101,7 +101,8 @@ export default {
       bottom: 0;
       font-size: 3rem;
       font-weight: bold;
-      text-shadow: 3px 3px white;
+      // text-shadow: 3px 3px white;
+      text-shadow: -2px -2px white, 2px -2px white, -2px 2px white, 2px 2px white;
     }
     &:nth-of-type(1) {
       animation: identifier 4s 0.5s ease-in-out infinite;
