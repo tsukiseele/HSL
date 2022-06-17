@@ -59,29 +59,6 @@ export default {
       })
     })
   },
-  watch: {
-    itemActive(newVal, oldVal) {
-      if (newVal) {
-        this.$store.commit('live2dText', `要阅读『${newVal} 』吗?`)
-      }
-    },
-    /*
-    $route: {
-      handler(to, from) {
-        if (process.client) {
-          this.$nextTick(() => {
-            setTimeout(() => {
-              document
-                .getElementById("container")
-                .scrollIntoView({ behavior: "smooth" });
-            }, 0);
-          });
-        }
-      },
-      deep: true,
-      immediate: true,
-    },*/
-  },
   computed: {
     ...mapState(['page', 'scroll', 'archives', 'labels', 'categorys']),
     isMobile() {

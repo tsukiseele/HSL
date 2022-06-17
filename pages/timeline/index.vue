@@ -22,10 +22,6 @@ export default {
     archives: [],
     error: null,
   }),
-  /*
-  fetch() {
-    this.$store.commit('header', { title: '『时间线』' })
-  },*/
   computed: {
     ...mapState(['timeline']),
   },

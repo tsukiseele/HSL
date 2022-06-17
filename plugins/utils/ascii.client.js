@@ -28,9 +28,9 @@ export default () => {
         ,fLL;::;;i:..............;:::,,....:fftGKKKEt::::ff;;
         .tiit:::::;itti;::,,,,,,,,,,,:;iiiiiff;;fLLj::::tLf::
 
-                         %cHARUKA %ccreated by %c@tsukiseele%c - ${new Date().getFullYear()}
+                            %cHSL %ccreated by %c@tsukiseele%c - ${new Date().getFullYear()}
   
-                         https://github.com/tsukiseele/Haruka`;
+                         https://github.com/tsukiseele/HSL`;
 
   console.log(
     ascii,

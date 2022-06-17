@@ -15,7 +15,7 @@ const CDN_URL = 'cdn.jsdelivr.net/gh'
 function initMarkdown(markdown) {
   const images = getImages(markdown)
   if (RAW_URL && CDN_URL) {
-    images.forEach(image => {
+    images.forEach((image) => {
       if (image && image.url) {
         const cdnUrl = image.url.replace(RAW_URL, CDN_URL).replace(regBranches, '')
         markdown = markdown.replace(image.url, cdnUrl)
@@ -94,8 +94,8 @@ export const formatPost = ({ body, title, created_at: createAt, labels, mileston
 /**
  * 格式化分类
  */
-export const formatCategory = category => {
-  category.forEach(o => {
+export const formatCategory = (category) => {
+  category.forEach((o) => {
     const description = o.description.split('\r\n')
     o.summary = description[0].split('summary:')[1]
     o.cover = description[1].split('cover:')[1]
@@ -105,10 +105,10 @@ export const formatCategory = category => {
 /**
  * 格式化时间线
  */
-export const formatTimeline = posts => {
-  const archives = posts.map(item => formatPost(item))
+export const formatTimeline = (posts) => {
+  const archives = posts.map((item) => formatPost(item))
   const timeline = {}
-  Object.values(archives).forEach(archive => {
+  Object.values(archives).forEach((archive) => {
     const timestrap = new Date(archive.createAt).format('yyyy-MM')
     if (timeline[timestrap]) {
       timeline[timestrap].push(archive)
@@ -121,8 +121,8 @@ export const formatTimeline = posts => {
 /**
  * 格式化灵感
  */
-export const formatInspiration = inspiration => {
-  inspiration.forEach(o => (o.date = new Date(o.created_at).format('y年m月d日')))
+export const formatInspiration = (inspiration) => {
+  inspiration.forEach((o) => (o.date = new Date(o.created_at).format('y年m月d日')))
   return inspiration
 }
 
@@ -131,13 +131,14 @@ export const formatInspiration = inspiration => {
  */
 export const formatPage = (data, type) => {
   if (!data || !data.body) return []
-  let section = data.body.split('## ').filter(o => o.length)
+  let section = data.body.split('## ').filter((o) => o.length)
 
   switch (type) {
     case 'book':
     case 'friend':
-      section = section.map(o => {
-        const content = o.split('\r\n').filter(o => o.length)
+    case 'projects':
+      section = section.map((o) => {
+        const content = o.split('\r\n').filter((o) => o.length)
         const result = {}
         content.forEach((row, index) => {
           if (index === 0) {
@@ -153,7 +154,7 @@ export const formatPage = (data, type) => {
       })
       break
     case 'about':
-      section = section.map(o => {
+      section = section.map((o) => {
         const title = o.match(/.+?\r\n/)[0]
         return {
           title,
@@ -162,11 +163,26 @@ export const formatPage = (data, type) => {
       })
       break
     default:
+      section = section.map((o) => {
+        const content = o.split('\r\n').filter((o) => o.length)
+        const result = {}
+        content.forEach((row, index) => {
+          if (index === 0) {
+            result.name = row
+          } else {
+            const inx = row.indexOf(':')
+            const key = row.slice(0, inx)
+            const value = row.slice(inx + 1)
+            result[key] = value
+          }
+        })
+        return result
+      })
       break
   }
   // 移除首尾空格
-  section.forEach(item => {
-    Object.keys(item).forEach(k => {
+  section.forEach((item) => {
+    Object.keys(item).forEach((k) => {
       item[k] = item[k].trim()
     })
   })

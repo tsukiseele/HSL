@@ -3,19 +3,16 @@
   #background
   #app(:class="{ full: isFull }")
     TheNav(
-      :title='nav.title',
-      :subtitle='nav.subtitle',
-      :nav='nav.nav',
-      :links='nav.links',
-      :drawerBannerBackground='nav.drawerBannerBackground',
+      :title='navigation.title',
+      :subtitle='navigation.subtitle',
+      :nav='navigation.nav',
+      :links='navigation.links',
+      :drawerBannerBackground='navigation.drawerBannerBackground',
       :isMobile='isMobile',
       :isFull='isFull',
       :isTransparent='isTransparentNav',
       :isHide='isHideNav',
-      @scrollDown='scrollToContent'
     )
-    //- Banner
-    TheBanner(v-if='isFull', :title='nav.title', :subtitle='nav.subtitle', :nav='nav.nav', :links='nav.links', @scrollDown='$emit("scrollDown")', hideArrow, :introduction="nav.introduction")
     main#main
       nuxt
     //- 页脚
@@ -30,56 +27,11 @@
 import { mapState, mapGetters } from 'vuex'
 export default {
   data: () => ({
-    playlistId: 7490559834, //6760099512,
     musics: [],
     windowWidth: 0,
-    nav: {
-      title: 'Sweet Hurt',
-      subtitle: "Let's search for tomorrow",
-      introduction:
-        '久しぶり！这里是以松阪砂糖和神户盐作为配色的个人网站主题HSL，目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！（PS: 发电中）',
-      drawer: false,
-      drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
-      nav: [
-        {
-          name: 'Home',
-          icon: 'mdi-home',
-          to: '/',
-        },
-        {
-          name: 'Projects',
-          icon: 'mdi-lightbulb-on-outline',
-          to: '/projects',
-        },
-        {
-          name: 'Blog',
-          icon: 'mdi-clipboard-text-outline',
-          to: '/post',
-        },
-        {
-          name: 'About',
-          icon: 'mdi-information',
-          to: '/about',
-        },
-      ],
-      links: [
-        {
-          icon: 'mdi-github',
-          to: 'https://github.com/tsukiseele',
-        },
-        {
-          icon: 'mdi-twitter',
-          to: 'https://twitter.com/tsukiseele',
-        },
-        {
-          icon: 'mdi-gmail',
-          to: 'mailto:tsukiseele@gmail.com',
-        },
-      ],
-    },
   }),
   computed: {
-    ...mapState(['header', 'live2dText']),
+    ...mapState(['navigation']),
     ...mapGetters(['isMobile', 'scroll']),
     background() {
       return process.client ? `url(${this.$static}/bg/${this.getRandomNumber(1, 20)}.webp)` : ''
@@ -95,11 +47,7 @@ export default {
     },
   },
   watch: {
-    live2dText(newVal) {
-      if (this.$refs.live2d) this.$refs.live2d.showMessage(newVal)
-    },
     windowWidth(newVal) {
-      console.log(newVal)
       this.$store.commit('clientWidth', newVal)
     },
   },
@@ -109,8 +57,8 @@ export default {
      */
     async getMusicList() {
       try {
-        const api = `https://api.hlo.li/music/playlist/detail?id=${this.playlistId}`
-        const result = await (await fetch(api, { method: 'GET', mode: 'cors' })).json()
+        // const api = 
+        const result = await (await fetch(this.$config.musicAPI, { method: 'GET', mode: 'cors' })).json()
         if (result.code == 200) {
           this.musics = result.playlist.tracks.map((item) => ({
             id: item.id,
@@ -127,18 +75,6 @@ export default {
     getRandomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min
     },
-    scrollToContent() {
-      this.$nextTick(() => {
-        const ele = document.getElementById('container')
-        if (ele) {
-          this.$store.commit('scroll', {
-            pos: ele.offsetTop,
-            change: ele.offsetTop,
-          })
-          ele.scrollIntoView({ behavior: 'smooth' })
-        }
-      })
-    },
     onScroll() {
       const newPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
       const scroll = this.$store.getters.scroll
@@ -153,12 +89,6 @@ export default {
         this.windowWidth = document.documentElement.clientWidth
       }
     },
-    // 夜晚改变主题
-    changeTheme() {
-      if (this.$isNight()) {
-        // document.getElementsByTagName("html")[0].setAttribute("theme", "dark");
-      }
-    },
     init() {
       this.$nextTick(() => {
         this.onScroll()
@@ -166,11 +96,7 @@ export default {
       })
     },
   },
-  beforeMount() {
-    this.changeTheme()
-  },
   mounted() {
-    // window.addEventListener('load', this.init)
     this.init()
     window.addEventListener('scroll', this.onScroll)
     window.addEventListener('resize', this.onResize)
@@ -178,7 +104,6 @@ export default {
     this.getMusicList()
   },
   destroyed() {
-    window.removeEventListener('load', this.init)
     window.removeEventListener('scroll', this.onScroll)
     window.removeEventListener('resize', this.onResize)
   },
@@ -204,10 +129,10 @@ export default {
     background-size: cover;
     transition: background 1s;
     overflow: hidden;
-    animation: anim 2s .5s ease-in-out forwards;
+    animation: anim 2s 0.5s ease-in-out forwards;
     @keyframes anim {
       100% {
-        background-color: #F4D8E4;
+        background-color: #f4d8e4;
       }
     }
     &::before,
@@ -228,7 +153,7 @@ export default {
       right: 5rem;
     }
     @include screen-mobile {
-      &::before, 
+      &::before,
       &::after {
         border: none;
       }

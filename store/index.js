@@ -1,68 +1,33 @@
 import { formatPost, formatNavMenu, formatGallery, formatTimeline, formatPage } from '@/plugins/utils/format.js'
+import config from '@/plugins/config.js'
 
 export const state = () => ({
   page: 0,
   clientWidth: 0,
-  live2dText: '',
-  scroll: {
-    pos: 0,
-    change: 0,
-  },
+  scroll: { pos: 0, change: 0 },
   archives: [],
   archive: {},
   images: [],
   inspiration: [],
   about: {},
-  menu: [],
+  friends: [],
+  projects: [],
   labels: [],
   categorys: [],
-  friends: [],
   timeline: [],
-  header: {
-    title: '',
-    subtitle: '',
-    isHideSubtitle: false,
-    isFull: false,
-    isHide: false,
-  },
-  navigation: [
-    {
-      name: 'Home',
-      icon: 'mdi-home',
-      to: '/',
-    },
-    {
-      name: 'Projects',
-      icon: 'mdi-developer-board',
-      to: '/projects',
-    },
-    {
-      name: 'Blog',
-      icon: 'mdi-developer-board',
-      to: '/post',
-    },
-    {
-      name: 'About',
-      icon: 'mdi-information',
-      to: '/about',
-    },
-  ],
+  navigation: config.nav,
 })
 
 export const getters = {
   breakpoints(state, size) {
     const breakpoints = {
-      'tablet': 760,
-      'mobile': 480
+      tablet: 760,
+      mobile: 480,
     }
     return breakpoints[size] && breakpoints[size] < state.clientWidth
-    // Object.entries(breakpoints).forEach(([k, v]) => k == size && v < state.clientWidth)
   },
   scroll(state) {
     return state.scroll
-  },
-  header(state) {
-    return state.header
   },
   clientWidth(state) {
     return state.clientWidth
@@ -79,14 +44,8 @@ export const mutations = {
   page(state, page) {
     state.page = page
   },
-  live2dText(state, msg) {
-    state.live2dText = msg
-  },
   scroll(state, scroll) {
     state.scroll = scroll
-  },
-  header(state, header) {
-    state.header = header
   },
   clientWidth(state, clientWidth) {
     state.clientWidth = clientWidth
@@ -117,7 +76,10 @@ export const mutations = {
   },
   timeline(state, timeline) {
     state.timeline = timeline
-  }
+  },
+  projects(state, projects) {
+    state.projects = projects
+  },
 }
 
 export const actions = {
@@ -130,7 +92,7 @@ export const actions = {
   async archives({ commit, state }, { page, count }) {
     if (state.page === page) return
     const archives = []
-    ;(await this.$service.getArchives({ page, count })).forEach(item => {
+    ;(await this.$service.getArchives({ page, count })).forEach((item) => {
       archives.push(formatPost(item))
     })
     commit('page', page)
@@ -145,7 +107,7 @@ export const actions = {
     let archive = null
     // 先从缓存里面找
     if (state.archives) {
-      archive = state.archives.find(item => item.id == id)
+      archive = state.archives.find((item) => item.id == id)
     }
     // 如果没有找到就请求
     commit('archive', archive || formatPost(await this.$service.getArchiveById(id)))
@@ -157,16 +119,16 @@ export const actions = {
    */
   async images({ commit, state }) {
     if (state.images.length > 0) return
-    commit('images', [].concat(...(await this.$service.getArchives({ page: 1, count: 99 })).map(item => formatGallery(item))).slice(0, 20))
+    commit('images', [].concat(...(await this.$service.getArchives({ page: 1, count: 99 })).map((item) => formatGallery(item))).slice(0, 20))
   },
   /**
    * 获取时间线
-   * @param {*} param0 
-   * @returns 
+   * @param {*} param0
+   * @returns
    */
   async timeline({ commit, state }) {
     if (state.timeline.length) return
-    const timeline = formatTimeline((await this.$service.getArchives({ page: 1, count: 99 })))
+    const timeline = formatTimeline(await this.$service.getArchives({ page: 1, count: 99 }))
     commit('timeline', timeline)
   },
   /**
@@ -210,5 +172,20 @@ export const actions = {
     if (friends && friends[0]) {
       commit('friends', formatPage(friends[0], 'friend'))
     }
+  },
+  /**
+   * 获取友链
+   */
+  async projects({ commit, state }) {
+    const projects = (await Promise.all([this.$service.getPage('projects'), this.$service.getPage('websites')])).map((item) => item[0])
+    console.log(projects)
+    commit(
+      'projects',
+      projects.map((item) => {
+        const name = item.title.toLowerCase()
+        return { name, items: formatPage(item, item.title.toLowerCase()) }
+      })
+    )
+    console.log(state.projects)
   },
 }
