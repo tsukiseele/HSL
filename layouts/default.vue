@@ -23,7 +23,7 @@
     //- 播放器
     TheAPlayer(:musics="musics")
     //- 返回顶部
-    TheBackTop
+    //- TheBackTop
 </template>
 
 <script>
@@ -198,12 +198,18 @@ export default {
     // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
     // background-color: #F4D8E4;
     // background-image: url(https://api.paugram.com/wallpaper?source=gt);
-    background-color: #f4d8e4;
+    background-color: wheat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     transition: background 1s;
     overflow: hidden;
+    animation: anim 2s .5s ease-in-out forwards;
+    @keyframes anim {
+      100% {
+        background-color: #F4D8E4;
+      }
+    }
     &::before,
     &::after {
       content: '';
@@ -265,11 +271,6 @@ export default {
 @media screen and (max-width: 1080px) {
   main#main {
     width: 100%;
-  }
-}
-@keyframes identifier {
-  100% {
-    transform: translate(100%, 100%);
   }
 }
 </style>

@@ -2,8 +2,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
+  height: 100%;
   animation: fade 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-fill-mode: forwards;
   transform: translateY(-100%) translateZ(0);
@@ -17,7 +17,6 @@
     position: absolute;
     top: 0;
     font-size: 3rem;
-    // transform: translateY(100%);
     color: transparent;
     transform-origin: top center;
     z-index: -1;
@@ -40,64 +39,71 @@
       bottom: 0;
       font-size: 3rem;
       font-weight: bold;
+      text-shadow:   3px 3px white;
     }
     &:nth-of-type(1) {
-      animation: identifier 3s 0.5s ease-in-out infinite;
-      height: 12%;
+      animation: identifier 4s 0.5s ease-in-out infinite;
+      height: 24%;
       &::after {
         color: rgb(255, 182, 185);
         transform: rotate(-30deg);
       }
-      left: 16%;
+      left: 15%;
     }
     &:nth-of-type(2) {
       animation: identifier 3s 1s ease-in-out infinite;
-      height: 15%;
+      height: 30%;
       &::after {
-        color: rgb(250, 227, 217);
+        // color: rgb(250, 227, 217);
+        color: #B7D7B6;
         transform: rotate(0);
       }
-      left: 32%;
+      left: 30%;
     }
     &:nth-of-type(3) {
-      animation: identifier 3s -0.5s ease-in-out infinite;
-      height: 13%;
+      animation: identifier 4s -0.5s ease-in-out infinite;
+      height: 26%;
       &::after {
         color: #c7b3d6;
         transform: rotate(15deg);
       }
-      left: 48%;
+      left: 50%;
     }
     &:nth-of-type(4) {
-      animation: identifier 2s 0.5s ease-in-out infinite;
-      height: 10%;
+      animation: identifier 3s 0.5s ease-in-out infinite;
+      height: 20%;
       &::after {
         color: rgb(187, 222, 214);
         transform: rotate(-15deg);
       }
-      left: 64%;
+      left: 60%;
     }
     &:nth-of-type(5) {
-      animation: identifier 3s 0.5s ease-in-out infinite;
-      height: 16%;
+      animation: identifier 5s 0.5s ease-in-out infinite;
+      height: 32%;
       &::after {
         color: rgb(138, 198, 209);
         transform: rotate(30deg);
       }
-      left: 80%;
+      left: 75%;
     }
     @keyframes identifier {
       0% {
-        transform: rotate(-3deg);
+        transform: rotate(-3deg) rotateY(-15deg);
       }
       50% {
-        transform: rotate(3deg);
+        transform: rotate(3deg)rotateY(15deg); 
       }
       100% {
-        transform: rotate(-3deg);
+        transform: rotate(-3deg) rotateY(-15deg);
       }
     }
-    @include screen-mobile {
+  }
+  
+  @include screen-mobile {
+    height: 50%;
+    .decorate-item {
+
       font-size: 3rem;
       &::before {
         bottom: 4rem;
@@ -177,17 +183,17 @@
         //   opacity: 0.5;
         //   padding: 2px;
         // }
-        &:hover::after {
-          opacity: 1;
-        }
+        // &:hover::after {
+        //   opacity: 1;
+        // }
         &.active,
         &:hover {
           color: #cd5da0;
-          &::before,
-          &::after {
-            width: 100%;
-            left: 0;
-          }
+          // &::before,
+          // &::after {
+          //   width: 100%;
+          //   left: 0;
+          // }
         }
       }
     }
@@ -247,14 +253,64 @@
   #banner {
     .nav {
       .nav-menu {
+        display: flex;
+        align-items: stretch;
         box-shadow: none;
-        border: 1px dashed #cd5da0;
-        padding: 1rem;
+        // border: 1px dashed #cd5da0;
         // transform: scale(1.2rem);
+        border-radius: .5rem;
+        border: 1px dashed #cd5da0;
+        overflow: hidden;
         li {
+        width: 100%;
           font-size: 1.1rem;
           padding: 0.2rem;
+          margin: 0;
+          overflow: hidden;
+          // border: 1px solid #cd5da0;
+          border-bottom: 1px dashed #cd5da0;
+
+          // border-bottom: none;
+          transition: .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+          &.active {
+            color: white;
+            background-color: #cd5da0;
+          }
+          &:last-of-type {
+            border-bottom: none;
+          }
+          // &::before, &::after {
+          //   content: '';
+          //   position: absolute;
+          //   top: 0;
+          //   width: 100%;
+          //   height: 100%;
+          //   border-right: 1px solid #cd5da0 ;
+          //   border-left: 1px solid #cd5da0 ;
+          //   background-color: #F4D8E4;
+          //   transform: rotate(20deg);
+          //   transition: .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+          // }
+          // &::before {
+          //   left: calc(-100% + .5rem);
+          // }
+          // &::after {
+          //   right: calc(-100% + .5rem);
+          // }
+          // &:hover {
+          //  &::before {
+          //   left: -120%;
+          //  } 
+          //  &::after {
+          //   right: -120%;
+          //  }
+          // }
         }
+      }
+      .introduction {
+        border: 1px dashed #cd5da0;
+
+        padding: .5rem;
       }
     }
   }
