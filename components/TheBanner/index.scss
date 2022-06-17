@@ -1,3 +1,113 @@
+.decorate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: fade 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+  transform: translateY(-100%) translateZ(0);
+  z-index: -1;
+  @keyframes fade {
+    100% {
+      transform: translateY(0) translateZ(0);
+    }
+  }
+  .decorate-item {
+    position: absolute;
+    top: 0;
+    font-size: 3rem;
+    // transform: translateY(100%);
+    color: transparent;
+    transform-origin: top center;
+    z-index: -1;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 4rem;
+      left: 50%;
+      width: 3px;
+      transform: translateX(-50%);
+      // background-color: #C7B3D6;
+      // background-image: repeating-linear-gradient(0deg, rgb(234, 191, 212), rgb(234, 191, 212) 0.6rem, white 0.6rem, white 1rem);
+      background-image: repeating-linear-gradient(0deg, #C7B3D6, #C7B3D6 0.6rem, white 0.6rem, white 1rem);
+    }
+    &::after {
+      content: attr(data-content);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    &:nth-of-type(1) {
+      animation: identifier 3s 0.5s ease-in-out infinite;
+      height: 12%;
+      &::after {
+        color: rgb(255, 182, 185);
+        transform: rotate(-30deg);
+      }
+      left: 16%;
+    }
+    &:nth-of-type(2) {
+      animation: identifier 3s 1s ease-in-out infinite;
+      height: 15%;
+      &::after {
+        color: rgb(250, 227, 217);
+        transform: rotate(0);
+      }
+      left: 32%;
+    }
+    &:nth-of-type(3) {
+      animation: identifier 3s -0.5s ease-in-out infinite;
+      height: 13%;
+      &::after {
+        color: #c7b3d6;
+        transform: rotate(15deg);
+      }
+      left: 48%;
+    }
+    &:nth-of-type(4) {
+      animation: identifier 2s 0.5s ease-in-out infinite;
+      height: 10%;
+      &::after {
+        color: rgb(187, 222, 214);
+        transform: rotate(-15deg);
+      }
+      left: 64%;
+    }
+    &:nth-of-type(5) {
+      animation: identifier 3s 0.5s ease-in-out infinite;
+      height: 16%;
+      &::after {
+        color: rgb(138, 198, 209);
+        transform: rotate(30deg);
+      }
+      left: 80%;
+    }
+    @keyframes identifier {
+      0% {
+        transform: rotate(-3deg);
+      }
+      50% {
+        transform: rotate(3deg);
+      }
+      100% {
+        transform: rotate(-3deg);
+      }
+    }
+    @include screen-mobile {
+      font-size: 3rem;
+      &::before {
+        bottom: 4rem;
+      }
+      &::after {
+        font-size: 3rem;
+      }
+    }
+  }
+}
 #banner {
   position: relative;
   display: flex;

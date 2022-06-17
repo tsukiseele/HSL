@@ -34,7 +34,7 @@ export default {
     musics: [],
     windowWidth: 0,
     nav: {
-      title: '砂糖と塩',
+      title: 'Sweet Hurt',
       subtitle: "Let's search for tomorrow",
       introduction:
         '久しぶり！这里是以松阪砂糖和神户盐作为配色的个人网站主题HSL，目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！（PS: 发电中）',

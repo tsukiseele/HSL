@@ -13,6 +13,17 @@
         .nav-name {{ item.name }}
     div.introduction(data-aos="fade-up"  data-aos-delay="900")
       span {{ introduction }} 
+    .decorate
+      .decorate-item(data-content="S") S
+      .decorate-item(data-content="W") W
+      .decorate-item(data-content="E") E
+      .decorate-item(data-content="E") E
+      .decorate-item(data-content="T") T
+      //- .decorate-item(data-content="H") H
+      //- .decorate-item(data-content="U") U
+      //- .decorate-item(data-content="R") R
+      //- .decorate-item(data-content="T") T
+      
   s-icon.scroll-down(v-if="!hideArrow" name='mdi-chevron-down', @click='$emit("scrollDown")')
 </template>
 

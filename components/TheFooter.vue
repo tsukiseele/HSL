@@ -18,8 +18,8 @@
 
 <script>
 export default {
-  data: () => ({})
-};
+  data: () => ({}),
+}
 </script>
 
 <style lang="scss" scoped>
@@ -36,35 +36,43 @@ export default {
   font-family: InfoDisplay;
   background-color: #2a2b3d;
   color: white;
-  
+  overflow: hidden;
+
   &::after {
-    
-      content: '';
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      left: 0px;
-      width: 100%;
-      height: 1.8rem;
-      background-image: radial-gradient(circle, #2a2b3d, #2a2b3d calc(2rem - 1px), transparent 2rem);
-      background-size: calc(4rem) calc(4rem);
-      background-position: top center;
-      background-repeat: repeat-x;
+    content: '';
+    position: absolute;
+    top: 0px;
+    // right: 0px;
+    // left: 0px;
+    width: 200%;
+    height: 1.8rem;
+    background-color: #f4d8e4;
+    background-image: radial-gradient(circle, #2a2b3d, #2a2b3d calc(2rem - 1px), transparent 2rem);
+    background-size: calc(4rem) calc(4rem);
+    background-position: top center;
+    background-repeat: repeat-x;
+    animation: identifier 6s linear infinite;
   }
-  &::before {
-    
-      content: '';
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      left: 0px;
-      width: 100%;
-      height: 1.8rem;
-      background-image: radial-gradient(circle, #f4d8e4, #f4d8e4 calc(2rem - 1px), transparent 2rem);
-      background-size: calc(4rem) calc(4rem);
-      background-position: bottom center;
-      background-repeat: repeat-x;
+  @keyframes identifier {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(4rem);
+    }
   }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0px;
+  //   width: 200%;
+  //   height: 1.8rem;
+  //   background-image: radial-gradient(circle, #f4d8e4, #f4d8e4 calc(2rem - 1px), transparent 2rem);
+  //   background-size: calc(4rem) calc(4rem);
+  //   background-position: bottom center;
+  //   background-repeat: repeat-x;
+  //   animation: identifier 3s linear infinite;
+  // }
 }
 
 .footer-info {

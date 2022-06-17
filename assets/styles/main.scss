@@ -32,8 +32,8 @@
   height: 6px;
 }
 *::-webkit-scrollbar-thumb {
-  // border-radius: 6px;
-  background: linear-gradient(45deg, #9198e5 , #9198e5);
+  border-radius: 3px;
+  background: linear-gradient(45deg, #b980ae , #b980ae);
 }
 *::-webkit-scrollbar-thumb:hover {
   filter: brightness(1.2);
