@@ -22,6 +22,7 @@ export default {
     title: 'さとうしお',
     subtitle: "Let's search for tomorrow",
     introduction: '很高兴见到你！这里是Happy Suger Life（ハッピーシュガーライフ）的个人网站主题。<br/>目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！',
+    decorateText: 'SWEET',
     drawer: false,
     drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',
     nav: [

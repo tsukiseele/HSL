@@ -19,19 +19,15 @@
     li(v-for='item in navigation.links', :key='item.name')
       a.normal(:href='item.to', target='_blank')
         s-icon(:name='item.icon')
-  .decorate
-    //- .decorate-item(v-for='char in navigation.title' :data-content="char") {{ char }}
-    .decorate-item(data-content="S") S
-    .decorate-item(data-content="W") W
-    .decorate-item(data-content="E") E
-    .decorate-item(data-content="E") E
-    .decorate-item(data-content="T") T
-  .decorate-side
-    .decorate-item
-    .decorate-item
+  
   .decorate-ferris-wheel
     .decorate-item
     .decorate-item
+  .decorate-side
+    .decorate-item
+    .decorate-item
+  .decorate
+    .decorate-item(v-for='char in navigation.decorateText' :data-content="char") {{ char }}
 </template>
 
 <script>
@@ -39,7 +35,9 @@ import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
 
 export default {
-  data: () => ({}),
+  data: () => ({
+    decorateText: 'SWEET'
+  }),
   computed: {
     ...mapState(['navigation']),
     ...mapGetters(['isMobile']),
