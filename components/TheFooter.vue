@@ -12,7 +12,7 @@
         |.
         span.info--spacer |
         |Theme 
-        a.info--color-secondary(href="https://github.com/tsukiseele/Haruka" target="_blank") HSL
+        a.info--color-secondary(href="https://github.com/tsukiseele/HSL" target="_blank") HSL
         |.
 </template>
 

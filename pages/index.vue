@@ -36,7 +36,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   data: () => ({
-    decorateText: 'SWEET'
+    decorateText: 'SWEET',
   }),
   computed: {
     ...mapState(['navigation']),
@@ -252,7 +252,7 @@ export default {
     top: -50vh;
     width: 120vh;
     height: 120vh;
-    animation: rotate 200s linear infinite;
+    animation: rotate 180s linear infinite;
     &::before {
       content: '';
       position: absolute;
@@ -260,9 +260,10 @@ export default {
       top: 50%;
       width: 50%;
       height: 50%;
-      transform: translateX(-50%) translateY(-50%);
       border: 1rem dashed #f7e4c6;
       border-radius: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(0);
+      animation: scale-fade 1s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
     }
     &::after {
       content: '';
@@ -271,10 +272,15 @@ export default {
       top: 50%;
       width: 30%;
       height: 30%;
-      transform: translateX(-50%) translateY(-50%);
-      border: 1rem dotted #f2c047;
-      border-style: double;
+      border: 1rem double #f2c047;
       border-radius: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(0);
+      animation: scale-fade 1s 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    }
+  }
+  @keyframes scale-fade {
+    100% {
+      transform: translateX(-50%) translateY(-50%) scale(1);
     }
   }
   @keyframes rotate {
@@ -417,7 +423,8 @@ export default {
         // &:hover::before {
         //   background-color: #c7b3d6;
         // }
-        &:hover::before , &.active::before {
+        &:hover::before,
+        &.active::before {
           background-color: #cd5da0;
         }
       }
