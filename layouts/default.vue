@@ -67,7 +67,7 @@ export default {
             id: item.id,
             name: item.name,
             artist: item.ar.map((item) => item.name).toString(),
-            cover: item.al.picUrl,
+            cover: item.al.picUrl ? item.al.picUrl.replace('http://', 'https://') : '',
             url: `https://music.163.com/song/media/outer/url?id=${item.id}.mp3`,
           }))
         }

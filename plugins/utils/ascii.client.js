@@ -30,7 +30,7 @@ export default () => {
 
                             %cHSL %ccreated by %c@tsukiseele%c - ${new Date().getFullYear()}
   
-                         https://github.com/tsukiseele/HSL`;
+                            https://github.com/tsukiseele/HSL`;
 
   console.log(
     ascii,
