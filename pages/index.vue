@@ -13,6 +13,7 @@
       li.nav-item(v-for='item in navigation.nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
         SIcon(:name='item.icon')
         .nav-name {{ item.name }}
+        .nav-underline
     
   
   ul.nav-links
@@ -197,8 +198,6 @@ export default {
     top: 0;
     width: 0%;
     height: 100%;
-    // background-color: #c7b3d6;
-
     background-image: radial-gradient(#c7b3d6, #c7b3d6 0.5rem, transparent calc(0.5rem + 1px));
     background-size: 1rem 1rem;
     background-repeat: repeat;
@@ -372,16 +371,91 @@ export default {
     .nav-menu {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: stretch;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.12);
-      border-radius: 0.5rem;
-      overflow: hidden;
-      transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-      &:hover {
-        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+      .nav-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        text-transform: uppercase;
+        transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        cursor: pointer;
+        i {
+          font-size: 1.2rem;
+          margin-right: 0.5rem;
+        }
+        .nav-underline {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-bottom: 1px dashed;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          transition: 0.3s cubic-bezier(0.98, 0.16, 0.35, 1.19);
+          z-index: -1;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -1rem;
+          width: 0.5rem;
+          height: 100%;
+        }
+        &:nth-of-type(1) {
+          .nav-underline {
+            border-color: #cd5da0;
+          }
+          &::after,
+          &::before {
+            background-color: #cd5da0;
+          }
+        }
+        &:nth-of-type(2) {
+          .nav-underline {
+            border-color: #f2c047;
+          }
+          &::after,
+          &::before {
+            background-color: #f2c047;
+          }
+        }
+        &:nth-of-type(3) {
+          .nav-underline {
+            border-color: #8daacd;
+          }
+          &::after,
+          &::before {
+            background-color: #8daacd;
+          }
+        }
+        &:nth-of-type(4) {
+          .nav-underline {
+            border-color: #ffb6b9;
+          }
+          &::after,
+          &::before {
+            background-color: #ffb6b9;
+          }
+        }
+        &.active {
+          color: #cd5da0;
+        }
+        &:hover {
+          color: white;
+          &::before {
+            width: 100%;
+          }
+        }
       }
+      /*
       .nav-item {
         position: relative;
         display: flex;
@@ -427,7 +501,7 @@ export default {
         &.active::before {
           background-color: #cd5da0;
         }
-      }
+      }*/
     }
   }
   .nav-links {
@@ -525,24 +599,34 @@ export default {
           transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
           transform-style: preserve-3d;
           perspective: 1000px;
+          .nav-underline {
+            display: none;
+            // border-top: 1px dashed;
+            // border-bottom: 1px dashed;
+            // border-left: 1px solid;
+            // border-right: 1px solid;
+          }
           &::before {
+            display: none;
+          }
+          &::after {
             display: none;
           }
           i {
             font-size: 1.5rem;
-            padding: 0;
+            margin: 0;
           }
           .nav-name {
             font-size: 1.2rem;
             writing-mode: vertical-lr;
           }
-          &.active {
-            color: white;
-            background-color: #cd5da0;
-          }
           &:hover {
             color: #cd5da0;
             border-color: #cd5da0;
+          }
+          &.active {
+            color: white;
+            background-color: #cd5da0;
           }
         }
       }
