@@ -1,6 +1,9 @@
 <template lang="pug">
 #haruka
   #background
+    .decorate
+      .decorate-item
+      .decorate-item
   #app(:class="{ full: isFull }")
     TheNav(
       :title='navigation.title',
@@ -57,7 +60,7 @@ export default {
      */
     async getMusicList() {
       try {
-        // const api = 
+        // const api =
         const result = await (await fetch(this.$config.musicAPI, { method: 'GET', mode: 'cors' })).json()
         if (result.code == 200) {
           this.musics = result.playlist.tracks.map((item) => ({
@@ -122,39 +125,51 @@ export default {
     // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
     // background-color: #F4D8E4;
     // background-image: url(https://api.paugram.com/wallpaper?source=gt);
-    background-color: wheat;
+    background-color: #f4d8e4;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    transition: background 1s;
     overflow: hidden;
-    animation: anim 2s 0.5s ease-in-out forwards;
-    @keyframes anim {
-      100% {
-        background-color: #f4d8e4;
-      }
-    }
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      z-index: -2;
-    }
-    &::before {
-      border-left: 2px dotted #c16798;
-      left: 5rem;
-    }
-    &::after {
-      border-right: 2px dotted #c16798;
-      right: 5rem;
-    }
+
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 10%;
+    //   width: 80%;
+    //   height: 100%;
+    //   background-image: radial-gradient(#f4d8e4, #f4d8e4, 0.25rem, transparent 0.25rem);
+    //   background-repeat: repeat;
+    //   background-size: 1rem 1rem;
+    //   z-index: -1;
+    // }
     @include screen-mobile {
       &::before,
       &::after {
         border: none;
+      }
+    }
+    .decorate {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .decorate-item {
+        position: absolute;
+        top: 0;
+        // width: 2px;
+        height: 100%;
+        &:first-of-type {
+          left: 10%;
+          background-image: repeating-linear-gradient(0deg, #c7b3d6, #c7b3d6 2px, white 4px, white 8px);
+        }
+        &:last-of-type {
+          right: 10%;
+          background-image: repeating-linear-gradient(0deg, #c7b3d6, #c7b3d6 2px, white 4px, white 8px);
+        }
+        height: 100%;
+        overflow: hidden;
       }
     }
   }

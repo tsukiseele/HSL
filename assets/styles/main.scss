@@ -105,7 +105,8 @@ a {
   }
 
   &::before {
-    content: '\e226 'attr(href);
+    // content: '\e226 'attr(href);
+    content: attr(href);
     position: absolute;
     display: inline-block;
     left: 0;
