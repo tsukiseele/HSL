@@ -121,34 +121,13 @@ export default {
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover;
-    // background-image: url(https://cdn.jsdelivr.net/gh/tsukiseele/statics/watora/images/backgrounds/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg);
-    // background-color: #F4D8E4;
-    // background-image: url(https://api.paugram.com/wallpaper?source=gt);
     background-color: #f4d8e4;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
+      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+    background-repeat: repeat-x;
     background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
     overflow: hidden;
-
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 10%;
-    //   width: 80%;
-    //   height: 100%;
-    //   background-image: radial-gradient(#f4d8e4, #f4d8e4, 0.25rem, transparent 0.25rem);
-    //   background-repeat: repeat;
-    //   background-size: 1rem 1rem;
-    //   z-index: -1;
-    // }
-    @include screen-mobile {
-      &::before,
-      &::after {
-        border: none;
-      }
-    }
     .decorate {
       position: absolute;
       top: 0;

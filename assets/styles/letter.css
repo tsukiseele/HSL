@@ -1,0 +1,379 @@
+
+/* Global Letter Styling */
+
+.letter {
+  border-color: inherit !important; /* Change colour here */
+  border-style: solid;
+  border-width: .5em;
+  display: inline-block;
+  position: relative;
+  box-sizing: content-box;
+}
+.letter::after {
+  border-color: inherit;
+  border-style: solid;
+  border-width: .5em;
+  content: '';
+  position: absolute;
+}
+
+/* Individual Letter Styling */
+
+.letter.a {
+  border-bottom: none;
+  border-radius: 1em 1em 0 0;
+  height: 2.05em;
+  margin-top: -.05em;
+  width: 1em;
+}
+.letter.a::after {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  left: 0;
+  right: 0;
+  top: .75em;
+}
+.letter.b {
+  border-radius: 0 1em 1em 0;
+  height: .5em;
+  width: 1em;
+}
+.letter.b::after {
+  border-radius: 0 1em 1em 0;
+  bottom: 100%;
+  height: .5em;
+  left: -.5em;
+  width: .9em;    
+}
+.letter.c {
+  border-right: none;
+  border-radius: 1em 0 0 1em;
+  height: 1.5em;
+  width: 1.5em;
+}
+.letter.c::after {
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  height: .5em;
+  right: 0;
+  top: 0;
+  width: .5em;
+}
+.letter.d {
+  border-radius: 0 1em 1em 0;
+  height: 1.5em;
+  width: 1em;
+}
+.letter.d::after {
+  border: none;
+}
+.letter.e {
+  border-right: none;
+  height: 1.5em;
+  width: 1.5em;
+}
+.letter.e::after {
+  border-bottom: none;
+  left: 0;
+  right: .5em;
+  top: .5em;
+}
+.letter.f {
+  border-bottom: none;
+  border-right: none;
+  height: 2em;
+  width: 1.5em;
+}
+.letter.f::after {
+  border-bottom: none;
+  left: 0;
+  right: .5em;
+  top: .5em;
+}
+.letter.g {
+  border-right: none;
+  border-radius: 1em 0 0 1em;
+  height: 1.5em;
+  width: 1.5em;
+}
+.letter.g::after {
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  bottom: 0;
+  height: .5em;
+  right: 0;
+  width: .5em;
+}
+.letter.h {
+  border-bottom: none;
+  border-top: none;
+  height: 2.5em;
+  width: 1em;
+}
+.letter.h::after {
+  border-bottom: none;
+  left: 0;
+  right: 0;
+  top: 1em;
+}
+.letter.i {
+  border-left: none;
+  border-right: none;
+  height: 1.5em;
+  width: 1.5em;
+}
+.letter.i::after {
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  bottom: 0;
+  left: .5em;
+  top: 0;
+  width: 0;
+}
+.letter.j {
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 1em 0;
+  height: 2em;
+  width: 1.5em;
+}
+.letter.j::after {
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  bottom: 0;
+  height: .5em;
+  left: 0;
+  width: .5em;
+}
+.letter.k {
+  border-bottom: 0;
+  border-radius: 0 1em 0 0;
+  height: 1em;
+  width: 1em;
+}
+.letter.k::after {
+  border-top: none;
+  border-radius: 0 0 1em 0;
+  bottom: 100%;
+  height: 1em;
+  left: -.5em;
+  width: .9em;    
+}
+.letter.l {
+  border-right: none;
+  border-top: none;
+  height: 2em;
+  width: 1.5em;
+}
+.letter.l::after {
+  border: none;
+}
+.letter.m {
+  border-bottom: none;
+  border-radius: 1em 1em 0 0;
+  height: 2.05em;
+  margin-right: 1.25em;
+  margin-top: -.05em;
+  width: .75em;
+}
+.letter.m::after {
+  border-bottom: none;
+  border-radius: 1em 1em 0 0;
+  height: 2.05em;
+  left: .75em;
+  top: -.5em;
+  width: .75em;
+}
+.letter.n {
+  border-bottom: none;
+  border-radius: 0 1em 0 0;
+  height: 2em;
+  width: 1em;
+}
+.letter.n::after {
+  border: none;
+}
+.letter.o {
+  border-radius: 1em ;
+  height: 1.6em;
+  margin-bottom: -.05em;
+  margin-top: -.05em;
+  width: 1.25em;
+}
+.letter.o::after {
+  border: none;
+}
+.letter.p {
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  height: 1em;
+  width: 1.5em;
+}
+.letter.p::after {
+  border-radius: 0 1em 1em 0;
+  bottom: 100%;
+  height: .5em;
+  left: -.5em;
+  width: 1em;    
+}
+.letter.q {
+  border-radius: 1em 1em 0 1em ;
+  height: 1.55em;
+  margin-top: -.05em;
+  width: 1.25em;
+}
+.letter.q::after {
+  border-radius: .5em 0 0 0;
+  bottom: -.5em;
+  right: -.5em;
+}
+.letter.r {
+  border-bottom: none;
+  border-radius: 0 1em 0 0;
+  height: 1em;
+  width: 1em;
+}
+.letter.r::after {
+  border-radius: 0 1em 1em 0;
+  bottom: 100%;
+  height: .5em;
+  left: -.5em;
+  width: 1em;    
+}
+.letter.s {
+  border-left: none;
+  border-top: none;
+  border-radius: 1em .5em 1em 0;
+  height: 1em;
+  margin-right: -.05em;
+  width: 1.5em;
+}
+.letter.s::after {
+  border-bottom: none;
+  border-right: none;
+  border-radius: 1em 0 1em .5em;
+  height: 1em;
+  right: -.4em;
+  top: -1em;
+  width: 1.4em;
+}
+.letter.s::before {
+  content: '';
+  height: 0;
+  left: .5em;
+  position: absolute;
+  width: 1em;
+  border-color: inherit;
+  border-style: solid;
+  border-width: .5em;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+.letter.t {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  height: 2em;
+  width: 2em;
+}
+.letter.t::after {
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  bottom: 0;
+  left: .75em;
+  top: 0;
+  width: 0;
+}
+.letter.u {
+  border-top: none;
+  border-radius: 0 0 1em 1em;
+  height: 2.05em;
+  margin-bottom: -.05em;
+  width: 1em;
+}
+.letter.u::after {
+  border: none;
+}
+.letter.v {
+  border-top: none;
+  border-radius: 0 0 1em 0;
+  width: 1em;
+  height: 2em;
+}
+.letter.v::after {
+  border: none;
+}
+.letter.w {
+  border-top: none;
+  border-radius: 0 0 1em 1em;
+  height: 2.05em;
+  margin-bottom: -.05em;
+  margin-right: 1.25em;
+  width: .75em;
+}
+.letter.w::after {
+  border-top: none;
+  border-radius: 0 0 1em 1em;
+  height: 2.05em;
+  left: .75em;
+  top: 0em;
+  width: .75em;
+}
+.letter.x {
+  border-bottom: none;
+  border-radius: 1em 1em 0 0;
+  height: 1em;
+  width: 1em;
+}
+.letter.x::after {
+  border-top: none;
+  border-radius: 0 0 1em 1em;
+  height: 1em;
+  left: -.5em;
+  top: -1.5em;
+  width: 1em;
+}
+.letter.y {
+  border-top: none;
+  border-radius: 0 0 1em 1em;
+  height: 1em;
+  margin-bottom: 1em;
+  width: 1em;
+}
+.letter.y::after {
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  bottom: -1.5em;
+  left: .25em;
+  top: 1em;
+  width: 0;
+}
+.letter.z {
+  border-left: none;
+  border-right: none;
+  height: 1.5em;
+  width: 2em;
+}
+.letter.z::after {
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  height: 2.5em;
+  left: .75em;
+  top: -.5em;
+  width: 0;
+  -webkit-transform: rotate(41.5deg);
+     -moz-transform: rotate(41.5deg);
+      -ms-transform: rotate(41.5deg);
+       -o-transform: rotate(41.5deg);
+          transform: rotate(41.5deg);
+}

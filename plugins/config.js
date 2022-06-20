@@ -9,7 +9,8 @@ export default {
   username: 'tsukiseele',
   // username: 'chanshiyucx',
   // Github 文章仓库名
-  repository: 'blog',
+  // repository: 'blog',
+  repository: 'archives',
   // Github 评论仓库名
   commentRepository: 'comment',
   // 音乐接口
@@ -19,7 +20,8 @@ export default {
 
   // 导航
   nav: {
-    title: 'さとうしお',
+    // title: 'さとうしお',
+    title: 'TsukiSeele',
     subtitle: 'しおちゃんがいる場所が、私のハッピーシュガーライフ',
     introduction: '知りたいよ、愛がどういう物か知りたい。だって分からないんだもん。愛してるってささやかれても、肌を合わせても、な～んにも感じないの',
     // introduction: 'でもさとちゃんが来てくれた。さとちゃんに出会って、一緒に暮らせて、幸せで',

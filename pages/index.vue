@@ -1,6 +1,10 @@
 <template lang="pug">
 #content
-  .title(data-aos="fade-down" data-aos-delay="300") {{ navigation.title }}
+  //- .title(data-aos="fade-down" data-aos-delay="300")
+  .title
+    span.letter__wrapper(v-for="char in navigation.title.toLowerCase()" )
+      .letter(:class="char")
+    //-  {{ navigation.title }}
   .subtitle(data-aos="fade-down" data-aos-delay="300") {{ navigation.subtitle }}
   
   div.introduction(data-aos="fade-right" data-aos-delay="600")
