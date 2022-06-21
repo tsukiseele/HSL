@@ -43,7 +43,7 @@
       }
       @for $i from 1 through 10 {
         &:nth-of-type(#{$i}) {
-          animation: anim-drop 1.6s #{ $i * 0.1}s cubic-bezier(0.33, 0.72, 0.66, 0.25) forwards;
+          animation: anim-drop 1.2s #{ $i * 0.1}s cubic-bezier(0.33, 0.72, 0.66, 0.25) forwards;
           // animation: anim-drop 1.2s #{1 + $i * 0.1}s cubic-bezier(0, 0.62, .91, 0.58) forwards;
         }
       }

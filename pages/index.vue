@@ -1,9 +1,9 @@
 <template lang="pug">
 #content
-  //- .title(data-aos="fade-down" data-aos-delay="300")
-  .title
-    span.letter__wrapper(v-for="char in navigation.title.toLowerCase()" )
-      .letter(:class="char")
+  .title(data-aos="fade-down" data-aos-delay="300") {{ navigation.title }}
+  //- .title
+    //- span.letter__wrapper(v-for="char in navigation.title.toLowerCase()" )
+    //-   .letter(:class="char")
     //-  {{ navigation.title }}
   .subtitle(data-aos="fade-down" data-aos-delay="300") {{ navigation.subtitle }}
   
@@ -18,14 +18,11 @@
         SIcon(:name='item.icon')
         .nav-name {{ item.name }}
         .nav-underline
-    
-  
   ul.nav-links
     li.nav-link-item(v-for='item in navigation.links', :key='item.name')
       .item__bg
       a(:href='item.to', target='_blank')
         s-icon(:name='item.icon')
-  
   .decorate-ferris-wheel
     .decorate-item
     .decorate-item
@@ -34,7 +31,6 @@
     .decorate-item
   .decorate
     .decorate-item(v-for='char in navigation.decorateText' :data-content="char") {{ char }}
-  
   //- .decorate-burst-12
   //-   .burst-12
   //-   .burst-12
@@ -49,9 +45,7 @@ import { mapState } from 'vuex'
 import { mapGetters } from 'vuex'
 
 export default {
-  data: () => ({
-    decorateText: 'SWEET',
-  }),
+  data: () => ({}),
   computed: {
     ...mapState(['navigation']),
     ...mapGetters(['isMobile']),

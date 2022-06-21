@@ -17,7 +17,8 @@
     .drawer-blank(@click='drawer = !drawer')
     .drawer-main
       .drawer-banner
-        img.drawer-banner-bg(:src='drawerBannerBackground')
+        //- img.drawer-banner-bg(:src='drawerBannerBackground')
+        //- img.drawer-banner-bg(:src='drawerBannerBackground')
       ul.drawer-menu(@click='drawer = !drawer')
         li(v-for='(item, j) in nav', :key='j', @click='$router.push(item.to)')
           s-icon(:name='item.icon')

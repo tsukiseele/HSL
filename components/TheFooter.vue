@@ -31,36 +31,18 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  // height: 100px;
-  padding: 4rem 0 2rem 0;
   font-family: InfoDisplay;
-  background-color: #2a2b3d;
   color: white;
   overflow: hidden;
-
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0px;
-  //   width: 200%;
-  //   height: 1.8rem;
-  //   background-color: #f4d8e4;
-  //   background-image: radial-gradient(circle, #2a2b3d, #2a2b3d calc(2rem - 1px), transparent 2rem);
-  //   background-size: calc(2rem) calc(4rem);
-  //   background-position: top center;
-  //   background-repeat: repeat-x;
-  //   animation: identifier 6s linear infinite;
-  // }
-  &::before {
+  &::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: 0rem;
     width: 200%;
     height: 1.8rem;
-    // background-color: #2a2b3d;
-    background-image: radial-gradient(circle, #f4d8e4, #f4d8e4 calc(2rem - 1px), transparent 2rem);
+    background-image: radial-gradient(circle, #2a2b3d, #2a2b3d calc(2rem - 1px), transparent 2rem);
     background-size: calc(3rem) calc(4rem);
-    background-position: bottom center;
+    background-position: top center;
     background-repeat: repeat-x;
     animation: identifier 6s linear infinite;
   }
@@ -73,7 +55,14 @@ export default {
     }
   }
 }
-
+.footer-wrap {
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: #2a2b3d;
+  z-index: 1;
+}
 .footer-info {
   display: flex;
   flex-direction: column;

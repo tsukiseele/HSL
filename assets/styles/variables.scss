@@ -5,9 +5,9 @@ $mobile: 768px;
 :root {
   --redius: 5px;
   --nav-height: 4rem;
-  // --font-monospace: 0;
-  --font-monospace: 'IBM Plex Mono', 'Menlo', 'monospace';
-  --font-serif: 'Patrick Hand', Georgia, Times, STSong, SimSun, FangSong, KaiTi, STKaiti;
-  // --font-sans-serif: rubik, helvetica, arial, sans-serif;
-  --font-sans-serif: 'Pally', 'Comic Sans MS', 'sans-serif';
+  --font-monospace: 'Consolas', 'Monaco', 'Jetbrains Mono', 'Menlo', monospace;
+  --font-serif: 'Patrick Hand', 'Georgia', 'Times', 'STSong', 'SimSun', 'FangSong', 'KaiTi', 'STKaiti', serif;
+  --font-sans-serif: 'rubik', 'helvetica', 'arial', sans-serif;
+  --font-comic: 'Pally', 'Comic Sans MS', sans-serif;
+  --font-coquettec: 'CoquetteC', sans-serif;
 }

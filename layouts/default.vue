@@ -1,5 +1,5 @@
 <template lang="pug">
-#haruka
+#hsl
   #background
     .decorate
       .decorate-item
@@ -113,18 +113,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#haruka {
+#hsl {
   #background {
     position: fixed;
     top: 0;
+    
     right: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    left: 0;
     z-index: -1;
     background-color: #f4d8e4;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
-      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
-    background-size: 13px, 29px, 37px, 53px;
+    background-image: 
+      linear-gradient(90deg, rgba(255, 255, 255, 0.07) 50%, transparent 50%), 
+      linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
+      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), 
+      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
+    background-size: 13px, 29px, 47px, 61px;
     background-repeat: repeat-x;
     background-attachment: fixed;
     overflow: hidden;
