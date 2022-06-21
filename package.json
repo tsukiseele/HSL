@@ -1,8 +1,8 @@
 {
-  "name": "haruka",
+  "name": "hsl",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://tsukiseele.github.io/Haruka",
+  "homepage": "https://github.com/tsukiseele/HSL",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nuxt dev",
     "dev-spa": "cross-env NODE_ENV=dev MODE=SPA nuxt dev",
@@ -29,6 +29,7 @@
     "ress": "~4.0.0",
     "timeago.js": "~4.0.2",
     "vssue": "~1.4.8",
+    "vue-aplayer": "^1.6.1",
     "vue-lazyload": "~1.3.3",
     "vuex-persistedstate": "~4.0.0-beta.3"
   },

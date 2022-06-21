@@ -22,7 +22,7 @@
       opacity: 0;
       .letter {
         color: #817487;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         margin: 0 0.25rem;
       }
       &:nth-of-type(2n) .letter {
@@ -43,7 +43,7 @@
       }
       @for $i from 1 through 10 {
         &:nth-of-type(#{$i}) {
-          animation: anim-drop 1.6s #{ $i * 0.1}s cubic-bezier(.67,-0.01,.62,1.2) forwards;
+          animation: anim-drop 1.6s #{-.6 + $i * 0.1}s cubic-bezier(.67,-0.01,.62,1.2) forwards;
         }
       }
       @keyframes anim-drop {

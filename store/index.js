@@ -178,7 +178,6 @@ export const actions = {
    */
   async projects({ commit, state }) {
     const projects = (await Promise.all([this.$service.getPage('projects'), this.$service.getPage('websites')])).map((item) => item[0])
-    console.log(projects)
     commit(
       'projects',
       projects.map((item) => {
@@ -186,6 +185,5 @@ export const actions = {
         return { name, items: formatPage(item, item.title.toLowerCase()) }
       })
     )
-    console.log(state.projects)
   },
 }

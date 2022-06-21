@@ -1,5 +1,6 @@
+import config from './plugins/config.js'
+
 export default {
-  // https://github.com/tsukiseele/blog.git
   server: {
     host: process.env.BASE_HOST || '0.0.0.0',
     port: process.env.BASE_PORT || 3000,
@@ -7,24 +8,11 @@ export default {
   ssr: !(process.env.MODE && process.env.MODE.toLocaleUpperCase() == 'SPA'),
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '砂糖と塩 - 罐中少女的爱',
+    title: config.title,
     htmlAttrs: {
       lang: 'zh-CN',
     },
-    meta: [
-      {
-        charset: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no',
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: '',
-      },
-    ],
+    meta: config.meta,
     link: [
       {
         rel: 'icon',
@@ -84,7 +72,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios' , '@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

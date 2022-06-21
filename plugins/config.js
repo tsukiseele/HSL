@@ -1,6 +1,6 @@
 export default {
   // 标题
-  title: '',
+  title: 'さとうしお - 砂糖的糖果罐',
   // 描述
   details: '',
   // token base64lize
@@ -17,14 +17,13 @@ export default {
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 一言接口（可选，填写后会显示在subtitle)
   hitokitoAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
-
   // 导航
   nav: {
     title: 'さとうしお',
     // title: '乙女のキャンディ缶',
     // title: 'TsukiSeele\'s Blog',
     // subtitle: 'しおちゃんがいる場所が、私のハッピーシュガーライフ',
-    subtitle: 'TsukiSeele\'s Blog',
+    subtitle: "TsukiSeele's Blog",
     introduction: '知りたいよ、愛がどういう物か知りたい。だって分からないんだもん。愛してるってささやかれても、肌を合わせても、な～んにも感じないの',
     // introduction: 'でもさとちゃんが来てくれた。さとちゃんに出会って、一緒に暮らせて、幸せで',
     // introduction: 'It shines so brightly, it’s sweeter than all the cakes in the world, it smooths the mind, this feeling is all I know, how can I possibly describe it in words?',
@@ -44,4 +43,19 @@ export default {
       { icon: 'mdi-gmail', to: 'mailto:tsukiseele@gmail.com' },
     ],
   },
+  // 页面元数据
+  meta: [
+    {
+      charset: 'utf-8',
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width,initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no',
+    },
+    {
+      hid: 'description',
+      name: 'description',
+      content: '这里 TsukiSeele 的个人网站主题 HSL ，请多关照',
+    },
+  ],
 }

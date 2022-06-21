@@ -60,7 +60,6 @@ export default {
      */
     async getMusicList() {
       try {
-        // const api =
         const result = await (await fetch(this.$config.musicAPI, { method: 'GET', mode: 'cors' })).json()
         if (result.code == 200) {
           this.musics = result.playlist.tracks.map((item) => ({
@@ -69,6 +68,7 @@ export default {
             artist: item.ar.map((item) => item.name).toString(),
             cover: item.al.picUrl ? item.al.picUrl.replace('http://', 'https://') : '',
             url: `https://music.163.com/song/media/outer/url?id=${item.id}.mp3`,
+            // lrc: `https://api.hlo.li/music/lyric?id=${item.id}`
           }))
         }
       } catch (e) {
@@ -114,20 +114,18 @@ export default {
 
 <style lang="scss" scoped>
 #hsl {
+  overflow: hidden;
   #background {
     position: fixed;
     top: 0;
-    
+
     right: 0;
     bottom: 0;
     left: 0;
     z-index: -1;
     background-color: #f4d8e4;
-    background-image: 
-      linear-gradient(90deg, rgba(255, 255, 255, 0.07) 50%, transparent 50%), 
-      linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
-      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), 
-      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
+      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
     background-size: 13px, 29px, 47px, 61px;
     background-repeat: repeat-x;
     background-attachment: fixed;
