@@ -29,7 +29,6 @@
     "ress": "~4.0.0",
     "timeago.js": "~4.0.2",
     "vssue": "~1.4.8",
-    "vue-aplayer": "^1.6.1",
     "vue-lazyload": "~1.3.3",
     "vuex-persistedstate": "~4.0.0-beta.3"
   },
