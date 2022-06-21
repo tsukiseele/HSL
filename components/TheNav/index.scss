@@ -54,7 +54,6 @@
   transition: 0.25s ease-out;
   cursor: pointer;
   user-select: none;
-
   svg {
     transition: 0.3s ease;
   }
@@ -64,18 +63,30 @@
 }
 
 .nav-drawer {
+  display: none;
   .drawer-main {
     position: fixed;
     top: 0;
-    right: -61.8%;
-    width: 61.8%;
     height: 100%;
     transition: right 0.3s ease;
     background-color: var(--color-card);
     backdrop-filter: blur(16px) saturate(400%);
     z-index: 1000;
   }
-
+  @include screen-tablet {
+    display: block;
+    .drawer-main {
+      right: -38.2%;
+      width: 38.2%;
+    }
+  }
+  @include screen-mobile {
+    display: block;
+    .drawer-main {
+      right: -61.8%;
+      width: 61.8%;
+    }
+  }
   .drawer-banner {
     position: relative;
     .drawer-banner-bg {

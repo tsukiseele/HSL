@@ -30,7 +30,6 @@
     font-weight: normal;
     font-size: 3rem;
     text-transform: uppercase;
-    // text-shadow: 2px 2px white;
     text-shadow: 0 0 4px rgba($color: #cd5da0, $alpha: 0.5);
     color: #cd5da0;
     margin-top: 2rem;
@@ -39,74 +38,45 @@
       display: inline-block;
       opacity: 0;
       .letter {
+        color: #817487;
         font-size: 0.875rem;
         margin: 0 0.25rem;
       }
       &:nth-of-type(2n) .letter {
-        color: #adddf7;
+        color: #8FCDDA;
         transform: rotate(2deg);
       }
       &:nth-of-type(3n) .letter {
-        color: #009298;
+        color: #c3ce5f;
         transform: rotate(-3deg);
       }
       &:nth-of-type(5n) .letter {
-        color: #8daacd;
+        color: #009298;
         transform: rotate(5deg);
       }
       &:nth-of-type(7n) .letter {
-        color: #8daacd;
+        color: #817487;
         transform: rotate(-7deg);
       }
-      &:nth-of-type(1) {
-        animation: anim-drop 2s 1s forwards;
-      }
-      &:nth-of-type(2) {
-        animation: anim-drop 2s 1.1s forwards;
-      }
-      &:nth-of-type(3) {
-        animation: anim-drop 2s 1.2s forwards;
-      }
-      &:nth-of-type(4) {
-        animation: anim-drop 2s 1.3s forwards;
-      }
-      &:nth-of-type(5) {
-        animation: anim-drop 2s 1.4s forwards;
-      }
-      &:nth-of-type(6) {
-        animation: anim-drop 2s 1.5s cubic-bezier(.04,1.09,.77,.35) forwards;
-      }
-      &:nth-of-type(7) {
-        animation: anim-drop 2s 1.6s cubic-bezier(.04,1.09,.77,.35) forwards;
-      }
-      &:nth-of-type(8) {
-        animation: anim-drop 2s 1.7s cubic-bezier(.04,1.09,.77,.35) forwards;
-      }
-      &:nth-of-type(9) {
-        animation: anim-drop 2s 1.8s cubic-bezier(.04,1.09,.77,.35) forwards;
-      }
-      &:nth-of-type(10) {
-        animation: anim-drop 2s 1.9s cubic-bezier(.04,1.09,.77,.35) forwards;
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          animation: anim-drop 1.6s #{.4 + $i * 0.1}s cubic-bezier(0.33, 0.72, 0.66, 0.25) forwards;
+          // animation: anim-drop 1.2s #{1 + $i * 0.1}s cubic-bezier(0, 0.62, .91, 0.58) forwards;
+        }
       }
       @keyframes anim-drop {
         0% {
           transform: translateY(-100vh);
           opacity: 1;
         }
-        50% {
-          transform: translateY(-10%);
-        }
-        60% {
-          transform: translateY(0);
-        }
         70% {
-          transform: translateY(5%);
+          transform: translateY(-20%);
         }
         80% {
-          transform: translateY(0);
+          transform: translateY(10%);
         }
         90% {
-          transform: translateY(-2.5%);
+          transform: translateY(-5%);
         }
         100% {
           transform: translateY(0);

@@ -9,6 +9,65 @@
   }
 } 
 .about {
+  .title {
+    font-family: var(--font-serif);
+    font-weight: normal;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    line-height: 2.4rem;
+    .letter__wrapper {
+      display: inline-block;
+      opacity: 0;
+      .letter {
+        color: #817487;
+        font-size: 0.875rem;
+        margin: 0 0.25rem;
+      }
+      &:nth-of-type(2n) .letter {
+        color: #8FCDDA;
+        transform: rotate(2deg);
+      }
+      &:nth-of-type(3n) .letter {
+        color: #c3ce5f;
+        transform: rotate(-3deg);
+      }
+      &:nth-of-type(5n) .letter {
+        color: #009298;
+        transform: rotate(5deg);
+      }
+      &:nth-of-type(7n) .letter {
+        color: #817487;
+        transform: rotate(-7deg);
+      }
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          animation: anim-drop 1.6s #{ $i * 0.1}s cubic-bezier(0.33, 0.72, 0.66, 0.25) forwards;
+          // animation: anim-drop 1.2s #{1 + $i * 0.1}s cubic-bezier(0, 0.62, .91, 0.58) forwards;
+        }
+      }
+      @keyframes anim-drop {
+        0% {
+          transform: translateY(-100vh);
+          opacity: 1;
+        }
+        70% {
+          transform: translateY(-20%);
+        }
+        80% {
+          transform: translateY(10%);
+        }
+        90% {
+          transform: translateY(-5%);
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
   // margin: 0 2rem;
   .blockquote {
     display: flex;
