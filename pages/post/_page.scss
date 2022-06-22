@@ -23,7 +23,7 @@
     }
   }
   .aside-sticky {
-    top: var(--nav-height);
+    top: calc(var(--nav-height) + 1rem);
     position: sticky;
     > * {
       margin-bottom: 1rem;
@@ -119,5 +119,85 @@
       background: var(--color-primary);
     }
     color: var(--color-light);
+  }
+}
+.aside-static {
+  position: relative;
+  .aside-decorate {
+    .decorate-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-coquettec);
+      font-size: 2rem;
+      color: var(--color-text-primary);
+    }
+    .decorate-burst-12 {
+      $size: 10rem;
+      $radius: 1rem;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      .burst-12 {
+        position: relative;
+        background-color: #f4d8e4;
+        width: $size;
+        height: $size;
+        border-radius: $radius;
+        margin: 0 auto;
+      }
+      .burst-12:before,
+      .burst-12:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $size;
+        height: $size;
+        background: inherit;
+        border-radius: $radius;
+      }
+      .burst-12:before {
+        transform: rotate(30deg);
+      }
+      .burst-12:after {
+        transform: rotate(60deg);
+      }
+      // .burst-12:nth-of-type(1),
+      // .burst-12:nth-of-type(1):before,
+      // .burst-12:nth-of-type(1):after {
+      //   background-color: #e9cdd9;
+      // }
+      // .burst-12:nth-of-type(2),
+      // .burst-12:nth-of-type(2):before,
+      // .burst-12:nth-of-type(2):after {
+      //   background-color: #c7b3d6;
+      // }
+      // .burst-12:nth-of-type(1) {
+      //   transform: scale(0.5);
+      //   background-color: #e9cdd9;
+      // }
+      // .burst-12:nth-of-type(2) {
+      //   transform: scale(0.3);
+      //   background-color: #c7b3d6;
+      // }
+      // .burst-12:nth-of-type(3) {
+      //   transform: scale(0.7);
+      //   background-color: #b7d7b6;
+      // }
+      // .burst-12:nth-of-type(4) {
+      //   transform: scale(0.8);
+      //   background-color: #8daacd;
+      // }
+      // .burst-12:nth-of-type(5) {
+      //   transform: scale(0.6);
+      //   background-color: #f7e4c6;
+      // }
+      // .burst-12:nth-of-type(6) {
+      //   transform: scale(0.4);
+      //   background-color: #81c8c0;
+      // }
+    }
   }
 }

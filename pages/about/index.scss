@@ -3,20 +3,20 @@
   height: 100%;
   border-radius: 0;
   margin: 1rem;
-  .subtitle {
-    text-align: center;
-    font-size: 1.5rem;
-  }
-} 
-.about {
+  
   .title {
     font-family: var(--font-serif);
     font-weight: normal;
     font-size: 3rem;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 2rem;
+    // margin-top: 2rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
     line-height: 2.4rem;
+    border: .5rem  double grey ;
+    border-left: none;
+    border-right: none;
     .letter__wrapper {
       display: inline-block;
       opacity: 0;
@@ -67,6 +67,12 @@
       }
     }
   }
+  .subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+} 
+.about {
   // margin: 0 2rem;
   .blockquote {
     display: flex;

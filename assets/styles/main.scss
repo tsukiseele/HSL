@@ -28,21 +28,16 @@
   src: url('https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static/fonts/InfoDisplay.woff');
 }
 @font-face {
-  font-family: 'chinese';
-  src: url('https://cdn.jsdelivr.net/gh/tsukiseele/statics@master/watora/fonts/chinese.font.woff');
-}
-
-@font-face {
   font-family: 'CoquetteC';
   src: url('../fonts/CoquetteC\ Regular.ttf');
 }
 
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 *::-webkit-scrollbar-thumb {
-  border-radius: 3px;
+  // border-radius: .25rem;
   background: linear-gradient(45deg, #b980ae, #b980ae);
 }
 *::-webkit-scrollbar-thumb:hover {
@@ -57,21 +52,26 @@ img[lazy='error'] {
   --size: 4px;
   --color: #dfdfdf;
   background-color: black;
-  background-image: 
-    linear-gradient(60deg, 
+  background-image: linear-gradient(
+      60deg,
       transparent,
-      transparent calc(50% - var(--size) - 1px), 
-      var(--color) calc(50% - var(--size)), 
-      var(--color) calc(50% + var(--size)), 
-      transparent calc(50% + var(--size) + 1px), transparent),
-    linear-gradient(-60deg, 
+      transparent calc(50% - var(--size) - 1px),
+      var(--color) calc(50% - var(--size)),
+      var(--color) calc(50% + var(--size)),
+      transparent calc(50% + var(--size) + 1px),
+      transparent
+    ),
+    linear-gradient(
+      -60deg,
       transparent,
-      transparent calc(50% - var(--size) - 1px), 
-      var(--color) calc(50% - var(--size)), 
-      var(--color) calc(50% + var(--size)), 
-      transparent calc(50% + var(--size) + 1px), transparent);
-    background-size: 30% 30%;
-    background-position: center;
+      transparent calc(50% - var(--size) - 1px),
+      var(--color) calc(50% - var(--size)),
+      var(--color) calc(50% + var(--size)),
+      transparent calc(50% + var(--size) + 1px),
+      transparent
+    );
+  background-size: 30% 30%;
+  background-position: center;
 }
 img[lazy='loading'] {
   --d: 4rem;

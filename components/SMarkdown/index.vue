@@ -78,8 +78,11 @@ export default {
       this.initPreview()
     },
     initCopy() {
+      console.log(
       document
-        .querySelectorAll('.markdown-content .md-code-copy')
+        .querySelectorAll('.markdown-content .code-options [data-copy]'));
+      document
+        .querySelectorAll('.markdown-content .code-options [data-copy]')
         .forEach((el) => (el.onclick = (e) => navigator.clipboard.writeText(document.getElementById(el.getAttribute('data-copy')).textContent)))
     },
     initPreview() {
@@ -111,7 +114,7 @@ export default {
 
 @import './index.scss';
 
-@import './haruka.scss';
+@import './hsl.scss';
 /*
 :root[theme="dark"] {
   @import "./theme/dark.scss";

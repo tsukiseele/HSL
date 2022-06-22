@@ -34,7 +34,6 @@ export default {
     },
     fonts: {
       default: "fonts/InfoDisplay.woff",
-      chinese: "fonts/chinese.font.woff"
     }
   }
 };

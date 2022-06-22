@@ -42,21 +42,28 @@
     .code-options {
       position: absolute;
       right: 0;
-      top: 0;
+      top: -2rem;
+      height: 2rem;
+      line-height: 2rem;
       user-select: none;
+      overflow: hidden;
+      display: flex;
+      box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: .12);
+      opacity: 0;
+      transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
       i {
         font-size: 1.25rem;
-        color: rgba(0, 128, 128, 0.67);
+        // color: rgba(0, 128, 128, 0.67);
+        color: var(--title-color);
         cursor: pointer;
-        opacity: 0;
-        transition: 0.25s;
+        padding: 0 .5rem;
         &:focus,
         &:active {
           color: rgba(0, 96, 96, 1);
         }
       }
     }
-    &:hover .code-options i {
+    &:hover .code-options {
       opacity: 1;
     }
   }

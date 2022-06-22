@@ -3,10 +3,15 @@
 }
 .article {
   display: flex;
-  margin-top: 1rem;
+  margin: 1rem;
   .markdown {
     flex: 1;
     width: 0;
+    padding: 1rem 1rem;
+    box-shadow: none;
+    .markdown-preview {
+      overflow: hidden;
+    }
   }
   .aside {
     position: sticky;
@@ -18,15 +23,6 @@
     margin-left: 1rem;
   }
 }
-/*
-.markdown,
-.comments,
-.banner {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}*/
 
 .comments {
   overflow: hidden;
@@ -101,17 +97,11 @@
   }
 }
 @media screen and(max-width: $mobile) {
-  .banner,
-  .markdown,
-  .comments {
-    border-radius: 0;
-    margin: 0 !important;
-    padding: 0 !important;
+  .article {
+    margin: 0;
   }
-  #main {
-    // margin-top: -3rem;
-  }
-  .archive {
-    margin: 0 1rem;
+  .comment {
+    margin-bottom: 1rem;
+    border-top: 2px dashed #f4d8e4;
   }
 }

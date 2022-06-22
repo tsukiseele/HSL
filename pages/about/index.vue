@@ -1,9 +1,9 @@
 <template lang="pug">
 #content
+  .title  
+    span.letter__wrapper(v-for="char in name.toLowerCase()" )
+      .letter(:class="char")
   .about.card
-    .title  
-      span.letter__wrapper(v-for="char in name.toLowerCase()" )
-        .letter(:class="char")
     .blockquote
       s-icon(name='mdi-format-quote-open').quote-left
       .quote-content 砂糖少女は愛を食む
