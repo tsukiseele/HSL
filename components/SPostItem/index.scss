@@ -1,17 +1,14 @@
-
-
 .post-item {
   position: relative;
   display: flex;
   flex-direction: row;
   padding: 0.5rem;
-  margin: 0.5rem;
-  background: var(--color-card);
+  // background: var(--color-card);
+  background-color: white;
   transition: all 0.3s;
-  box-shadow: var(--shadow);
   cursor: pointer;
-  border-radius: 5px;
-  backdrop-filter: var(--blur);
+  box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.12);
+  // backdrop-filter: var(--blur);
 
   &:hover {
     // background: var(--color-card-active);
@@ -26,6 +23,9 @@
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     position: relative;
+    transition: .3s ease-in-out;
+    box-shadow: 0 0 0.25rem rgba($color: #000000, $alpha: 0.12);
+    // box-shadow: var(--shadow);
     &::before {
       content: '';
       position: absolute;

@@ -4,11 +4,11 @@
   i {
     font-size: 1rem;
     vertical-align: middle;
-    padding-right: 0.5rem;
-
+    padding-right: 0.25rem;
   }
   $height: 1.8rem;
   display: inline-block;
+  font-family: var(--font-monospace);
   vertical-align: middle;
   border-radius: math.div($height, 2) !important;
   color: var(--color-text);
@@ -19,10 +19,10 @@
   border: thin solid var(--color-border);
   transition: border 0.3s ease;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.12);
-  &:hover {
-    border: thin solid var(--color-text-primary);
-    background-color: rgba(0, 0, 0, 0.2);
-    color: var(--color-text-primary);
+  color: var(--color);
+  // background-color: var(--color);
+  background-color: white;
+  .chip-text {
+    color: #283c5f;
   }
 }

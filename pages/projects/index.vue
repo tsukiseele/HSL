@@ -4,7 +4,7 @@
     .project-classify(v-for="(projectClassify, index) in projects" :key="index")
       .project-classify-name {{ projectClassify.name }}
       .project-list
-        .project-item(v-for="(project, i) in projectClassify.items" :key="i" @click="onItemClick(project)" data-aos="fade-up") 
+        .project-item(v-for="(project, i) in projectClassify.items" :key="i" @click="onItemClick(project)") 
           .project-cover-wrapper
             img.project-cover(:src="project.cover" :alt="project.name")
           .project-description

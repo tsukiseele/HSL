@@ -6,7 +6,7 @@
     :text="label.name",
     icon="sell",
     @click="onItemClick(label)",
-    :style="{ color: '#' + label.color }"
+    :color="'#' + label.color"
   )
 </template>
 

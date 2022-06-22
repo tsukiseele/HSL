@@ -13,7 +13,7 @@ export const state = () => ({
   friends: [],
   projects: [],
   labels: [],
-  categorys: [],
+  categorys: null,
   timeline: [],
   navigation: config.nav,
 })
@@ -135,7 +135,8 @@ export const actions = {
    * 获取标签列表
    * @param {Context} context 上下文
    */
-  async labels({ commit }) {
+  async labels({ commit, state }) {
+    if (state.labels.length) return
     // 如果没有找到就请求
     commit('labels', await this.$service.getLabels())
   },
@@ -143,7 +144,8 @@ export const actions = {
    * 获取分类列表
    * @param {Context} context 上下文
    */
-  async categorys({ commit }) {
+  async categorys({ commit , state}) {
+    if (state.categorys) return
     commit('categorys', await this.$service.getMilestones())
   },
   /**
@@ -151,14 +153,15 @@ export const actions = {
    * @param {*} param0
    * @param {*} param1
    */
-  async inspiration({ commit }, { page, count }) {
+  async inspiration({ commit , state}, { page, count }) {
     commit('inspiration', formatInspiration(await this.$service.getInspiration({ page, count })))
   },
   /**
    * 获取关于
    * @param {*} param0
    */
-  async about({ commit }) {
+  async about({ commit, state }) {
+    if (state.about.length) return
     const about = await this.$service.getPage('about')
     if (about && about[0]) {
       commit('about', formatPage(about[0], 'about'))
@@ -167,7 +170,8 @@ export const actions = {
   /**
    * 获取友链
    */
-  async friends({ commit }) {
+  async friends({ commit, state }) {
+    if (state.friends) return
     const friends = await this.$service.getPage('friend')
     if (friends && friends[0]) {
       commit('friends', formatPage(friends[0], 'friend'))
@@ -177,6 +181,7 @@ export const actions = {
    * 获取友链
    */
   async projects({ commit, state }) {
+    if (state.projects.length) return
     const projects = (await Promise.all([this.$service.getPage('projects'), this.$service.getPage('websites')])).map((item) => item[0])
     commit(
       'projects',

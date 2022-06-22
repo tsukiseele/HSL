@@ -1,6 +1,3 @@
-
-
-
 /**
  * position: sticly 粘性布局在 flex box 内应用需要给
  * 父元素设置 overflow: visible; 保证内容可滚动。
@@ -12,23 +9,47 @@
 #main {
   display: flex;
   overflow: visible;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
-.aside-wrap {
+.aside {
+  flex: 0 0 240px;
+  width: 0;
+  margin-right: 1rem;
   overflow: visible;
-  flex: 1;
-  margin: 0 0.5rem 0 0;
-  .sticky {
+  .aside-static {
+    > * {
+      margin-bottom: 1rem;
+    }
+  }
+  .aside-sticky {
     top: var(--nav-height);
     position: sticky;
-    padding: 0.5rem 0;
+    > * {
+      margin-bottom: 1rem;
+    }
   }
 }
-@media screen and (max-width: $mobile) {
-  .aside-wrap {
-    position: relative;
+
+.post {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  .post-item-wrap {
+    margin-bottom: 1rem;
+  }
+}
+
+@include screen-tablet {
+  .aside {
+    width: auto;
+    flex: auto;
     align-self: stretch;
+    margin-right: 0;
+    .sticky {
+      position: static;
+    }
   }
 
   #main {
@@ -38,12 +59,6 @@
   .post {
     flex: 1;
   }
-}
-.post {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
 }
 
 /** 下一页按钮样式 */
@@ -65,12 +80,12 @@
   .loading {
     position: absolute;
     &::before {
-      content: "";
+      content: '';
     }
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -84,7 +99,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;
