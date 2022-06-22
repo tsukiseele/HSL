@@ -1,13 +1,13 @@
-@use "sass:math";
+@use 'sass:math';
 // 移动端断点
 $mobile: 768px;
 
 :root {
   --redius: 5px;
   --nav-height: 4rem;
-  --font-monospace: 'Consolas', 'Monaco', 'Jetbrains Mono', 'Menlo', monospace;
+  --font-monospace:  'Consolas', 'Monaco','Jetbrains Mono', 'Menlo', 'Luxi Mono', 'Courier New', var(--font-sans-serif);
   --font-serif: 'Patrick Hand', 'Georgia', 'Times', 'STSong', 'SimSun', 'FangSong', 'KaiTi', 'STKaiti', serif;
-  --font-sans-serif: 'rubik', 'helvetica', 'arial', sans-serif;
-  --font-comic: 'Pally', 'Comic Sans MS', sans-serif;
-  --font-coquettec: 'CoquetteC', sans-serif;
+  --font-sans-serif: 'Sarasa Gothic SC', 'Source Han Sans CN', 'rubik', 'helvetica', 'arial', sans-serif;
+  --font-comic: 'Pally', 'Comic Sans MS', var(--font-sans-serif);
+  --font-coquettec: 'CoquetteC', var(--font-sans-serif);
 }

@@ -1,16 +1,13 @@
 <template lang="pug">
 #content
-  //- TheBanner(v-if='archive',  :disableTyping='true', :isHide='header.isHide')
-  //- :title='header.title', :cover='header.cover', :subtitle='header.subtitle',
-  main#main
-    .content
-      .markdown.card
-        client-only
-          SMarkdown(:content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
-      .aside.card(v-if='!isMobile && titles && titles.length')
-        STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
-    client-only
-      SComment(:title='this.$route.path')
+  .article
+    .markdown.card
+      client-only
+        SMarkdown(:content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
+    .aside.card(v-if='!isMobile && titles && titles.length')
+      STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
+  client-only
+    SComment(:title='this.$route.path')
 </template>
 
 <script>

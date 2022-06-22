@@ -98,9 +98,8 @@
   flex-grow: 1;
 }
 .nav-drawer-bar {
-  display: none;
   align-self: center;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 32px;
@@ -132,19 +131,9 @@
     backdrop-filter: blur(16px) saturate(400%);
     z-index: 1000;
   }
-  @include screen-tablet {
-    display: none;
-  }
-  @include screen-mobile {
-    display: block;
-    .drawer-main {
-      right: -61.8%;
-      width: 61.8%;
-    }
-  }
   .drawer-banner {
     position: relative;
-    height: 12rem;
+    height: 15rem;
     width: 100%;
     &::before,
     &::after {
@@ -211,7 +200,7 @@
   .nav-title {
     display: none;
   }
-  .nav-drawer-bar {
+  .nav-drawer {
     display: none;
   }
 }
@@ -223,6 +212,13 @@
     display: none;
   }
   .nav-drawer-bar {
-    display: inline-block;
+    display: flex;
+  }
+  .nav-drawer {
+    display: block;
+    .drawer-main {
+      right: -61.8%;
+      width: 61.8%;
+    }
   }
 }

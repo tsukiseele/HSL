@@ -20,43 +20,12 @@
     flex: 0 0 250px;
     height: 200px;
     overflow: hidden;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
     position: relative;
     transition: .3s ease-in-out;
     box-shadow: 0 0 0.25rem rgba($color: #000000, $alpha: 0.12);
-    // box-shadow: var(--shadow);
-    &::before {
-      content: '';
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      z-index: -1;
-      // animation: anim 3s ease-in-out infinite;
-    }
   }
-  /*
-    &::before {
-      content: '\f116';
-      position: absolute;
-      font-size: 36px;
-      font-family: 'Material Icons';
-      color: rgb(100, 100, 100);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #ddd;
-    }
-  }*/
+  
+  
   .item-cover {
     height: 100%;
     width: 100%;
@@ -146,15 +115,12 @@
     }
   }
   /** Mobile兼容 */
-  @media screen and (max-width: $mobile) {
-    /* A方案-下方显示*/
+  @include screen-mobile {
     flex-direction: column;
     padding: 0rem;
     .item-cover-box {
       width: 100%;
       flex: 0 0 220px;
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 5px;
     }
 
     .item-info {
@@ -164,42 +130,5 @@
     .item-category {
       line-height: 2.2rem;
     }
-    /* B方案-遮罩层显示*/
-    /*
-    flex-direction: column;
-    padding: 0rem;
-    height: 250px;
-    background: none;
-    justify-content: flex-end;
-    overflow: hidden;
-    .item-info {
-      flex: 0;
-      background-color: var(--bg);
-      justify-content: flex-end;
-      .item-preview {
-        flex: 0;
-      }
-    }
-    .item-type {
-      display: none;
-    }
-    .item-cover-box {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      z-index: -1;
-      height: 300px;
-      border-bottom-left-radius: 0;
-      border-top-right-radius: 5px;
-      filter: brightness(0.8);
-    }
-    .item-info {
-      padding: 0 0.5rem 0.5rem 0.5rem;
-    }
-    .item-type {
-      line-height: 2.2rem;
-    }*/
   }
 }

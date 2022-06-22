@@ -6,7 +6,7 @@
 /** 根样式 **/
 :root {
   box-sizing: border-box;
-  font-family: var(--sans-serif);
+  font-family: var(--font-sans-serif);
   font-weight: 300;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +28,11 @@
   src: url('https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static/fonts/InfoDisplay.woff');
 }
 @font-face {
+  font-family: 'chinese';
+  src: url('https://cdn.jsdelivr.net/gh/tsukiseele/statics@master/watora/fonts/chinese.font.woff');
+}
+
+@font-face {
   font-family: 'CoquetteC';
   src: url('../fonts/CoquetteC\ Regular.ttf');
 }
@@ -38,7 +43,7 @@
 }
 *::-webkit-scrollbar-thumb {
   border-radius: 3px;
-  background: linear-gradient(45deg, #b980ae , #b980ae);
+  background: linear-gradient(45deg, #b980ae, #b980ae);
 }
 *::-webkit-scrollbar-thumb:hover {
   filter: brightness(1.2);
@@ -47,8 +52,44 @@
   background: transparent;
 }
 
-/** 初始化样式 **/
+// 图片状态样式
+img[lazy='error'] {
+  --size: 4px;
+  --color: #dfdfdf;
+  background-color: black;
+  background-image: 
+    linear-gradient(60deg, 
+      transparent,
+      transparent calc(50% - var(--size) - 1px), 
+      var(--color) calc(50% - var(--size)), 
+      var(--color) calc(50% + var(--size)), 
+      transparent calc(50% + var(--size) + 1px), transparent),
+    linear-gradient(-60deg, 
+      transparent,
+      transparent calc(50% - var(--size) - 1px), 
+      var(--color) calc(50% - var(--size)), 
+      var(--color) calc(50% + var(--size)), 
+      transparent calc(50% + var(--size) + 1px), transparent);
+    background-size: 30% 30%;
+    background-position: center;
+}
+img[lazy='loading'] {
+  --d: 4rem;
+  --angle: 135deg;
+  --sinus: #{math.sin(135deg)};
+  background-color: pink;
+  background-image: repeating-linear-gradient(var(--angle), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5) calc(var(--d) / 2), transparent calc(var(--d) / 2), transparent var(--d));
+  background-repeat: repeat-x;
+  background-size: calc(var(--d) / var(--sinus)) 100%;
+  animation: anim-image-loading 3s linear infinite reverse;
+}
+@keyframes anim-image-loading {
+  0% {
+    background-position: calc(var(--d) / var(--sinus)) 0;
+  }
+}
 
+/** 初始化样式 **/
 hr {
   background: var(--color-border);
   height: 1px;
@@ -104,13 +145,11 @@ a {
   cursor: pointer;
   text-decoration: none;
 
-
   &:link,
   &:visited {
     color: inherit;
   }
   &.link {
-
     &:link,
     &:visited {
       color: var(--color-text);
@@ -136,7 +175,7 @@ a {
       pointer-events: none;
       z-index: 9;
     }
-  
+
     &::after {
       content: '';
       background: currentColor;
@@ -147,14 +186,14 @@ a {
       width: 0;
       transition: width 0.3s ease;
     }
-  
+
     &:hover {
       &::before {
         opacity: 1;
         transform: scale(1);
         transform-origin: left bottom;
       }
-  
+
       &::after {
         left: 0;
         width: 100%;
@@ -169,7 +208,7 @@ a {
   // border-radius: var(--redius);
   background-color: white;
   padding: 0.5rem;
-  box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: 0.12);
+  box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.12);
   // box-shadow: var(--shadow);
   // backdrop-filter: var(--blur);
   /*

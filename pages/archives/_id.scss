@@ -1,26 +1,22 @@
-
-
-#content,
-.archive,
-#main,
-.content {
-  overflow: visible;
-}
 .content {
   display: flex;
 }
-.markdown {
-  flex: 1;
-  width: 0;
-}
-.aside {
-  position: sticky;
-  top: calc(var(--nav-height) + .5rem);
-  flex: 0 0 200px;
-  width: 0;
-  align-self: flex-start;
-  padding: .5rem;
-  margin-left: .5rem;
+.article {
+  display: flex;
+  margin-top: 1rem;
+  .markdown {
+    flex: 1;
+    width: 0;
+  }
+  .aside {
+    position: sticky;
+    top: calc(var(--nav-height) + 1rem);
+    width: 0;
+    flex: 0 0 200px;
+    align-self: flex-start;
+    padding: 0.5rem;
+    margin-left: 1rem;
+  }
 }
 /*
 .markdown,

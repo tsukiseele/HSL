@@ -1,6 +1,7 @@
 .markdown-content {
   --md-font-monospace: 'JetBrains Mono', HYZhengYuan, 'Fira Code', Menlo, 'Ubuntu Mono', Consolas;
-  --md-font-sans-serif: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;//'InfoDisplay', sans-serif;
+  // --md-font-sans-serif: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;//'InfoDisplay', sans-serif;
+  --md-font-sans-serif: var(--font-sans-serif);//'InfoDisplay', sans-serif;
   --md-font-serif: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   // font-family:
   // 全局文本字体/颜色

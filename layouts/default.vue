@@ -114,7 +114,7 @@ export default {
 
 <style lang="scss" scoped>
 #hsl {
-  overflow: hidden;
+  // overflow: hidden;
   #background {
     position: fixed;
     top: 0;
