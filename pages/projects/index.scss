@@ -21,10 +21,10 @@
         width: auto;
         transform: skew(-16deg);
         align-self: center;
-        border-radius: .5rem 0 .5rem 0;
+        border-radius: 0.5rem 0 0.5rem 0;
         color: white;
-        border: 2px solid transparent ;
-        transition: .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+        border: 2px solid transparent;
+        transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
         user-select: none;
         // &:hover {
         //   transform: skew(-16deg) scale(.9);
@@ -32,7 +32,7 @@
         // }
       }
     }
-    
+
     .project-list {
       display: flex;
       flex-wrap: wrap;
@@ -45,7 +45,7 @@
       margin: 1rem;
       background-color: white;
       overflow: hidden;
-      box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: 0.12);
+      box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.12);
       cursor: pointer;
       // &::before {
       //   content: '';
@@ -58,6 +58,7 @@
       // }
       transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
       .project-name {
+        font-family: var(--font-monospace);
         font-size: 1.4rem;
         font-weight: normal;
         color: #b980ae;

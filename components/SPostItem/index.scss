@@ -69,14 +69,16 @@
     color: var(--color-text);
     padding: 0 0 0 1rem;
     .item-title {
+      color: var(--color-text);
       font-size: 1.4rem;
       font-weight: normal;
-      color: var(--color-text);
+      font-family: var(--font-monospace);
       transition: color 0.3s;
     }
     .item-preview {
       flex: 1;
       color: var(--color-text-secondary);
+      font-family: var(--font-comic);
       word-break: break-word;
       white-space: normal;
       text-overflow: ellipsis;
@@ -89,14 +91,15 @@
       padding-right: 0.33rem;
     }
     .item-labels {
-      list-style: none;
+      margin-top: .5rem;
+      text-align: right;
       .item-label {
         display: inline-block;
-        margin-right: 0.5rem;
+        margin-left: 0.5rem;
       }
     }
   }
-  /*
+  
   .item-category {
     $triangle: 0.8rem;
     $height: 2rem;
@@ -141,7 +144,7 @@
       font-size: 0.8rem;
       vertical-align: middle;
     }
-  }*/
+  }
   /** Mobile兼容 */
   @media screen and (max-width: $mobile) {
     /* A方案-下方显示*/
