@@ -5,9 +5,9 @@
       .letter(:class="char")
   .about.card
     .blockquote
-      s-icon(name='mdi-format-quote-open').quote-left
+      s-icon(name='quote').quote-left
       .quote-content 砂糖少女は愛を食む
-      s-icon(name='mdi-format-quote-close').quote-right
+      s-icon(name='quote').quote-right
     .description(v-for='(part, i) in about', :key='i')
       hr
       .subtitle {{ part.title }}

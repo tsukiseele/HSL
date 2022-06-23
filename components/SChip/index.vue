@@ -1,6 +1,6 @@
 <template lang="pug">
 span.chip(:style="`--color: ${color ? color: '#566687'}` ")
-  s-icon.chip-icon(v-if="icon" name="" ) {{ icon }}
+  SIcon.chip-icon(v-if="icon" :name="icon || 'sell'" )
   span.chip-text {{ text }}
 </template>
 

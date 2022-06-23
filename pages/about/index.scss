@@ -84,6 +84,7 @@
     }
     .quote-left {
       align-self: flex-start;
+      transform: rotate(180deg);
     }
     .quote-right {
       align-self: flex-end;

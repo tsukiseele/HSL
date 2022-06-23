@@ -54,7 +54,7 @@
     font-family: var(--font-sans-serif);
     font-weight: 300;
     font-style: italic;
-    text-decoration: underline dashed rgba($color: $textColor, $alpha: 0.2);
+    font-size: 1rem;
     margin-top: 1rem;
     max-width: 50vw;
     color: rgba($color: $textColor, $alpha: 0.8);
@@ -65,18 +65,20 @@
       padding: 0 1rem;
       i {
         font-size: 1.5rem;
-        transform: skew(-9deg);
       }
       .quote-left {
         align-self: flex-start;
+        transform: skew(-9deg) rotate(180deg);
       }
       .quote-right {
         align-self: flex-end;
+        transform: skew(-9deg);
       }
       .quote-content {
         flex: 1;
         align-self: center;
         padding: 1rem;
+        text-decoration: underline dashed rgba($color: $textColor, $alpha: 0.3);
       }
     }
   }
@@ -165,11 +167,11 @@
         }
         &:nth-of-type(4) {
           .nav-underline {
-            border-color: #C7B3D6;
+            border-color: #c7b3d6;
           }
           &::after,
           &::before {
-            background-color: #C7B3D6;
+            background-color: #c7b3d6;
           }
         }
         &:nth-of-type(5) {
@@ -344,7 +346,7 @@
           .nav-name {
             font-size: 1.2rem;
             writing-mode: vertical-lr;
-            margin-top: .5rem;
+            margin-top: 0.5rem;
           }
           &:hover {
             color: #cd5da0;
