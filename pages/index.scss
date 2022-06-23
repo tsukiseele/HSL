@@ -232,7 +232,6 @@
           height: inherit;
           background: inherit;
           border-radius: inherit;
-          // box-shadow: inherit;
         }
 
         &::before {
@@ -243,20 +242,17 @@
           transform: rotate(60deg);
         }
       }
-      i {
-        color: #283c5f;
+      a {
         font-size: 1.6rem;
-        &::before {
-          transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 2);
-          // transition: 0.3s cubic-bezier(0.5, 0, .25, 2);
-          // transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
+        line-height: 0;
+        color: #283c5f;
+        transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 2);
       }
       &:hover {
         .item__bg {
           transform: scale(1.2) rotate(36deg);
         }
-        i::before {
+        a {
           transform: scale(1.2);
         }
       }
@@ -348,6 +344,7 @@
           .nav-name {
             font-size: 1.2rem;
             writing-mode: vertical-lr;
+            margin-top: .5rem;
           }
           &:hover {
             color: #cd5da0;

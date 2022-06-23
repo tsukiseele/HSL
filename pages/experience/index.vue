@@ -2,8 +2,8 @@
 #content.experience
   .classify(v-for="(classify, key) in experience" :key="key" :class="`classify--${key}`")
     .classify__name {{ classify.title }}
-    .classify__list(v-for="(item, index) in classify.items" :key="index")
-      .classify__list-item
+    .classify__list
+      .classify__list-item(v-for="(item, index) in classify.items" :key="index")
         .item__cover-wrapper
           img.item__cover(:src="item.cover" :alt="item.name")
         .item__info

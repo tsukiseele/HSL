@@ -27,7 +27,8 @@ export default {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css',
+        // href: '//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css',
+        href: '//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0',
       },
     ],
     script: [

@@ -2,12 +2,12 @@
 .pagination-wrap
   .pagination
     .pagination-first(:class="{ disable: current == 1 }", @click="onClick(1)")
-      s-icon(name="mdi-page-first")
+      SIcon(name="first_page")
     .pagination-pre(
       :class="{ disable: current == 1 }",
       @click="onClick(current - 1)"
     )
-      s-icon(name="mdi-chevron-left")
+      SIcon(name="chevron_left")
     .pagination-page(
       v-for="n in range",
       :key="n",
@@ -18,12 +18,12 @@
       :class="{ disable: current == size }",
       @click="onClick(current + 1)"
     )
-      s-icon(name="mdi-chevron-right")
+      SIcon(name="chevron_right")
     .pagination-last(
       :class="{ disable: current == size }",
       @click="onClick(size)"
     )
-      s-icon(name="mdi-page-last")
+      SIcon(name="last_page")
   .pagination-loading(v-show="loading")
 </template>
 

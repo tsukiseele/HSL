@@ -6,11 +6,11 @@
     .nav-spacer
     ul.nav-menu
       li.nav-menu__item(v-for='(item, i) in nav', :key='i', :class="{ active: $route.path == item.to }" @click='$router.push(item.to)')
-        s-icon(:name='item.icon')
+        SIcon(:name='item.icon')
         .menu-title {{ item.name }}
     .nav-spacer
     .nav-drawer-bar(@click='drawer = !drawer')
-      s-icon(name='mdi-menu')
+      SIcon(name='menu')
   //- 抽屉
   .nav-drawer(v-if='isMobile', :class='{ open: drawer }')
     .drawer-blank(@click='drawer = !drawer')
@@ -19,7 +19,7 @@
         //- img.drawer-banner-bg(:src='drawerBannerBackground')
       ul.drawer-menu(@click='drawer = !drawer')
         li(v-for='(item, j) in nav', :key='j', @click='$router.push(item.to)')
-          s-icon(:name='item.icon')
+          SIcon(:name='item.icon')
           .menu-title {{ item.name }}
 </template>
 

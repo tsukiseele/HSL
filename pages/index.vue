@@ -9,9 +9,9 @@
   
   div.introduction(data-aos="fade-right" data-aos-delay="600")
     .blockquote
-      s-icon(name='mdi-format-quote-open').quote-left
+      s-icon(name='quote').quote-left
       .quote-content(v-html="navigation.introduction")
-      s-icon(name='mdi-format-quote-close').quote-right
+      s-icon(name='quote').quote-right
   nav.nav(data-aos="fade-up" data-aos-delay="900")
     ul.nav-menu
       li.nav-item(v-for='item in navigation.nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
