@@ -4,7 +4,7 @@
   .markdown-content(v-html='markdown')
   transition(name='zoom')
     .markdown-image-preview-modal(v-if='previewEl', @click='cancelPreview')
-  img.markdown-image-preview(v-if='preview', :src='preview', ref='preview')
+  //- img.markdown-image-preview(v-if='preview', :src='preview', ref='preview')
 </template>
 
 <script>

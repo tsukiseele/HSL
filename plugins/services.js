@@ -35,6 +35,6 @@ export default ({ app, $axios }, inject) => {
     },
     getInspiration({ page, count }) {
       return $axios.$get(`/issues?state=closed&labels=inspiration&page=${page}&per_page=${count}`)
-    }
+    },
   })
 }

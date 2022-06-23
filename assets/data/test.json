@@ -1,0 +1,33 @@
+{
+  "book": {
+    "title": "看过的书",
+    "items": [
+      {
+        "name": "2WT抱枕面料数据",
+        "desc": "使用雷达图实现的抱枕数据可视化，数据来源于加拿大鹅抱枕研发中心",
+        "detail": "使用雷达图实现的抱枕数据可视化，数据来源于加拿大鹅抱枕研发中心",
+        "cover": "https://cdn.jsdelivr.net/gh/nyarray/LoliHost/images/a231b8d99bb21f774442fed775ec1f5e.png",
+        "link": "https://2wt.hlo.li"
+      }
+    ]
+  },
+  "anime": {
+    "title": "看过的动漫",
+    "items": [
+      {
+        "name": "萝莉图床",
+        "desc": "将图片储存在Github，使用jsdelivr进行内容分发",
+        "detail": "将图片储存在Github，使用jsdelivr进行内容分发",
+        "cover": "https://cdn.jsdelivr.net/gh/nyarray/LoliHost/images/d21343511739915cc3e24b497941b808.png",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "ゆるゆり",
+        "desc": "摇曳百合，元气满满的百合番",
+        "detail": "摇曳百合，元气满满的百合番",
+        "cover": "https://cdn.jsdelivr.net/gh/nyarray/LoliHost/images/d21343511739915cc3e24b497941b808.png",
+        "link": "https://ih.hlo.li"
+      }
+    ]
+  }
+}

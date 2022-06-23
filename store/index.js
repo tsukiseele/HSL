@@ -1,4 +1,4 @@
-import { formatPost, formatNavMenu, formatGallery, formatTimeline, formatPage } from '@/plugins/utils/format.js'
+import { formatPost, formatJson, formatNavMenu, formatGallery, formatTimeline, formatPage } from '@/plugins/utils/format.js'
 import config from '@/config.js'
 
 export const state = () => ({
@@ -15,6 +15,7 @@ export const state = () => ({
   labels: [],
   categorys: null,
   timeline: [],
+  experience: null,
   navigation: config.nav,
 })
 
@@ -80,6 +81,9 @@ export const mutations = {
   projects(state, projects) {
     state.projects = projects
   },
+  experience(state, experience) {
+    state.experience = experience
+  },
 }
 
 export const actions = {
@@ -144,7 +148,7 @@ export const actions = {
    * 获取分类列表
    * @param {Context} context 上下文
    */
-  async categorys({ commit , state}) {
+  async categorys({ commit, state }) {
     if (state.categorys) return
     commit('categorys', await this.$service.getMilestones())
   },
@@ -153,7 +157,7 @@ export const actions = {
    * @param {*} param0
    * @param {*} param1
    */
-  async inspiration({ commit , state}, { page, count }) {
+  async inspiration({ commit, state }, { page, count }) {
     commit('inspiration', formatInspiration(await this.$service.getInspiration({ page, count })))
   },
   /**
@@ -190,5 +194,17 @@ export const actions = {
         return { name, items: formatPage(item, item.title.toLowerCase()) }
       })
     )
+  },
+  /**
+   * 
+   * @param {*} param0 
+   * @returns 
+   */
+  async experience({ commit, state }) {
+    if (state.experience) return
+    const experience = await this.$service.getPage('experience')
+    if (experience && experience[0]) {
+      commit('experience', formatJson(experience[0]))
+    }
   },
 }

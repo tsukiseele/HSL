@@ -199,6 +199,9 @@
   }
 }
 @include screen-tablet {
+  #nav {
+    padding: 0;
+  }
   .nav-title {
     display: none;
   }
@@ -207,6 +210,9 @@
   }
 }
 @include screen-mobile {
+  #nav {
+    padding: 0 1rem;
+  }
   .nav-title {
     display: block;
   }

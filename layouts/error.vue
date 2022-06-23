@@ -6,7 +6,7 @@
   .e5xx(v-else-if="statusCode.toString().startsWith(5)") 
     span.error-code {{ statusCode }} 
     span.error-text ー 服务器内部错误，请联系网站管理员
-  .error
+  .error(v-else)
     span.error-code {{ statusCode }} 
     span.error-text ー {{ message }}
   NuxtLink.back(to="/") 返回主页
@@ -32,7 +32,7 @@ export default {
   },
   head() {
     return {
-      title: this.message,
+      title: `${this.statusCode} - ${this.message}`,
       meta: [
         {
           name: 'viewport',

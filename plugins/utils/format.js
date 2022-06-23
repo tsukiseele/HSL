@@ -190,6 +190,16 @@ export const formatPage = (data, type) => {
   return section
 }
 
+export const formatJson = (data) => {
+  if (!data || !data.body) return []
+  const reg = /```json([\s\S]+?)```/g
+  const result = reg.exec(data.body)
+  if (result && result[1]) {
+    return JSON.parse(result[1])
+  }
+  return []
+}
+
 /**
  * 日期转换
  */

@@ -165,6 +165,15 @@
         }
         &:nth-of-type(4) {
           .nav-underline {
+            border-color: #C7B3D6;
+          }
+          &::after,
+          &::before {
+            background-color: #C7B3D6;
+          }
+        }
+        &:nth-of-type(5) {
+          .nav-underline {
             border-color: #ffb6b9;
           }
           &::after,
