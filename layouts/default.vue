@@ -176,7 +176,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-top: var(--nav-height);
-  width: 1080px;
+  width: 1280px;
 }
 
 .full {
@@ -188,7 +188,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1280px) {
   main#main {
     width: 100%;
   }

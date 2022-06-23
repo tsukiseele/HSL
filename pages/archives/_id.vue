@@ -3,7 +3,7 @@
   .article
     .markdown.card
       client-only
-        SMarkdown(:content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
+        SMarkdown(:title="archive.title" :content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
     .aside.card(v-if='!isMobile && titles && titles.length')
       STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
   client-only

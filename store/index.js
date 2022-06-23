@@ -178,7 +178,7 @@ export const actions = {
     }
   },
   /**
-   * 获取友链
+   * 获取项目
    */
   async projects({ commit, state }) {
     if (state.projects.length) return

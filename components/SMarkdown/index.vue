@@ -1,5 +1,6 @@
 <template lang="pug">
 .markdown-preview
+  .markdown-title(v-if="title") {{ title }}
   .markdown-content(v-html='markdown')
   transition(name='zoom')
     .markdown-image-preview-modal(v-if='previewEl', @click='cancelPreview')
@@ -9,6 +10,10 @@
 <script>
 export default {
   props: {
+    title: {
+      type: String,
+      default: null,
+    },
     content: {
       type: String,
       default: null,
@@ -47,12 +52,10 @@ export default {
       this.$emit('activeChange', { index: i - 1, item: title })
     },
     onScroll() {
-      if (this._timer) return
+      this._timer && clearTimeout(this._timer)
       this._timer = setTimeout(() => {
         this.getNavPos()
         this.cancelPreview()
-        clearTimeout(this._timer)
-        this._timer = null
       }, 200)
     },
     cancelPreview() {
@@ -78,9 +81,7 @@ export default {
       this.initPreview()
     },
     initCopy() {
-      console.log(
-      document
-        .querySelectorAll('.markdown-content .code-options [data-copy]'));
+      console.log(document.querySelectorAll('.markdown-content .code-options [data-copy]'))
       document
         .querySelectorAll('.markdown-content .code-options [data-copy]')
         .forEach((el) => (el.onclick = (e) => navigator.clipboard.writeText(document.getElementById(el.getAttribute('data-copy')).textContent)))
@@ -114,7 +115,7 @@ export default {
 
 @import './index.scss';
 
-@import './hsl.scss';
+@import './theme/hsl.scss';
 /*
 :root[theme="dark"] {
   @import "./theme/dark.scss";

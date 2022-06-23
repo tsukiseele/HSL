@@ -61,13 +61,12 @@
   font-feature-settings: 'liga' on, 'calt' on;
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
-  letter-spacing: 0;
+  letter-spacing: 0.5px;
   margin: 0;
-  line-height: 1.8rem;
 
   *::-webkit-scrollbar {
-    width: .5rem;
-    height: .5rem;
+    width: 0.5rem;
+    height: 0.5rem;
   }
   *::-webkit-scrollbar-thumb {
     border-radius: 3px;
@@ -86,10 +85,15 @@
     word-wrap: normal;
     background-color: var(--code-block-bg-color);
     color: var(--code-block-color);
+    // box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(205, 93, 160, .5);
     margin: 1rem 0;
     .code-wrap {
       overflow-x: auto;
       padding: 0.5rem;
+    }
+    code {
+      line-height: 1.5;
     }
   }
   code {
@@ -97,6 +101,7 @@
     font-family: var(--code-block-font);
     color: var(--code-block-color);
     background-color: var(--code-block-bg-color);
+    letter-spacing: 0;
     // display: block;
     // overflow-x: auto;
   }
@@ -167,20 +172,12 @@
   h6 {
     font-family: var(--title-font);
     position: relative;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
     font-weight: bold;
     cursor: text;
     color: var(--title-color);
   }
-
-  h3:hover::before,
-  h4:hover::before,
-  h5:hover::before,
-  h6:hover::before {
-    visibility: hidden;
-  }
-
   h1 {
     font-size: 2rem;
     text-align: center;
@@ -192,30 +189,30 @@
     font-size: 1.6rem;
     line-height: 2rem;
     display: inline-block;
+    &::after {
+      content: '';
+      display: block;
+      height: 0;
+      margin-top: 2px;
+      background-color: transparent;
+      border-bottom: 2px solid var(--h2-underline-color);
+    }
   }
-
-  h2::after {
-    content: '';
-    display: block;
-    height: 0;
-    margin-top: 2px;
-    background-color: transparent;
-    border-bottom: 2px solid var(--h2-underline-color);
-  }
-
   h3 {
+    position: relative;
     font-family: var(--md-font-monospace);
     font-size: 1.4rem;
+    text-decoration: dashed ;
     margin-left: 1rem;
-
-    overflow: visible;
     &::before {
       content: '';
       position: absolute;
-      height: 50%;
+      height: 100%;
+      top: 0;
       left: -1rem;
       width: 0.25rem;
       background-color: var(--h3-startline-color);
+      z-index: 1;
     }
   }
 
@@ -373,13 +370,14 @@
   }
   table th {
     font-weight: bold;
-    border: 0.1em solid var(--table-border-color);
+    font-family: var(--md-font-monospace);
+    border: 1px solid var(--table-border-color);
     border-bottom: 0;
     margin: 0;
     padding: 6px 13px;
   }
   table td {
-    border: 0.1em solid var(--table-border-color);
+    border: 1px solid var(--table-border-color);
     margin: 0;
     padding: 6px 13px;
   }

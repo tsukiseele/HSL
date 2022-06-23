@@ -12,11 +12,11 @@ export default {
     // base64编码的Github token
     token: 'Z2hwX2UzbXo0eDFzMW1JeTlYYjJBYzZoc3lvMVA5eFpLaTN0ZnoxbA==',
     // Github 用户名
-    username: 'tsukiseele',
-    // username: 'chanshiyucx',
+    // username: 'tsukiseele',
+    username: 'chanshiyucx',
     // Github 存储文章的仓库名
-    // repository: 'blog',
-    repository: 'archives',
+    repository: 'blog',
+    // repository: 'archives',
   },
   // 评论配置
   vssue: {

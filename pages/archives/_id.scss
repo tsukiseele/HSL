@@ -24,10 +24,10 @@
   }
 }
 
-.comments {
+.comment {
   overflow: hidden;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
   background-color: var(--color-card);
   .comment-header {
     color: var(--color-text);
@@ -101,7 +101,7 @@
     margin: 0;
   }
   .comment {
-    margin-bottom: 1rem;
+    margin: 0 0 2rem 0;
     border-top: 2px dashed #f4d8e4;
   }
 }

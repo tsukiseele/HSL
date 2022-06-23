@@ -1,9 +1,12 @@
 <template lang="pug">
 .__nuxt-error-page
-  .error (╯°□°)╯︵ ┻━┻
-  div
-    .details(v-if="statusCode === 404") Not Found
-    NuxtLink.back.error-link(to="/") 返回主页
+    .e404(v-if="statusCode == 404") 
+      span.error-code {{ statusCode }} 
+      span.error-text ー 页面找不到
+    .e5xx(v-else-if="statusCode.toString().startsWith(5)") 
+      span.error-code {{ statusCode }} 
+      span.error-text ー 服务器内部错误，请联系网站管理员
+    NuxtLink.back(to="/") 返回主页
 //-   <div class="error">
 //-     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="#DBE1EC" viewBox="0 0 48 48">
 //-       <path d="M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z" />
@@ -25,8 +28,8 @@
 
 <script>
 export default {
-  layout: "blank",
-  name: "NuxtError",
+  layout: 'blank',
+  name: 'NuxtError',
   props: {
     error: {
       type: Object,
@@ -35,10 +38,10 @@ export default {
   },
   computed: {
     statusCode() {
-      return (this.error && this.error.statusCode) || 500;
+      return (this.error && this.error.statusCode) || 500
     },
     message() {
-      return this.error.message || "<%= messages.client_error %>";
+      return this.error.message || '<%= messages.client_error %>'
     },
   },
   head() {
@@ -46,48 +49,56 @@ export default {
       title: this.message,
       meta: [
         {
-          name: "viewport",
-          content: "width=device-width,initial-scale=1.0,minimum-scale=1.0",
+          name: 'viewport',
+          content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 .__nuxt-error-page {
-  padding: 1rem;
-  background: #f7f8fb;
-  color: #47494e;
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  font-weight: 100 !important;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  color: #47494e;
+  background: #f7f8fb;
 }
 
-.error {
-  font-family: Epilogue, ui-serif, Georgia, Cambria, "Times New Roman", Times,
-    serif;
-  font-size: 4rem;
+.error-code {
+  color: var(--color-primary);
+  font-family: var(--font-coquettec);
+  font-size: 6rem;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.12);
 }
-
-.details {
+.error-text {
+  font-family: var(--font-sans-serif);
   font-size: 2rem;
+}
+.e404,
+.e5xx {
+  font-style: italic;
 }
 
 .back {
+  color: var(--color-primary);
+  border-bottom: 2px solid transparent;
   font-size: 1.5rem;
+  &:hover {
+    border-bottom: 2px solid var(--color-primary);
+  }
 }
 </style>

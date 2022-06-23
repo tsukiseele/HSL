@@ -1,11 +1,5 @@
-
-
 .markdown-preview {
-  // display: flex;
-  // position: relative;
-  overflow-y: visible;
-  // background-color: var(--color-card);
-  // align-items: stretch;
+  padding: 1.5rem;
   .markdown-image-preview-modal {
     position: fixed;
     top: 0;
@@ -16,28 +10,28 @@
     background-color: rgba(32, 32, 32, 0.3);
   }
 }
-.zoom-enter-active {
-  transition: 0.3s ease-out;
-}
-.zoom-leave-active {
-  transition: 0.2s ease-in;
-}
-.zoom-enter,
-.zoom-leave-to {
-  opacity: 0;
+.markdown-title  {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  text-align: center;
+  color: var(--color-text-primary);
+  // text-decoration: ;
+  // text-decoration: line-through double var(--color-text-primary);
+  border-top: 4px double var(--color-text-primary);
+  border-bottom: 4px double var(--color-text-primary);
 }
 /**
  * 固有Markdown样式
  */
 .markdown-content {
-  padding: 1.5rem;
+  padding: 2rem 0;
   pre {
     display: block;
     position: relative;
     line-height: 0;
     code {
       display: inline-block;
-      line-height: initial;
+      line-height: 1;
     }
     .code-options {
       position: absolute;
@@ -75,6 +69,17 @@
 }
 @media screen and(max-width: $mobile) {
   .markdown-content {
+    font-size: 1.2rem;
     padding: .5rem;
   }
+}
+.zoom-enter-active {
+  transition: 0.3s ease-out;
+}
+.zoom-leave-active {
+  transition: 0.2s ease-in;
+}
+.zoom-enter,
+.zoom-leave-to {
+  opacity: 0;
 }
