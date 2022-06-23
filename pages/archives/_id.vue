@@ -1,11 +1,11 @@
 <template lang="pug">
 #content
-  .article
+  .article    
+    .aside.card(v-if='!isMobile && titles && titles.length')
+      STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
     .markdown.card
       client-only
         SMarkdown(:title="archive.title" :content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
-    .aside.card(v-if='!isMobile && titles && titles.length')
-      STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
   client-only
     SComment(:title='this.$route.path')
 </template>
@@ -21,15 +21,6 @@ export default {
   computed: {
     ...mapState(['archive']),
     ...mapGetters(['isMobile']),
-    header() {
-      return {
-        title: this.archive ? this.archive.title : '无题',
-        subtitle: this.archive ? this.archive.description : '',
-        cover: null, //this.archive ? this.archive.cover.url : null,
-        isHideSubtitle: true,
-        isHide: true,
-      }
-    },
   },
   methods: {
     onMarkdownLoaded({ html, titles }) {
@@ -39,36 +30,10 @@ export default {
       this.titlesActiveIndex = index
     },
     onImageClick(e) {},
-    // getColor(src) {
-    //   return new Promise((resolve, reject) => {
-    //     const colorThief = new ColorThief()
-    //     const img = new Image()
-    //     img.crossOrigin = 'Anonymous'
-    //     img.src = src
-    //     if (img.complete) {
-    //       resolve([colorThief.getColor(img), ...colorThief.getPalette(img)])
-    //     } else {
-    //       img.addEventListener('load', () => resolve([colorThief.getColor(img), ...colorThief.getPalette(img)]))
-    //       img.addEventListener('error', () => reject('Image failed to load'))
-    //     }
-    //   })
-    // },
   },
-  // async mounted() {
-  //   try {
-  //     const [dominant, palette1, palette2, palette3] = await this.getColor(this.archive.cover.url)
-  //     document.getElementById('background').style.background = `rgba(${dominant[0]}, ${dominant[1]}, ${dominant[2]}, 1)`
-  //   } catch (error) {
-  //     console.error(error)
-  //   }
-  // },
   async fetch({ store, params }) {
-    const id = parseInt(params.id)
-    await store.dispatch('archive', { id })
+    await store.dispatch('archive', { ...params })
   },
-  // async beforeDestroy() {
-  //   document.getElementById('background').style.backgroundColor = `rgba(0, 0, 0, 0.12)`
-  // },
 }
 </script>
 

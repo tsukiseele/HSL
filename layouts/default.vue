@@ -21,7 +21,7 @@
     //- 页脚
     TheFooter#footer
     //- 播放器
-    //- TheAPlayer(:musics="musics")
+    TheAPlayer(:musics="musics")
     //- 返回顶部
     //- TheBackTop
 </template>
@@ -114,11 +114,9 @@ export default {
 
 <style lang="scss" scoped>
 #hsl {
-  // overflow: hidden;
   #background {
     position: fixed;
     top: 0;
-
     right: 0;
     bottom: 0;
     left: 0;
