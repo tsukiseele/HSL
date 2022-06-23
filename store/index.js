@@ -1,5 +1,5 @@
 import { formatPost, formatNavMenu, formatGallery, formatTimeline, formatPage } from '@/plugins/utils/format.js'
-import config from '@/plugins/config.js'
+import config from '@/config.js'
 
 export const state = () => ({
   page: 0,

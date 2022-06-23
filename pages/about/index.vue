@@ -16,7 +16,7 @@
 <script>
 import { mapState } from 'vuex'
 // import { useMeta } from 'nuxt-edge'
-
+import config from '@/config'
 export default {
   setup() {
     useMeta({

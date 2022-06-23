@@ -3,20 +3,28 @@ export default {
   title: 'さとうしお - 砂糖的糖果罐',
   // 描述
   details: '',
-  // token base64lize
-  token: 'Z2hwX2UzbXo0eDFzMW1JeTlYYjJBYzZoc3lvMVA5eFpLaTN0ZnoxbA==',
-  // Github 用户名
-  username: 'tsukiseele',
-  // username: 'chanshiyucx',
-  // Github 文章仓库名
-  // repository: 'blog',
-  repository: 'archives',
-  // Github 评论仓库名
-  commentRepository: 'comment',
   // 音乐接口
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 一言接口（可选，填写后会显示在subtitle)
   hitokitoAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
+  // 博客配置
+  blog: {
+    // base64编码的Github token
+    token: 'Z2hwX2UzbXo0eDFzMW1JeTlYYjJBYzZoc3lvMVA5eFpLaTN0ZnoxbA==',
+    // Github 用户名
+    username: 'tsukiseele',
+    // username: 'chanshiyucx',
+    // Github 存储文章的仓库名
+    // repository: 'blog',
+    repository: 'archives',
+  },
+  // 评论配置
+  vssue: {
+    owner: 'tsukiseele',
+    repo: 'comment',
+    clientId: '438b1621c4f3d263f557',
+    clientSecret: 'cd03774c329435a40f7363d2d9817593bf576e79',
+  },
   // 导航
   nav: {
     title: 'さとうしお',
@@ -24,6 +32,7 @@ export default {
     // title: 'TsukiSeele\'s Blog',
     // subtitle: 'しおちゃんがいる場所が、私のハッピーシュガーライフ',
     subtitle: "TsukiSeele's Blog",
+    owner: 'TsukiSeele',
     introduction: '知りたいよ、愛がどういう物か知りたい。だって分からないんだもん。愛してるってささやかれても、肌を合わせても、な～んにも感じないの',
     // introduction: 'でもさとちゃんが来てくれた。さとちゃんに出会って、一緒に暮らせて、幸せで',
     // introduction: 'It shines so brightly, it’s sweeter than all the cakes in the world, it smooths the mind, this feeling is all I know, how can I possibly describe it in words?',

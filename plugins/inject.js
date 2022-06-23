@@ -1,5 +1,5 @@
 import Statics from '@/assets/resource/statics.js'
-import config from './config'
+import config from '../config'
 // import ColorThief from "";
 
 export default ({ app }, inject) => {

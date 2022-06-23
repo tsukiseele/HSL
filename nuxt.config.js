@@ -1,4 +1,4 @@
-import config from './plugins/config.js'
+import config from './config.js'
 
 export default {
   server: {
@@ -51,7 +51,7 @@ export default {
 
   // Plugins to run before rendering pasge: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '~/plugins/config.js',
+    // '~/config.js',
     '~/plugins/inject.js',
     '~/plugins/services.js',
     '~/plugins/utils/utils.js',

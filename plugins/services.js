@@ -1,8 +1,10 @@
-import config from '@/plugins/config.js'
+import config from '@/config.js'
+
+const blog = config.blog
 
 export default ({ app, $axios }, inject) => {
-  $axios.defaults.headers.common['Authorization'] = `token ${Buffer.from(config.token, 'base64').toString('ascii')}`
-  $axios.defaults.baseURL = `https://api.github.com/repos/${config.username}/${config.repository}`;
+  $axios.defaults.headers.common['Authorization'] = `token ${Buffer.from(blog.token, 'base64').toString('ascii')}`
+  $axios.defaults.baseURL = `https://api.github.com/repos/${blog.username}/${blog.repository}`;
   
   inject('service', {
     getArchives({ page, count }) {
