@@ -139,6 +139,7 @@
     width: 100%;
     &::before,
     &::after {
+      // $color-h: #566687;
       $color-h: #566687;
       $color-v: #ea8b98;
       content: '';

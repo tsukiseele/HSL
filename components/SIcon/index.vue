@@ -44,5 +44,9 @@ export default {
 }
 i {
   font-size: inherit;
+  // width: 1em;
+  // height: 1em;
+  overflow: hidden;
+  font-display: block;
 }
 </style>

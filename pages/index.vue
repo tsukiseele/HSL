@@ -12,7 +12,8 @@
       s-icon(name='quote').quote-left
       .quote-content(v-html="navigation.introduction")
       s-icon(name='quote').quote-right
-  nav.nav(data-aos="fade-up" data-aos-delay="900")
+  //- nav.nav(data-aos="fade-up" data-aos-delay="900")
+  nav.nav
     ul.nav-menu
       li.nav-item(v-for='item in navigation.nav', :key='item.name', :class='{ active: item.to == $route.path }' @click="$router.push(item.to)")
         SIcon(:name='item.icon')
