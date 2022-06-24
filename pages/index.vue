@@ -9,9 +9,9 @@
   
   div.introduction(data-aos="fade-right" data-aos-delay="600")
     .blockquote
-      s-icon(name='quote').quote-left
+      SIcon(name='quote').quote-left
       .quote-content(v-html="navigation.introduction")
-      s-icon(name='quote').quote-right
+      SIcon(name='quote').quote-right
   //- nav.nav(data-aos="fade-up" data-aos-delay="900")
   nav.nav
     ul.nav-menu
@@ -23,7 +23,7 @@
     li.nav-link-item(v-for='item in navigation.links', :key='item.name')
       .item__bg
       a(:href='item.to', target='_blank')
-        s-icon(:name='item.icon')
+        SIcon(:name='item.icon')
   .decorate-ferris-wheel
     .decorate-item
     .decorate-item
