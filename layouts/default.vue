@@ -36,9 +36,6 @@ export default {
   computed: {
     ...mapState(['navigation']),
     ...mapGetters(['isMobile', 'scroll']),
-    background() {
-      return process.client ? `url(${this.$static}/bg/${this.getRandomNumber(1, 20)}.webp)` : ''
-    },
     isFull() {
       return this.$route.path == '/'
     },

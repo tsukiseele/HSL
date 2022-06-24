@@ -57,11 +57,8 @@ export default {
       return this.$store.getters.isMobile
     },
     res() {
-      const icon = `${this.$static}/icon/icon.png`
-      // const placeholder = this.$src.images.placeholder
       return {
-        icon,
-        // placeholder,
+        icon: `${this.$config.static}/icon/icon.png`,
       }
     },
   },

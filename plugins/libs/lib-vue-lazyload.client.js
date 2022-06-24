@@ -6,10 +6,9 @@ Vue.use(VueLazyLoad, {
   preLoad: 1.33,
 
   // 加载失败后的图片
-  // error: "x",
+  // error: "",
   // 加载时的图片
-  // loading:
-    // "https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static/icon/loading.gif",
+  // loading: "https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static/icon/loading.gif",
 
   // 重试次数
   attempt: 3

@@ -20,8 +20,8 @@ export default {
     aliasMap: {
       home: 'home',
       project: 'layers',
-      blog: 'article',
-      experience: 'history_edu',
+      blog: 'history_edu',
+      experience: 'pending_actions',
       about: 'info',
       quote: 'format_quote',
       website: 'language',

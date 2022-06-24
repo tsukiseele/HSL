@@ -7,6 +7,8 @@ export default {
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 一言接口（可选，填写后会显示在subtitle)
   hitokitoAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
+  // 静态资源位置（可选）
+  static: 'https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static',
   // 博客配置
   blog: {
     // base64编码的Github token
