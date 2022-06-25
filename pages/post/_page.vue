@@ -14,7 +14,7 @@
         TheCategory(:categorys='categorys')
     .post
       .error(v-if='error') {{ error }}
-      .post-item-wrap(v-for='(item, index) in archives', :key='index')
+      .post-item-wrap(v-for='(item, index) in archive.items', :key='index')
         SPostItem(
           :title='item.title',
           :cover='item.cover.url',
@@ -25,34 +25,21 @@
           :to='`/archives/${item.id || ""}`',
           data-aos='fade-up' 
         )
-        //- :data-aos='index % 2 ? "fade-left" : "fade-right"',
-        //- :data-aos-once='isAosOnce'
 
-      SPagination(:current='page', @change='onChange', :size='10', :loading='isLoading')
+      SPagination.pagination(:current='archive.page' :total='archive.totalCount' :size="$config.blog.paginationSize" :length="length"  @change='onChange' :loading='isLoading')
 </template>
 
 <script>
 import { mapState } from 'vuex'
 
 export default {
-  scrollToTop: true,
   data: () => ({
-    arch: null,
     error: null,
+    length: 5,
     isLoading: false,
-    itemActive: null,
-    isAosOnce: false,
-    _timer: null,
   }),
-  mounted() {
-    this.$nextTick(() => {
-      this._timer = setTimeout(() => {
-        this.$aos.refresh()
-      })
-    })
-  },
   computed: {
-    ...mapState(['page', 'scroll', 'archives', 'labels', 'categorys']),
+    ...mapState(['scroll', 'archive', 'labels', 'categorys']),
     isMobile() {
       return this.$store.getters.isMobile
     },
@@ -67,18 +54,15 @@ export default {
       this.$router.push({ params: { page } })
     },
   },
-  async fetch({ store, params }) {
+  async fetch({ app, store, params }) {
     await Promise.all([
       store.dispatch('archives', {
-        page: Number(params.page || 1),
-        count: 10,
+        page: parseInt(params.page || 1) ,
+        count: app.$config.blog.paginationSize,
       }),
       store.dispatch('labels'),
       store.dispatch('categorys'),
     ])
-  },
-  beforeDestroy() {
-    clearTimeout(this._timer)
   },
 }
 </script>

@@ -2,11 +2,14 @@ import { formatPost, formatJson, formatNavMenu, formatGallery, formatTimeline, f
 import config from '@/config.js'
 
 export const state = () => ({
-  page: 0,
+  archive: {
+    page: 0,
+    totalCount: 0,
+    items: [],
+    currentItem: {},
+  },
   clientWidth: 0,
   scroll: { pos: 0, change: 0 },
-  archives: [],
-  archive: {},
   images: [],
   inspiration: [],
   about: {},
@@ -42,20 +45,15 @@ export const getters = {
 }
 
 export const mutations = {
-  page(state, page) {
-    state.page = page
+  archive(state, args) {
+    args instanceof Array ? (state.archive[args[0]] = args[1]) : (state.archive = args)
   },
+  //
   scroll(state, scroll) {
     state.scroll = scroll
   },
   clientWidth(state, clientWidth) {
     state.clientWidth = clientWidth
-  },
-  archives(state, archives) {
-    state.archives = archives
-  },
-  archive(state, archive) {
-    state.archive = archive
   },
   labels(state, labels) {
     state.labels = labels
@@ -94,13 +92,12 @@ export const actions = {
    * @returns {Array<Archive>} 文章列表
    */
   async archives({ commit, state }, { page, count }) {
-    if (state.page === page) return
-    const archives = []
-    ;(await this.$service.getArchives({ page, count })).forEach((item) => {
-      archives.push(formatPost(item))
-    })
-    commit('page', page)
-    commit('archives', archives)
+    if (state.archive.page === page) return
+    const result = await this.$service.getArchives({ page, count })
+    if (result) {
+      const totalCount = result.total_count
+      commit('archive', { page, totalCount, items: result.items.map((item) => formatPost(item)), currentItem: null })
+    }
   },
   /**
    * 通过id获取文章
@@ -110,11 +107,11 @@ export const actions = {
   async archive({ commit, state }, { id }) {
     let archive = null
     // 先从缓存里面找
-    if (state.archives) {
-      archive = state.archives.find((item) => item.id == id)
+    if (state.archive.items) {
+      archive = state.archive.items.find((item) => item.id == id)
     }
     // 如果没有找到就请求
-    commit('archive', archive || formatPost(await this.$service.getArchiveById(id)))
+    commit('archive', ['currentItem', archive || formatPost(await this.$service.getArchiveById(id))])
   },
   /**
    *
@@ -196,9 +193,9 @@ export const actions = {
     )
   },
   /**
-   * 
-   * @param {*} param0 
-   * @returns 
+   *
+   * @param {*} param0
+   * @returns
    */
   async experience({ commit, state }) {
     if (state.experience) return

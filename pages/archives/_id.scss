@@ -33,6 +33,11 @@
     color: var(--color-text);
     font-size: 1.2rem;
   }
+  ::v-deep {
+    .vssue .vssue-pagination .vssue-pagination-select {
+      padding-right: 2rem;
+    }
+  }
 }
 
 .banner {

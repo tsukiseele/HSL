@@ -12,18 +12,20 @@ export default {
   // Github OAuth口令，參見https://vssue.js.org/guide/github.html#config-and-start-your-vssue
   oAuth: {
     // Pre
-    // clientId: '470a7b6c072df5cedab6',
-    // clientSecret: 'd803f71d288f58ddfa8f36a6e27afc1cda504c81',
+    clientId: '470a7b6c072df5cedab6',
+    clientSecret: 'd803f71d288f58ddfa8f36a6e27afc1cda504c81',
     // Test
-    clientId: '5cfdbea436f66f50926e',
-    clientSecret: '7debdb73c509e6b16fa7e76146eb30c77c9d1afb',
+    // clientId: '5cfdbea436f66f50926e',
+    // clientSecret: '7debdb73c509e6b16fa7e76146eb30c77c9d1afb',
   },
-  // 博客配置，考慮到GFW，建議不要直接在Issue插入圖片，請使用外鏈以提升速度和穩定性
+  // 博客配置，考慮到GFW，建議不要直接在Issue插入圖片，請使用外鏈以 提升速度和穩定性
   blog: {
     // Github 用户名
     username: 'tsukiseele',
     // Github 存储文章的仓库名
     repository: 'archives',
+    // 每頁顯示的文章數
+    paginationSize: 5
     // username: 'chanshiyucx',
     // repository: 'blog',
   },

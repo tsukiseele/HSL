@@ -5,10 +5,9 @@
       STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
     .markdown.card
       client-only
-        SMarkdown(:title="archive.title" :content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
+        SMarkdown(:title="current.title" :content='current.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
   client-only
-    //- SComment(:title='this.$route.path')
-    SComment(:title='archive.title')
+    SComment(:title='this.$route.path')
 </template>
 
 <script>
@@ -22,6 +21,9 @@ export default {
   computed: {
     ...mapState(['archive']),
     ...mapGetters(['isMobile']),
+    current() {
+      return this.archive.currentItem
+    }
   },
   methods: {
     onMarkdownLoaded({ html, titles }) {
@@ -31,6 +33,9 @@ export default {
       this.titlesActiveIndex = index
     },
     onImageClick(e) {},
+  },
+  mounted() {
+    console.log(this.archive);
   },
   async fetch({ store, params }) {
     await store.dispatch('archive', { ...params })
