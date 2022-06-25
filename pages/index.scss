@@ -128,7 +128,7 @@
 
         @for $i from 1 through 5 {
           &:nth-of-type(#{$i}) {
-            animation: anim-nav-item 0.5s #{0.5 + $i * 0.2}s ease-out forwards;
+            animation: anim-nav-item 0.5s #{1 + $i * 0.1}s ease-out forwards;
           }
         }
         @keyframes anim-nav-item {
@@ -370,7 +370,7 @@
           opacity: 0;
           @for $i from 1 through 5 {
             &:nth-of-type(#{$i}) {
-              animation: anim-fade 0.5s #{0.5 + $i * 0.2}s ease-out forwards;
+              animation: anim-fade 0.5s #{1 + $i * 0.1}s ease-out forwards;
             }
           }
           &::before {

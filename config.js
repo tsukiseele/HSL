@@ -1,31 +1,36 @@
 export default {
   // 标题
   title: 'さとうしお - 砂糖的糖果罐',
-  // 描述
-  details: '',
   // 音乐接口
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 一言接口（可选，填写后会显示在subtitle)
   hitokitoAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 静态资源位置（可选）
   static: 'https://cdn.jsdelivr.net/gh/tsukiseele/awsl.re/static',
-  // 博客配置
+  // base64编码的Github token
+  token: 'Z2hwX2UzbXo0eDFzMW1JeTlYYjJBYzZoc3lvMVA5eFpLaTN0ZnoxbA==',
+  // Github OAuth口令，參見https://vssue.js.org/guide/github.html#config-and-start-your-vssue
+  oAuth: {
+    // Pre
+    // clientId: '470a7b6c072df5cedab6',
+    // clientSecret: 'd803f71d288f58ddfa8f36a6e27afc1cda504c81',
+    // Test
+    clientId: '5cfdbea436f66f50926e',
+    clientSecret: '7debdb73c509e6b16fa7e76146eb30c77c9d1afb',
+  },
+  // 博客配置，考慮到GFW，建議不要直接在Issue插入圖片，請使用外鏈以提升速度和穩定性
   blog: {
-    // base64编码的Github token
-    token: 'Z2hwX2UzbXo0eDFzMW1JeTlYYjJBYzZoc3lvMVA5eFpLaTN0ZnoxbA==',
     // Github 用户名
     username: 'tsukiseele',
-    // username: 'chanshiyucx',
     // Github 存储文章的仓库名
     repository: 'archives',
+    // username: 'chanshiyucx',
     // repository: 'blog',
   },
-  // 评论配置
+  // 评论配置，雖然評論可以和文章儲存在同一倉庫，但是考慮到需要過濾且影響可讀性，所以請不要這麽做
   vssue: {
     owner: 'tsukiseele',
     repo: 'comment',
-    clientId: '438b1621c4f3d263f557',
-    clientSecret: 'cd03774c329435a40f7363d2d9817593bf576e79',
   },
   // 导航
   nav: {

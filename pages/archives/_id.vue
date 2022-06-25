@@ -7,7 +7,8 @@
       client-only
         SMarkdown(:title="archive.title" :content='archive.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
   client-only
-    SComment(:title='this.$route.path')
+    //- SComment(:title='this.$route.path')
+    SComment(:title='archive.title')
 </template>
 
 <script>
