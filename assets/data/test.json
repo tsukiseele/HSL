@@ -3,11 +3,107 @@
     "title": "看过的书",
     "items": [
       {
-        "name": "2WT抱枕面料数据",
-        "desc": "使用雷达图实现的抱枕数据可视化，数据来源于加拿大鹅抱枕研发中心",
-        "detail": "使用雷达图实现的抱枕数据可视化，数据来源于加拿大鹅抱枕研发中心",
-        "cover": "https://cdn.jsdelivr.net/gh/nyarray/LoliHost/images/a231b8d99bb21f774442fed775ec1f5e.png",
-        "link": "https://2wt.hlo.li"
+        "name": "C Primer Plus 第五版",
+        "desc": "高中时学C语言的入门书，当时被后面的链表和二叉搜索树难到抓狂，也有过用笔记本写代码的辛酸历史",
+        "detail": "高中时学C语言的入门书，当时被后面的链表和二叉搜索树难到抓狂，也有过用笔记本写代码的辛酸历史",
+        "cover": "",
+        "link": ""
+      },
+      {
+        "name": "C#入门经典 第五版",
+        "desc": "高中时学C#语言的入门书，读了一大半，但是并没能深入学习，目前基本忘干净了",
+        "detail": "高中时学C语言的入门书，当时被后面的链表和二叉搜索树难到抓狂，也有过用笔记本写代码的辛酸历史",
+        "cover": "",
+        "link": ""
+      },
+      {
+        "name": "JAVA 核心技术 （全卷）",
+        "desc": "非常优秀的一本Java入门书，也是改变我的编程之路的书，此后我对Java的热爱一发不可收拾",
+        "detail": "非常优秀的一本Java入门书，也是改变我的编程之路的书，此后我对Java的热爱一发不可收拾，并以此为基础写了第一个AndroidAPP",
+        "cover": "",
+        "link": ""
+      },
+      {
+        "name": "JavaScript高级程序设计",
+        "desc": "大学研读的JS入门书，众所周知的优秀",
+        "detail": "大学研读的JS入门书，众所周知的优秀",
+        "cover": "",
+        "link": ""
+      },
+      {
+        "name": "TCP/IP详解",
+        "desc": "比较晦涩难懂，只读了第一卷，但受益匪浅",
+        "detail": "比较晦涩难懂，只读了第一卷，但受益匪浅",
+        "cover": "",
+        "link": ""
+      }
+    ]
+  },
+
+  "galgame": {
+    "title": "玩过的GalGame",
+    "items": [
+      {
+        "name": "星空列车与白的旅行",
+        "desc": "しらたま出品，治愈与感动的佳作",
+        "detail": "しらたま出品，治愈与感动的佳作",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "",
+        "desc": "しらたま出品，治愈与感动的佳作",
+        "detail": "しらたま出品，治愈与感动的佳作",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      }
+    ]
+  },
+  
+  "game": {
+    "title": "玩过的单机",
+    "items": [
+      {
+        "name": "上古卷轴-V 重置版",
+        "desc": "钳工yyds，期待老滚6",
+        "detail": "钳工yyds，期待老滚6",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "黑魂-III",
+        "desc": "其实并不受苦，只是沙里万有点受苦",
+        "detail": "其实并不受苦，只是沙里万有点受苦",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "泰拉瑞亚",
+        "desc": "来挖矿吧",
+        "detail": "来挖矿吧",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "Minecraft",
+        "desc": "一个玩就是孤独传说了",
+        "detail": "一个玩就是孤独传说了",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "魔兽争霸3冰封王座",
+        "desc": "初中时的最爱，为了做理想中的地图，上课时都在小本本上写触发器（编程启蒙？",
+        "detail": "初中时的最爱，为了做理想中的地图，上课时都在小本本上写触发器（编程启蒙？",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "GTA 系列",
+        "desc": "不言而喻",
+        "detail": "不言而喻",
+        "cover": "",
+        "link": "https://ih.hlo.li"
       }
     ]
   },
@@ -15,17 +111,80 @@
     "title": "看过的动漫",
     "items": [
       {
-        "name": "萝莉图床",
-        "desc": "将图片储存在Github，使用jsdelivr进行内容分发",
-        "detail": "将图片储存在Github，使用jsdelivr进行内容分发",
-        "cover": "https://cdn.jsdelivr.net/gh/nyarray/LoliHost/images/d21343511739915cc3e24b497941b808.png",
+        "name": "日常",
+        "desc": "我们每天度过的日常，就是连续不断的奇迹，不要被平淡的番名骗了哦",
+        "detail": "我们每天度过的日常，就是连续不断的奇迹，不要被平淡的番名骗了哦",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "安达与岛村",
+        "desc": "平淡的日常，的恋情，安達さくら与島村抱月的甜蜜百合故事",
+        "detail": "平淡的日常，的恋情，安達さくら与島村抱月的甜蜜百合故事",
+        "cover": "",
         "link": "https://ih.hlo.li"
       },
       {
         "name": "ゆるゆり",
-        "desc": "摇曳百合，元气满满的百合番",
-        "detail": "摇曳百合，元气满满的百合番",
+        "desc": "摇曳百合，元气满满的百合番，看过都说好",
+        "detail": "摇曳百合，元气满满的百合番，看过都说好",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "Happy Sugar Life",
+        "desc": "纯洁无暇的爱的诠释",
+        "detail": "纯洁无暇的爱的诠释",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "安达与岛村",
+        "desc": "平淡的日常，的恋情，安達さくら与島村抱月的甜蜜百合故事",
+        "detail": "平淡的日常，的恋情，安達さくら与島村抱月的甜蜜百合故事",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "月色真美",
+        "desc": "校园，青涩的恋情",
+        "detail": "校园，青涩的恋情",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "少女终末旅行",
+        "desc": "末世下科技的无力，生命的脆弱，以及人性的光芒",
+        "detail": "末世下科技的无力，生命的脆弱，以及人性的光芒",
         "cover": "https://cdn.jsdelivr.net/gh/nyarray/LoliHost/images/d21343511739915cc3e24b497941b808.png",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "白兔糖",
+        "desc": "深入心灵的治愈，父母与孩子的相互救赎",
+        "detail": "末世下科技的无力，生命的脆弱，以及人性的光芒",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "RE:从零开始的异世界生活",
+        "desc": "穿越番的天花板（主观观点）",
+        "detail": "穿越番的天花板（主观观点）",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "这个美术部果然有问题",
+        "desc": "宇佐美瑞希，可爱的让世界都为之心痛",
+        "detail": "宇佐美瑞希，可爱的让世界都为之心痛",
+        "cover": "",
+        "link": "https://ih.hlo.li"
+      },
+      {
+        "name": "来自深渊",
+        "desc": "黑深残，啊啊啊！！！素晴らしい",
+        "detail": "黑深残，啊啊啊！！！素晴らしい",
+        "cover": "",
         "link": "https://ih.hlo.li"
       }
     ]
