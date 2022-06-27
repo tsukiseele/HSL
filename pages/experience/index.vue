@@ -1,10 +1,10 @@
 <template lang="pug">
 #content.experience
   .classify(v-for="(classify, key) in experience" :key="key" :class="`classify--${key}`")
-    .classify__name {{ classify.title }}
+    .classify__name(:data-name="classify.title") {{ classify.title }}
     .classify__list
       .classify__list-item(v-for="(item, index) in classify.items" :key="index")
-        .item__cover-wrapper
+        .item__cover-wrapper(v-if="item.cover")
           img.item__cover(:src="item.cover" :alt="item.name")
         .item__info
           .item__info-name {{ item.name }}

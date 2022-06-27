@@ -39,7 +39,7 @@ renderer.code = function(code, lang, isEscaped) {
   if (this.options.highlight) code = this.options.highlight(code, lang) || code
   return `
     <pre class="hljs ${langClass}">
-      <div class="code-options"><i data-copy="${id}" class="mdi mdi-content-copy" aria-hidden="true"></i></div>
+      <div class="code-options"><i data-copy="${id}" class="material-symbols-rounded mdi mdi-content-copy" aria-hidden="true">content_copy</i></div>
       <div class="code-wrap"><code class="${langClass}" id="${id}">${code}</code></div>
     </pre>\n`
 }

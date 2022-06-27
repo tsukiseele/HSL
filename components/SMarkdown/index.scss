@@ -10,7 +10,7 @@
     background-color: rgba(32, 32, 32, 0.3);
   }
 }
-.markdown-title  {
+.markdown-title {
   font-family: var(--font-serif);
   font-size: 2rem;
   text-align: center;
@@ -42,15 +42,17 @@
       user-select: none;
       overflow: hidden;
       display: flex;
-      box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: .12);
+      align-items: center;
+      box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.12);
       opacity: 0;
       transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+      border-radius: 0.25rem;
       i {
         font-size: 1.25rem;
         // color: rgba(0, 128, 128, 0.67);
         color: var(--title-color);
         cursor: pointer;
-        padding: 0 .5rem;
+        padding: 0 0.5rem;
         &:focus,
         &:active {
           color: rgba(0, 96, 96, 1);
@@ -70,7 +72,7 @@
 @media screen and(max-width: $mobile) {
   .markdown-content {
     font-size: 1.125rem;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 }
 .zoom-enter-active {
