@@ -10,7 +10,8 @@
   div.introduction(data-aos="fade-right" data-aos-delay="600")
     .blockquote
       SIcon(name='quote').quote-left
-      .quote-content(v-html="navigation.introduction")
+      .quote-content(v-html="navigation.introduction" :data-from="navigation.introductionFrom")
+        //- .quote-from(v-if="navigation.introductionFrom" v-html="navigation.introductionFrom")
       SIcon(name='quote').quote-right
   //- nav.nav(data-aos="fade-up" data-aos-delay="900")
   nav.nav

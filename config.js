@@ -22,7 +22,7 @@ export default {
     // Github 存储文章的仓库名
     repository: 'archives',
     // 每頁顯示的文章數
-    paginationSize: 5
+    paginationSize: 5,
     // username: 'chanshiyucx',
     // repository: 'blog',
   },
@@ -36,10 +36,12 @@ export default {
     title: 'さとうしお',
     // title: '乙女のキャンディ缶',
     // title: 'TsukiSeele\'s Blog',
-    // subtitle: 'しおちゃんがいる場所が、私のハッピーシュガーライフ',
+    // subtitle: 'しおちゃんがいる場所が、私のハッピーシュガーライフ。   ーー',
     subtitle: "TsukiSeele's Blog",
     owner: 'TsukiSeele',
-    introduction: '知りたいよ、愛がどういう物か知りたい。だって分からないんだもん。愛してるってささやかれても、肌を合わせても、な～んにも感じないの',
+    introduction: 'しおちゃんがいる場所が、私のハッピーシュガーライフ',
+    introductionFrom: 'ーー松坂さとう',
+    // introduction: '知りたいよ、愛がどういう物か知りたい。だって分からないんだもん。愛してるってささやかれても、肌を合わせても、な～んにも感じないの',
     // introduction: 'でもさとちゃんが来てくれた。さとちゃんに出会って、一緒に暮らせて、幸せで',
     // introduction: 'It shines so brightly, it’s sweeter than all the cakes in the world, it smooths the mind, this feeling is all I know, how can I possibly describe it in words?',
     // introduction: '很高兴见到你！这里TsukiSeele的个人网站主题HSL（ハッピーシュガーライフ）。<br/>目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！',

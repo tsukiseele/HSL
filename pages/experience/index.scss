@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     margin-bottom: 3rem;
     background-color: rgba($color: white, $alpha: 0.3);
+    padding: 0 1rem;
     .classify__name {
       position: relative;
       text-align: center;
@@ -38,7 +39,7 @@
         height: 100%;
         border: 2px solid #b980ae;
         background-color: #b980ae;
-        transition: 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
         box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: 0.12);
       }
       &::before {

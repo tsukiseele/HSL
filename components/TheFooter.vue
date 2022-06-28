@@ -5,9 +5,13 @@
       div
         img.assess-count(src="https://count.getloli.com/get/@nlo.li?theme=rule34" alt="counter")
       p © {{ new Date().getFullYear() }} by 
-        a.info--developer(href="https://github.com/tsukiseele" target="_blank") さとうしお 
+        a.info--theme(href="/") さとうしお 
         | All Rights Reserved.
-      p Powered by 
+      p Designed by 
+        a.info--developer(href="https://github.com/tsukiseele" target="_blank") TsukiSeele
+        |.
+        span.info--spacer |
+        | Powered by 
         a.info--nuxtjs(href="https://nuxtjs.org/" target="_blank") Nuxt.js
         |.
         span.info--spacer |
@@ -68,6 +72,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  a:hover {
+    text-decoration:  underline;
+  }
+}
+
+
+.info--theme {
+  color: #C7B3D6;
 }
 
 .info--developer {
