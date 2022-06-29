@@ -22,7 +22,7 @@ export default {
     // Github 存储文章的仓库名
     repository: 'archives',
     // 每頁顯示的文章數
-    paginationSize: 5,
+    paginationSize: 8,
     // username: 'chanshiyucx',
     // repository: 'blog',
   },
@@ -73,7 +73,7 @@ export default {
     {
       hid: 'description',
       name: 'description',
-      content: '这里 TsukiSeele 的个人网站主题 HSL ，请多关照',
+      content: '这里我的个人网站さとうしお、分享来自二次元的奇迹，请多关照',
     },
   ],
 }
