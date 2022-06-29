@@ -11,7 +11,8 @@
 
   // 标题文本字体/颜色
   --title-font: var(--md-font-sans-serif);
-  --title-font-h2: var(--md-font-coquettec);
+  --title-font-h1: var(--md-font-serif);
+  --title-font-h2: var(--md-font-sans-serif);
   // --title-color: teal;// #204040;
   --title-color: var(--color-text);
 
@@ -179,6 +180,7 @@
     color: var(--title-color);
   }
   h1 {
+    font-family: var(--title-font-h2);
     font-size: 2rem;
     text-align: center;
     margin-top: 0;
