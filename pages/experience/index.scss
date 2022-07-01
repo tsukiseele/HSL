@@ -19,7 +19,7 @@
       font-family: var(--font-sans-serif);
       font-size: 1.25rem;
       // background-color: #2089a5;
-      padding: .25rem 2rem;
+      padding: 0.25rem 2rem;
       display: inline-block;
       width: auto;
       align-self: center;
@@ -30,17 +30,17 @@
       user-select: none;
       cursor: pointer;
       &::after {
-      color: white;
+        color: white;
         position: absolute;
         content: attr(data-name);
-        right: .5rem;
-        bottom: .5rem;
+        right: 0.5rem;
+        bottom: 0.5rem;
         width: 100%;
         height: 100%;
         border: 2px solid #b980ae;
         background-color: #b980ae;
         transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-        box-shadow: 0 0 .5rem rgba($color: #000000, $alpha: 0.12);
+        box-shadow: 0 0 0.5rem rgba($color: #000000, $alpha: 0.12);
       }
       &::before {
         position: absolute;

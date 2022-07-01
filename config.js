@@ -23,8 +23,6 @@ export default {
     repository: 'archives',
     // 每頁顯示的文章數
     paginationSize: 8,
-    // username: 'chanshiyucx',
-    // repository: 'blog',
   },
   // 评论配置，雖然評論可以和文章儲存在同一倉庫，但是考慮到需要過濾且影響可讀性，所以請不要這麽做
   vssue: {
@@ -34,17 +32,10 @@ export default {
   // 导航
   nav: {
     title: 'さとうしお',
-    // title: '乙女のキャンディ缶',
-    // title: 'TsukiSeele\'s Blog',
-    // subtitle: 'しおちゃんがいる場所が、私のハッピーシュガーライフ。   ーー',
     subtitle: "TsukiSeele's Blog",
     owner: 'TsukiSeele',
     introduction: 'しおちゃんがいる場所が、私のハッピーシュガーライフ',
     introductionFrom: 'ーー松坂さとう',
-    // introduction: '知りたいよ、愛がどういう物か知りたい。だって分からないんだもん。愛してるってささやかれても、肌を合わせても、な～んにも感じないの',
-    // introduction: 'でもさとちゃんが来てくれた。さとちゃんに出会って、一緒に暮らせて、幸せで',
-    // introduction: 'It shines so brightly, it’s sweeter than all the cakes in the world, it smooths the mind, this feeling is all I know, how can I possibly describe it in words?',
-    // introduction: '很高兴见到你！这里TsukiSeele的个人网站主题HSL（ハッピーシュガーライフ）。<br/>目前正在摸鱼开发中，砂糖ちゃん！我的砂糖ちゃん！！！',
     decorateText: 'SWEET',
     drawer: false,
     drawerBannerBackground: 'https://cdn.jsdelivr.net/gh/tsukiseele/ImageHosting/upload/826f66f94e3ebf1f62cff7c9109bb118.jpeg',

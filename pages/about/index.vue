@@ -1,6 +1,8 @@
 <template lang="pug">
 #content
-  .title  
+  .header  
+    .header__avatar-wrapper
+      img.header__avatar(src="https://avatars.githubusercontent.com/u/28500231?v=4")
     span.letter__wrapper(v-for="char in name.toLowerCase()" )
       .letter(:class="char")
   .about.card
