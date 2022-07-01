@@ -35,7 +35,7 @@ export default {
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js',
       },
-    ],
+    ]
   },
   axios: {
     retry: {
