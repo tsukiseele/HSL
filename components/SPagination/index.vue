@@ -68,11 +68,6 @@ export default {
         },
         range() {
             const r = Math.ceil(parseInt(this.length / 2));
-            // console.log("R", r);
-            // console.log("Currnet", this.current);
-            // console.log("total", this.total);
-            // console.log("size", this.size);
-            // console.log("totalPaginationCount", this.totalPaginationCount);
             if (this.totalPaginationCount <= this.length) {
                 return this.getRange(1, this.totalPaginationCount);
             }
@@ -92,7 +87,7 @@ export default {
             this.$emit("change", n);
         },
         getRange(start, end) {
-            const arr = [];
+            const arr = []; 
             if (typeof start == "number" && typeof end == "number") {
                 for (let index = start; index <= end; index++) {
                     arr.push(index);
