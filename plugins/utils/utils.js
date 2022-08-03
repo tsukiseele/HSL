@@ -55,8 +55,12 @@ Number.prototype.toChineseNumber = function(num = this) {
   if (chnStr.length > 1) {
     chnStr = chnStr.substring(-1) == zero ? (chnStr = chnStr.substring(0, chnStr.length - 1)) : chnStr
     chnStr = chnStr.substring(0, 1) == zero ? (chnStr = chnStr.substring(1)) : chnStr
-    if (chnStr.substring(0, 2) == '一十') {
+    const first = chnStr
+    if (first == '一十') {
       chnStr = chnStr.substring(1)
+    }
+    if (first == '十零') {
+      chnStr = '十' + chnStr.substring(2, chnStr.length)
     }
   }
   return chnStr
