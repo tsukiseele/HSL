@@ -9,6 +9,10 @@
     z-index: 10;
     background-color: rgba(32, 32, 32, 0.3);
   }
+  /** Mobile兼容 */
+  @include screen-mobile {
+    padding: .5rem;
+  }
 }
 .markdown-title {
   font-family: var(--font-serif);

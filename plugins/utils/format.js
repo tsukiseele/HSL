@@ -1,5 +1,5 @@
 const regDesc = new RegExp('(^[^-_!#<>`\\s\\[][\\s\\S]+?\\n)+', 'm')
-const regCover = new RegExp('\\[(.*?)\\]:\\s#\\s\\((.*?)\\)')
+const regCover = new RegExp('\\[(.*?)\\]:\\s*#?\\s*\\((.*?)\\)')
 const regImages = new RegExp('!\\[(.*?)\\].*?\\(((?:https?:\\/\\/|\\/\\/).+?\\.(?:webp|png|gif|jpg|jpeg|jfif)(?:\\?[\\w_=\\-%]+?|))\\)', 'g')
 const regTitles = new RegExp('^(#+)\\s+(.+)', 'gm')
 const regBranches = new RegExp('(main|master)\\/')

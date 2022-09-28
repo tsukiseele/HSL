@@ -468,7 +468,7 @@
     transform-origin: top center;
     z-index: -1;
     // font-family: 'CoquetteC';
-    font-family: var(--font-comic);
+    // font-family: var(--font-comic);
     &::before {
       content: '';
       position: absolute;
@@ -610,7 +610,7 @@
   // }
   $starColor: #f4d8e4;
   $bgColor: #c7b3d6;
-  $size: 1rem;
+  $size: .9rem;
   position: absolute;
   background-color: $starColor;
   &::before,
