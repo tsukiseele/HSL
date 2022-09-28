@@ -43,7 +43,7 @@ export default {
       { name: 'Home', icon: 'home', to: '/' },
       { name: 'Project', icon: 'project', to: '/projects' },
       { name: 'Blog', icon: 'blog', to: '/post' },
-      { name: 'Experience', icon: 'experience', to: '/experience' },
+      // { name: 'Experience', icon: 'experience', to: '/experience' },
       { name: 'About', icon: 'about', to: '/about' },
     ],
     links: [

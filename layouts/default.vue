@@ -1,6 +1,6 @@
 <template lang="pug">
 #hsl
-  #background
+  #background(:data-theme-background="backgroundThemes[0]")
     .decorate
       .decorate-item
       .decorate-item
@@ -31,6 +31,35 @@ import { mapState, mapGetters } from 'vuex'
 export default {
   data: () => ({
     musics: [],
+    backgroundThemes: [
+      'cicada-stripes',
+      'arrows',
+      'zig-zag',
+      'weave',
+      'upholstery',
+      'starry-night',
+      'carbon',
+      'carbon-fibre',
+      'hearts',
+      'argyle',
+      'steps',
+      'stars',
+      'japanese-cube',
+      'bricks',
+      'polka-dot',
+      'checkerboard',
+      'diagonal-checkerboard',
+      'tartan',
+      'lined-paper',
+      'blueprint-grid',
+      'tablecloth',
+      'honeycomb',
+      'wave',
+      'pyramid',
+      'chocolate-weave',
+      'cross-dots',
+      'madras',
+    ],
     windowWidth: 0,
   }),
   computed: {
@@ -118,11 +147,7 @@ export default {
     bottom: 0;
     left: 0;
     z-index: -1;
-    background-color: #f4d8e4;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 50%, transparent 50%), linear-gradient(90deg, rgba(255, 255, 255, 0.13) 50%, transparent 50%),
-      linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.17) 50%), linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.19) 50%);
-    background-size: 13px, 29px, 47px, 61px;
-    background-repeat: repeat-x;
+    // background-repeat: repeat;
     background-attachment: fixed;
     overflow: hidden;
     .decorate {
