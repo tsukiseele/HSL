@@ -1,6 +1,6 @@
 <template lang="pug">
 #hsl
-  #background(:data-theme-background="backgroundThemes[0]")
+  #background(:data-theme-background="$config.backgroundTheme")
     .decorate
       .decorate-item
       .decorate-item
@@ -31,35 +31,6 @@ import { mapState, mapGetters } from 'vuex'
 export default {
   data: () => ({
     musics: [],
-    backgroundThemes: [
-      'cicada-stripes',
-      'arrows',
-      'zig-zag',
-      'weave',
-      'upholstery',
-      'starry-night',
-      'carbon',
-      'carbon-fibre',
-      'hearts',
-      'argyle',
-      'steps',
-      'stars',
-      'japanese-cube',
-      'bricks',
-      'polka-dot',
-      'checkerboard',
-      'diagonal-checkerboard',
-      'tartan',
-      'lined-paper',
-      'blueprint-grid',
-      'tablecloth',
-      'honeycomb',
-      'wave',
-      'pyramid',
-      'chocolate-weave',
-      'cross-dots',
-      'madras',
-    ],
     windowWidth: 0,
   }),
   computed: {
