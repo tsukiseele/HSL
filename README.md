@@ -1,6 +1,6 @@
 # HSL
 
-### 一个简洁可爱柔和的个人主页主题，一切基于Github
+### 个人主页主题，一切基于Github
 [hlo.li](https://hlo.li)
 
 ### 贡献者
