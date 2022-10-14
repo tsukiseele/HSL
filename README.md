@@ -1,9 +1,7 @@
 # HSL
 
 ### 一个简洁可爱柔和的个人主页主题，一切基于Github
-
-
-![](./preview/preview_1.png)
+[hlo.li](https://hlo.li)
 
 ### 贡献者
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
