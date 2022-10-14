@@ -1,7 +1,7 @@
 # HSL
 
 ### 个人主页主题，一切基于Github
-[hlo.li](https://hlo.li)
+在线示例：[hlo.li](https://hlo.li)
 
 ### 贡献者
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
