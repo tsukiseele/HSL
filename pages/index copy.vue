@@ -27,8 +27,8 @@
     .decorate-item
     .decorate-item
   .decorate-side
-    .decorate-item(:data-theme-background="$config.sideTheme")
-    .decorate-item(:data-theme-background="$config.sideTheme")
+    .decorate-item
+    .decorate-item
   .decorate
     .decorate-item(v-for='char in navigation.decorateText' :data-content="char") {{ char }}
   //- .decorate-burst-12

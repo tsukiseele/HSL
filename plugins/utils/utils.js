@@ -56,6 +56,9 @@ Number.prototype.toChineseNumber = function(num = this) {
     chnStr = chnStr.substring(-1) == zero ? (chnStr = chnStr.substring(0, chnStr.length - 1)) : chnStr
     chnStr = chnStr.substring(0, 1) == zero ? (chnStr = chnStr.substring(1)) : chnStr
     const first = chnStr
+    if (first == '一十零') {
+      chnStr = '十'
+    }
     if (first == '一十') {
       chnStr = chnStr.substring(1)
     }

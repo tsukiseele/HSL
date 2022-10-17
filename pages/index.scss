@@ -571,91 +571,45 @@
   }
 }
 .decorate-side {
-  z-index: -2;
-  // .decorate-item {
-  //   position: fixed;
-  //   top: 0;
-  //   bottom: 0;
-  //   width: 15%;
-  //   &:first-of-type {
-  //     left: 0;
-
-  //     &::before,
-  //     &::after {
-  //       background-position: right top;
-  //     }
-  //   }
-  //   &:last-of-type {
-  //     right: 0;
-  //     &::before,
-  //     &::after {
-  //       background-position: left top;
-  //     }
-  //   }
-  //   &::before,
-  //   &::after {
-  //     $color-h: rgba(
-  //       $color: #c7b3d6,
-  //       $alpha: 0.7,
-  //     );
-  //     $color-v: rgba(
-  //       $color: #f4d8e4,
-  //       $alpha: 0.9,
-  //     );
-  //     content: '';
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     background-color: white;
-  //     background-image: repeating-linear-gradient(0deg, $color-h, $color-h 50%, transparent 50%, transparent 100%),
-  //       repeating-linear-gradient(90deg, $color-v, $color-v 50%, transparent 50%, transparent 100%);
-  //     background-size: 1.5rem 1.5rem;
-  //     background-repeat: repeat;
-  //   }
-  // }
-  $starColor: #f4d8e4;
-  $bgColor: #c7b3d6;
+  // $starColor: #f4d8e4;
+  // $bgColor: #c7b3d6;
   $size: 0.9rem;
+  --side-width: 12%;
+
   position: absolute;
-  background-color: $starColor;
-  &::before,
-  &::after {
-    content: '';
-    position: fixed;
+  z-index: -2;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  .decorate-item:first-of-type,
+  .decorate-item:last-of-type {
+    position: absolute;
     top: 0;
-    width: 0%;
+    width: var(--side-width);
     height: 100%;
-    background-color: white;
-    // background-color: hsl(2, 57%, 40%);
-    // background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
-    // repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
-    // repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
-    background-color: #6d695c;
-    background-image: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px),
-      repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px),
-      linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)),
-      linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
-    background-size: 70px 120px;
     background-repeat: repeat;
     z-index: -2;
-    animation: anim 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+    box-shadow: 0 0 8px rgba(0,0,0,.75), 0 0 16px rgba(0,0,0,.5), 0 0 32px rgba(0,0,0,.25);
   }
-  &::before {
-    left: 0;
-    background-position: calc(100% - $size / 2) 100%;
+  .decorate-item:first-of-type {
+    left: calc(-1 * (var(--side-width) + 5%));
+    transform: rotateY(180deg);
+    animation: decorate-side-left 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   }
-  &::after {
-    right: 0;
-    background-position: calc($size / -2) 100%;
+  .decorate-item:last-of-type {
+    right: calc(-1 * (var(--side-width) + 5%));
+    animation: decorate-side-right 2s 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   }
-  @keyframes anim {
+  @keyframes decorate-side-left {
     100% {
-      width: 12%;
-      // border-right: 2px solid #c7b3d6;
-      // border-left: 2px solid #c7b3d6;
+      left: 0;
+    }
+  }
+  @keyframes decorate-side-right {
+    100% {
+      right: 0;
     }
   }
   @include screen-mobile {

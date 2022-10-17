@@ -1,6 +1,6 @@
 export default {
   // 标题
-  title: 'さとうしお - 砂糖的糖果罐',
+  title: '遥远的理想乡 - TsukiSeele\'s Blog',
   // 音乐接口
   musicAPI: 'https://api.hlo.li/music/playlist/detail?id=7490559834',
   // 一言接口（可选，填写后会显示在subtitle)
@@ -69,6 +69,7 @@ export default {
     },
   ],
   backgroundTheme: 'madras',
+  sideTheme: 'tartan'
   // backgroundThemes: [
   //   'cicada-stripes',
   //   'arrows',
