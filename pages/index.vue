@@ -26,6 +26,7 @@
   .decorate-ferris-wheel
     .decorate-item
     .decorate-item
+    .decorate-item
   .decorate-side
     .decorate-item(:data-theme-background="$config.sideTheme")
     .decorate-item(:data-theme-background="$config.sideTheme")

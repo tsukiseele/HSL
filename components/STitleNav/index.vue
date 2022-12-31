@@ -22,7 +22,11 @@ export default {
     onNavItemClick(item) {
       if (item && item.id) {
         const target = document.getElementById(item.id)
-        target && target.scrollIntoView({ behavior: 'smooth' })
+        if (target) {
+          const targetOffset = target.scrollTop
+          target && target.scrollIntoView({ behavior: 'smooth' })
+          target.scrollTop = targetOffset
+        }
       }
     },
     isActive(i) {
