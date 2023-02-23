@@ -52,11 +52,16 @@ export default {
       this.$emit('activeChange', { index: i - 1, item: title })
     },
     onScroll() {
-      this._timer && clearTimeout(this._timer)
-      this._timer = setTimeout(() => {
+      // this._timer && clearTimeout(this._timer)
+
+      // this._timer = setTimeout(() => {
+      //   this.getNavPos()
+      //   this.cancelPreview()
+      // }, 200)
+      requestAnimationFrame(() => {
         this.getNavPos()
         this.cancelPreview()
-      }, 200)
+      })
     },
     cancelPreview() {
       if (this.previewEl) {
