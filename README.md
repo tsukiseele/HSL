@@ -1,6 +1,6 @@
 # HSL
 
-### 个人主页主题，一切基于Github
+### 个人主页主题，运行于Github
 在线示例：[hlo.li](https://hlo.li)
 
 ### 贡献者
