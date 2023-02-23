@@ -18,6 +18,10 @@ export default {
       type: String,
       default: null,
     },
+    offset: {
+      type: Number,
+      default: 0
+    }
   },
   data: () => ({
     _timer: null,
@@ -34,20 +38,20 @@ export default {
         this.titles = result.titles
         return result.html
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
       return null
     },
   },
   methods: {
-    getNavPos() {
+    getNavPosition() {
       const titles = document.querySelectorAll(".markdown [id^='md-title']")
       if (!titles.length) return
       let title, i
       for (i = 0; i < titles.length; i++) {
         title = titles[i]
         const rect = title.getBoundingClientRect()
-        if (rect.top - rect.height > 0) break
+        if (rect.top - rect.height > this.offset) break
       }
       this.$emit('activeChange', { index: i - 1, item: title })
     },
@@ -55,11 +59,11 @@ export default {
       // this._timer && clearTimeout(this._timer)
 
       // this._timer = setTimeout(() => {
-      //   this.getNavPos()
+      //   this.getNavPosition()
       //   this.cancelPreview()
       // }, 200)
       requestAnimationFrame(() => {
-        this.getNavPos()
+        this.getNavPosition()
         this.cancelPreview()
       })
     },
@@ -86,7 +90,6 @@ export default {
       this.initPreview()
     },
     initCopy() {
-      console.log(document.querySelectorAll('.markdown-content .code-options [data-copy]'))
       document
         .querySelectorAll('.markdown-content .code-options [data-copy]')
         .forEach((el) => (el.onclick = (e) => navigator.clipboard.writeText(document.getElementById(el.getAttribute('data-copy')).textContent)))

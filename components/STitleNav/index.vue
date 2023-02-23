@@ -15,18 +15,15 @@ export default {
     activeIndex: {
       type: Number,
       default: null,
-    },
+    }
   },
+
   data: () => ({}),
   methods: {
     onNavItemClick(item) {
       if (item && item.id) {
         const target = document.getElementById(item.id)
-        if (target) {
-          const targetOffset = target.scrollTop
-          target && target.scrollIntoView({ behavior: 'smooth' })
-          target.scrollTop = targetOffset
-        }
+        target && this.$emit('itemClick', { target, item })
       }
     },
     isActive(i) {
@@ -34,7 +31,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.nav)
   },
 }
 </script>

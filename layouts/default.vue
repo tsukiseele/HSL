@@ -50,6 +50,11 @@ export default {
     windowWidth(newVal) {
       this.$store.commit('clientWidth', newVal)
     },
+    scroll(nv, ov) {
+      const root = document.querySelector(':root')
+      if (!root) return
+      root.style.setProperty('--nav-height', nv.pos > 32 ? '3rem' : '4rem');
+    }
   },
   methods: {
     /**

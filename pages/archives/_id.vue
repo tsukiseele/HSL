@@ -2,10 +2,10 @@
 #content
   .article    
     .aside.card(v-if='!isMobile && titles && titles.length')
-      STitleNav(:nav='titles', :activeIndex="titlesActiveIndex")
+      STitleNav(:nav='titles', :activeIndex="titlesActiveIndex", @itemClick="onNavItemClick")
     .markdown.card
       client-only
-        SMarkdown(:title="current.title" :content='current.markdown', @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
+        SMarkdown(:title="current.title" :content='current.markdown', :offset="navHeight" @activeChange='onMarkdownScroll', @imageClick="onImageClick" @loaded="onMarkdownLoaded")
   client-only
     SComment(:title='this.$route.path')
 </template>
@@ -23,6 +23,9 @@ export default {
     ...mapGetters(['isMobile']),
     current() {
       return this.archive.currentItem
+    },
+    navHeight() {
+      return document.querySelector('#nav').clientHeight;
     }
   },
   methods: {
@@ -33,9 +36,11 @@ export default {
       this.titlesActiveIndex = index
     },
     onImageClick(e) {},
+    onNavItemClick({ target, item }) {
+      window.scrollTo({ top: target.offsetTop - this.navHeight,  behavior: 'smooth' })
+    }
   },
   mounted() {
-    console.log(this.archive);
   },
   async fetch({ store, params }) {
     await store.dispatch('archive', { ...params })
