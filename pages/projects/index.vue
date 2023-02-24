@@ -6,7 +6,7 @@
       .project-list
         .project-item(v-for="(project, i) in projectClassify.items" :key="i" @click="onItemClick(project)") 
           .project-cover-wrapper
-            img.project-cover(:src="project.cover" :alt="project.name")
+            img.project-cover(v-lazy="project.cover" :alt="project.name")
           .project-description
             .project-name {{ project.name }}
             .project-desc {{ project.desc }}

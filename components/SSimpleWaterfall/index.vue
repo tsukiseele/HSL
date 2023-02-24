@@ -3,7 +3,7 @@
   slot(name='header')
   .list
     .list-item(v-for='(item, index) in items', :key='index', @click='$emit("click", item)')
-      img.list-item--image(:src='imageKey ? item[imageKey] : item.src')
+      img.list-item--image(v-lazy='imageKey ? item[imageKey] : item.src')
       slot(:index='index', :item='item')
   slot(name='footer')
 </template>

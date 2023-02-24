@@ -3,7 +3,7 @@
   //- TheBanner(title='友链', subtitle='')
   ul.friends
     li.friend(v-for='(friend, index) in friends', :key='index', @click='onLinkClick(friend)', :style='{ "--cover": `url(${friend.cover})` }')
-      img.friend-avatar(:src='friend.avatar')
+      img.friend-avatar(v-lazy='friend.avatar')
       span.friend-name {{ friend.name }}
 </template>
 
