@@ -79,3 +79,5 @@ typings/
 #
 *.zip
 .history/
+.nuxt/
+dist/
