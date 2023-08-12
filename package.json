@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://github.com/tsukiseele/HSL",
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=dev nuxt dev",
-    "dev-spa": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=dev MODE=SPA nuxt dev",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=prod nuxt build",
+    "dev": "cross-env NODE_ENV=dev nuxt dev",
+    "dev-spa": "cross-env NODE_ENV=dev MODE=SPA nuxt dev",
+    "build": "cross-env NODE_ENV=prod nuxt build",
     "build-spa": "cross-env NODE_ENV=prod MODE=SPA nuxt build",
     "_build-spa": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=prod MODE=SPA nuxt build",
     "start": "cross-env NODE_ENV=prod nuxt start",
